@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	
+	<ui:define name="content"> 
+		
+		<div id="breadcrumbs">
+			 <span>Supervisión</span> <span>Reasignación de Comprobantes</span> 
+		</div>
+		
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+		
+		<div id="sub-nav" class="sub-nav" style="height: 40px">
+				<ul class="nav">
+					<li><a href="#"><u>Reasignación de Comprobantes</u></a></li>
+
+					<li><a href="#">Turnos</a></li>
+
+					<li><a href="#">Procesadoras</a></li>
+
+					<li><a href="#">Bitácora</a></li>
+
+					<li><a href="#">Depuración</a></li>
+				</ul>
+		<div class="clear-both"></div>
+			</div>
+		
+			<div class="section-name">
+				<h1>#{msg['reasignacionComprobantes.titulo']}</h1>
+			
+			</div>
+			<h:form class="horizontal">
+				<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+						
+						
+							
+						
+						<fieldset>
+					<legend>#{msg['reasignacionComprobantes.tituloTabla1']}</legend> 									
+					<h:dataTable class="gridtable" style="width:850px" value="">
+											
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['reasignacionComprobantes.turno']} </f:facet>
+							<h:outputLabel value="MATUTINO 1"  />
+						</h:column>
+					
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['reasignacionComprobantes.iniciado']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 09:00"  />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['reasignacionComprobantes.fContableInicio']} </f:facet>
+							<h:outputLabel value="04/DIC/2013"  />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['reasignacionComprobantes.finalizado']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 14:23"  />
+						</h:column>
+						
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['reasignacionComprobantes.fContableFinal']} </f:facet>
+							<h:outputLabel value="04/DIC/2013"  />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['reasignacionComprobantes.estatus']} </f:facet>
+							<h:outputLabel value="ABIERTO"  />
+						</h:column>
+						
+						<br></br>
+						
+					</h:dataTable>
+					<br></br>
+					<br></br>
+					<br></br>
+					<div align="right"  style="width:850px">
+						<h:commandButton value="#{msg['reasignacionComprobantes.btnAceptar']}" type="submit" class="button-blue jqTransformButton" style="align:right;width:120px;height:26px"/>
+						</div>
+						<div align="right"  style="width:850px">
+						<h:commandButton value="#{msg['reasignacionComprobantes.btnSalir']}" type="submit" class="button-blue jqTransformButton" style="align:right;width:120px;height:26px"/>	
+						</div>
+						<br></br>			
+					<br></br>	
+						
+				</fieldset>
+			
+
+				<fieldset>
+					<legend>#{msg['reasignacionComprobantes.tituloTabla2']}</legend> 
+									
+					<h:dataTable class="gridtable" style="width:850px" value="">
+					
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['reasignacionComprobantes.comprobante']} </f:facet>
+							<h:outputLabel value="P2864829631092837465" />
+							<br></br>
+							<h:outputLabel value="P2863453484938383834"  />
+							
+						</h:column>
+					
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['reasignacionComprobantes.cajaActual']} </f:facet>
+							<h:outputLabel value="0001"  />
+							<br></br>
+							<h:outputLabel value="0002"  />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['reasignacionComprobantes.tipoCaja']} </f:facet>
+							<h:outputLabel value="RECEPTORA" />
+							<br></br>
+							<h:outputLabel value="VERIFICADORA BILLETE" />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['reasignacionComprobantes.statusComprobante']} </f:facet>
+							<h:outputLabel value="RECIBIDO" />
+							<br></br>
+							<h:outputLabel value="ASIGNADO" />
+							
+						</h:column>
+						
+						<h:column style="width:200px">
+							<f:facet name="header" style="size=4">#{msg['reasignacionComprobantes.reasignar']} </f:facet>
+							  
+								<h:selectBooleanCheckbox value=" " ></h:selectBooleanCheckbox>
+								<br></br>
+								<h:selectBooleanCheckbox value=" " ></h:selectBooleanCheckbox>
+						</h:column>
+						
+					</h:dataTable>
+							<br></br>
+							<br></br>
+							<br></br>		
+				</fieldset>
+								
+			</h:form>
+		
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+			
+			

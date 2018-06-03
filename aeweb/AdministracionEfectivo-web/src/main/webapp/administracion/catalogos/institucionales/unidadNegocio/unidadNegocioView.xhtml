@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> Institucionales</span> <span> Unidad de Negocio</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['unidadNegocio.titulo']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+<fieldset>
+
+						<legend>#{msg['unidadNegocio.sessionCamposCaptura']}</legend>
+
+						<h:panelGrid columns="12">
+							<h:outputLabel value="#{msg['unidadNegocio.contrato']}" />
+							<span  />
+							<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.unidadDeNegocioPK.cntrtoNum}" size="20" disabled="true" />
+
+							<h:outputLabel value="#{msg['unidadNegocio.unidadNegocio']}" />
+							<span  />
+							<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.unidadDeNegocioPK.unegId}" size="20" disabled="true" />
+							<h:outputLabel value="#{msg['unidadNegocio.deposito']}" />
+							<span  />
+							<h:selectBooleanCheckbox value="#{unidadNegocioGridMB.unidadNegocioVO.deposito}" />
+							<h:outputLabel value="#{msg['unidadNegocio.dotacion']}" />
+							<span  />
+							<h:selectBooleanCheckbox value="#{unidadNegocioGridMB.unidadNegocioVO.dotacion}" />
+						</h:panelGrid>
+
+</fieldset>
+						<br />
+						<fieldset>
+							<legend>#{msg['unidadNegocio.sessionDatosCliente']}</legend>
+
+							<h:panelGrid columns="2" style="width:300px;margin-left:0px">
+								<h:outputLabel value="#{msg['unidadNegocio.nombreCliente']}"  />
+
+								<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.nombreCliente}" size="34" />
+								<span />
+							</h:panelGrid>
+
+							<br />
+							<h:panelGrid columns="6">
+								<h:outputLabel value="#{msg['unidadNegocio.telefonoUno']}" />
+								<span />
+								<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.tel1}" size="34" />
+
+								<h:outputLabel value="#{msg['unidadNegocio.telefonoDos']}" />
+								<span />
+								<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.tel2}" size="34" />
+								<h:outputLabel value="#{msg['unidadNegocio.rfc']}" />
+								<span />
+								<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.rfc}" size="34" />
+
+							
+								<h:outputLabel value="#{msg['unidadNegocio.fechaAltaDep']}" />
+								<span />
+								<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.fecAltaDep}" size="10" />
+
+								<h:outputLabel value="#{msg['unidadNegocio.fechaAltaDot']}" />
+								<span />
+								<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.fecAltaDot}" size="10" />
+
+								<h:outputLabel value="#{msg['unidadNegocio.fechaVencimiento']}" />
+								<span  />
+								<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.fecVenc}" size="10" disabled="true" />
+								<h:outputLabel value="#{msg['unidadNegocio.fechaCancelacion']}" />
+								<span  />
+								<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.fecCancel}" size="10" disabled="true" />
+							
+								<h:outputLabel value="#{msg['unidadNegocio.clave']}" />
+								<span  />
+								<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.cveCshPolicy}" size="20" />
+								
+								<h:outputLabel value="#{msg['unidadNegocio.importe']}" />
+							    <span  />
+								<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.cveCshPolicy}" size="20" />
+								
+								<h:outputLabel
+									value="#{msg['unidadNegocio.tipoProcesoBillete']}" />
+									<span  />
+								
+								<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.tipProcBill}" size="20" />
+						
+								<h:outputLabel value="#{msg['unidadNegocio.tipoProcesoMoneda']}" />
+								<span  />
+							
+								<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.tipProcMon}" size="20" />
+								
+								<h:outputLabel value="#{msg['unidadNegocio.dif']}" />
+								<span  />
+								
+								<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.tipProcMon}" size="20" />
+
+							</h:panelGrid>
+							<fieldset>
+								<legend>#{msg['unidadNegocio.sessionDomicilio']}</legend>
+								<h:panelGrid columns="6">
+									<h:outputLabel value="#{msg['unidadNegocio.calle']}" />
+									<span />
+									<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.calle}" size="34" />
+									<h:outputLabel value="#{msg['unidadNegocio.colonia']}" />
+									<span />
+									<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.colonia}" size="34" />
+									<h:outputLabel value="#{msg['unidadNegocio.delegacion']}" />
+									<span />
+									<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.deleg}" size="34" />
+									<h:outputLabel value="#{msg['unidadNegocio.cp']}" />
+									<span />
+									<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.cp}" size="34" />
+									<h:outputLabel value="#{msg['unidadNegocio.estado']}" />
+									<span />
+									<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.estado}" size="34" />
+									<h:outputLabel value="#{msg['unidadNegocio.cia']}" />
+									<span />
+									<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.ciaTraslado}" size="34" />
+									<h:outputLabel value="#{msg['unidadNegocio.horarioRecepcion']}" />
+									<span />
+									<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.horaRecepcion}" size="34" />
+									<h:outputLabel value="#{msg['unidadNegocio.sucursal']}" />
+									<span />
+									<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.sucursalFicha}" size="34" />
+									<h:outputLabel value="#{msg['unidadNegocio.entregaFichas']}" />
+									<span />
+									<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.entregaFichas}" size="34" />
+									<h:outputLabel value="#{msg['unidadNegocio.nivelDificultad']}" />
+									<span />
+									<h:outputLabel value="#{unidadNegocioGridMB.unidadNegocioVO.nivDificultad}" size="34" />
+								</h:panelGrid>
+							</fieldset>
+
+						</fieldset>
+						<br />
+						
+
+							<h:panelGrid columns="12" cellspacing="20"   >
+
+								<h:dataTable class="gridtable" var="cuenta" value="#{unidadNegocioGridMB.unidadNegocioVO.listaCuenta}" style="width:900px;margin-left:10px; float:left;" >
+									<h:column>
+										<f:facet name="header">
+											<h:outputLabel value="#{msg['unidadNegocio.suc']}" />
+										</f:facet>
+										<h:outputLabel value="#{cuenta.cuentaPK.ctaSucursalId}" />
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputLabel value="#{msg['unidadNegocio.cuenta']}" />
+										</f:facet>
+										<h:outputLabel value="#{cuenta.cuentaPK.ctaCuenta}" />
+									</h:column>
+									<h:column>
+										<f:facet name="header">
+											<h:outputLabel value="#{msg['unidadNegocio.cop']}" />
+										</f:facet>
+										<h:outputLabel value="#{cuenta.claveOperativaDePagos}" />
+									</h:column>
+									<h:column>
+										<f:facet name="header">
+											<h:outputLabel value="#{msg['unidadNegocio.divisa']}" />
+										</f:facet>
+										<h:outputLabel value="#{cuenta.divisaMonedaId}" />
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputLabel value="#{msg['unidadNegocio.tipoCuenta']}" />
+										</f:facet>
+										<h:outputLabel value="#{cuenta.tipoCuenta}" />
+									</h:column>
+									
+									<h:column>
+										<f:facet name="header">
+											<h:outputLabel value="#{msg['unidadNegocio.aso']}" />
+										</f:facet>
+										<h:outputLabel value="#{cuenta.idCuentaAsociado}" />
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputLabel value="#{msg['unidadNegocio.dep']}" />
+										</f:facet>
+								
+									</h:column>
+									<h:column>
+										<f:facet name="header">
+											<h:outputLabel value="#{msg['unidadNegocio.dot']}" />
+										</f:facet>
+										
+									</h:column>
+									
+									<h:column>
+										<f:facet name="header">
+											<h:outputLabel value="#{msg['unidadNegocio.referenciaUno']}" />
+										</f:facet>
+										<h:outputLabel value="#{cuenta.referencia1Mascara}" />
+									</h:column>
+									
+									<h:column>
+										<f:facet name="header">
+											<h:outputLabel value="#{msg['unidadNegocio.referenciaDos']}" />
+										</f:facet>
+										<h:outputLabel value="#{cuenta.referencia2Mascara}" />
+									</h:column>
+									<h:column>
+										<f:facet name="header">
+											<h:outputLabel value="#{msg['unidadNegocio.referenciaTres']}" />
+										</f:facet>
+										<h:outputLabel value="#{cuenta.referencia3Mascara}" />
+									</h:column>
+									<h:column>
+										<f:facet name="header">
+											<h:outputLabel value="#{msg['unidadNegocio.referenciaCuatro']}" />
+										</f:facet>
+										<h:outputLabel value="#{cuenta.referencia4Mascara}" />
+									</h:column>
+								</h:dataTable>
+
+
+							</h:panelGrid>
+
+						
+						<br />
+
+						
+
+						<br />
+
+						
+
+						<br />
+
+						<fieldset>
+							<div align="center">
+
+								<h:commandButton value="#{msg['unidadNegocio.btnRegresar']}" action="unidadNegocioList.jsf"
+									class="button-blue jqTransformButton" />
+
+
+							</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

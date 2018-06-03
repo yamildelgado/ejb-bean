@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"	  
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content"> 
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> AE-WEB</span> <span> CPAE's</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+		<div class="section-name">
+				<h1>#{msg['mancatCPAES.tituloConsulta']}</h1>	
+				</div>
+					<h:form styleClass="horizontal">
+	
+							<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+						
+						<fieldset>
+												
+							<legend>#{msg['mancatCPAES.criterioId']}</legend>
+							
+							
+							<h:panelGrid columns="4" style="width:800px; float:left;">
+							<h:outputLabel value="#{msg['mancatCPAES.idsirh']}" />
+							<h:inputText value="1234" size="15" disabled ="true" style="text-align:right;" />
+								
+						</h:panelGrid>
+						</fieldset>
+															
+						
+																								
+						
+						<br />
+						<fieldset>
+							<legend>#{msg['mancatCPAES.criterioBusqueda']}</legend>
+							<h:panelGrid columns="2" style="width:890px" >
+																												
+								<h:outputLabel value="#{msg['mancatCPAES.nombre']}" />
+								<h:inputText  value="Cpae2" size="109" maxlength="90"  style="text-align:right; float:right "  /> 
+							</h:panelGrid>
+							
+						<h:panelGrid columns="4" style="width:900px;">	
+							
+								 
+								<h:outputLabel value="#{msg['mancatCPAES.horacontable']}" />
+								<h:inputText value="4" size="10" maxlength="2" converter="javax.faces.Number"  converterMessage="#{msg['mancatCPAES.errorHoracontable']}" style="text-align:right "  />
+								
+								<h:outputLabel value="#{msg['mancatCPAES.comporlote']}" />
+								<h:inputText value="6" size="10" maxlength="2" converter="javax.faces.Number"  converterMessage="#{msg['mancatCPAES.errorComporlote']}" style="text-align:right; " />
+								
+								<h:outputLabel value="#{msg['mancatCPAES.sirhlimpiso']}" />
+								<h:inputText value="34" size="10"  maxlength="2" converter="javax.faces.Number"  converterMessage="#{msg['mancatCPAES.errorSirhlimpiso']}" style="text-align:right; " />
+
+								<h:outputLabel value="#{msg['mancatCPAES.MontMinDifImprActa']}" />
+								<h:inputText value="95" size="10" maxlength="2" converter="javax.faces.Number"  converterMessage="#{msg['mancatCPAES.errorMontMinDifImprActa']}" style="text-align:right; "  />
+								
+								<h:outputLabel value="#{msg['mancatCPAES.numcopias']}" />
+								<h:inputText value="45" size="20" maxlength="16" converter="javax.faces.Number"  converterMessage="#{msg['mancatCPAES.errorNumcopias']}" style="text-align:right; "  />
+								
+								<h:outputLabel value="#{msg['mancatCPAES.envasecritico']}" />
+								<h:inputText value="4" size="10"  maxlength="2"  converter="javax.faces.Number"  converterMessage="#{msg['mancatCPAES.errorEnvasecritico']}" style="text-align:right; " />
+								
+								<h:outputLabel value="#{msg['mancatCPAES.asigxcajero']}" />
+								<h:inputText value="53" size="30" maxlength="38" converter="javax.faces.Number"  converterMessage="#{msg['mancatCPAES.errorAsigxcajero']}" style="text-align:right; "  />
+								
+							</h:panelGrid>	
+						</fieldset>
+			
+						<br />
+						
+						<fieldset>
+							<div align="center">
+							
+                              <h:panelGrid columns="4" style="width:40px;">								
+                              <center>
+									
+							    <h:commandButton value="#{msg['mancatCPAES.btnIngresar']}"
+								class="button-blue jqTransformButton" actionListener="#{cpaeGridMB.addCpaes}" />
+									
+								<h:commandButton value="#{msg['mancatCPAES.btnGuardar']}" 
+									class="button-blue jqTransformButton" actionListener="#{cpaeGridMB.editCpaes}" />
+								<h:commandButton value="#{msg['mancatCPAES.btnReporte']}" 
+									class="button-blue jqTransformButton" action="#{cpaeGridMB.generarReportes}" />
+								</center>
+							  </h:panelGrid>
+							</div>
+						</fieldset>
+						
+						
+					</h:form>
+			</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

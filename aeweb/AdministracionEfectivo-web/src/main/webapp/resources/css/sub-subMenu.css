@@ -1,0 +1,98 @@
+
+
+.navMenu{
+	
+	height : 40px; 
+	width : 920px; 
+	
+	
+}
+
+/*
+.navMenu a {
+    color: #333333;
+    text-decoration: none;
+	padding: 0px 5px 0px 5px;   
+}*/
+
+/*
+.navMenu a:hover {
+    color: #ff0000;
+    text-decoration: underline;
+    
+}*/
+
+/*
+.navMenu-on {
+    font-weight: bold;
+	color: #ffffff;
+}
+.navMenu-on a {
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+}
+.navMenu-on a:hover {
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;   
+}
+.navMenu-on a:link {
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/*menu de navegacion ori*/
+
+
+/*
+.navMenu ul {
+	padding:0;
+	margin:0;
+}    
+.navMenu ul li {
+	display: inline;
+	list-style:none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	float:left;
+	/*text-transform:capitalize;*/
+}*/
+
+/*
+.sub-nav ul li span{
+	float:left;
+	margin-top:-1px;
+	*margin-top:-2px;
+	
+} 
+
+.navMenu ul ul {
+	position: absolute;
+	display: none;
+	clear:both;
+	margin: 0 0 0 -2px;
+	* margin: -4px 0 0 -2px;
+	padding:5px 22px 10px 22px;
+	border:solid 1px #aaa;
+	border-top-width:0px;
+	background:#f7f7f7 url('../img/navigation/subnav_ul_bg.png') repeat-x scroll left bottom    ;
+	-moz-border-radius-bottomleft:4px;
+	-moz-border-radius-bottomright:4px;
+}
+.navMenu ul ul li {
+	float: none;
+	white-space:nowrap;
+	display:inherit;
+	padding:0px;
+	margin:0px
+}
+.navMenu ul ul li a {
+	display:block;
+	padding:3px 0;
+	margin:0px;
+}
+*/

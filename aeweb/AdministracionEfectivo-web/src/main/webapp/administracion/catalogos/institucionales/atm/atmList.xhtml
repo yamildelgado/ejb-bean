@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> Institucionales</span> <span> Atm</span> 
+		</div>
+	
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['atm.tituloAtm']}</h1>
+			</div>
+			<h:form  id="atmForm" class="horizontal">
+			
+			<h:panelGroup id="messagePanel" layout="block">
+						<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+						
+			
+				<fieldset>
+					<legend>#{msg['atm.consultarCatalogosATM']}</legend>
+					<h:panelGrid columns="4" style="width:650px; float:left;">
+						<h:outputLabel value="#{msg['atm.idATM']}" />
+						<h:inputText value="#{atmGridMB.criterioAtmVO.atmIdn}" size="34" converter="javax.faces.Number" converterMessage="DEBES INGRESAR UN NÚMERO PARA LA BÚSQUEDA" maxlength="4"/>
+					</h:panelGrid>
+				</fieldset>
+				<fieldset>
+					<legend>#{msg['atm.consultaCatalogosATM']}</legend>
+					<h:dataTable class="gridtable"   var="atms" value="#{atmGridMB.listaAtm}" >
+						<h:column>
+							<f:facet name="header">#{msg['atm.idATM']}</f:facet>
+							<h:outputLabel  value="#{atms.atmIdn}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">#{msg['atm.sirhAsociado']}</f:facet>
+							<h:outputText value="#{atms.cpaesEstructuraSirhIdn}" />
+							
+						</h:column>
+						<h:column>
+							<f:facet name="header">#{msg['atm.numCtaUnicaAsoc']}</f:facet>
+							<h:outputText value="#{atms.atmNumCtaUnicaAsoc}" />
+							
+						</h:column>
+						<h:column>
+							<f:facet name="header">#{msg['atm.tipoOficina']}</f:facet>
+							<h:outputText value="#{atms.atmTipoOficina}" />
+							
+						</h:column> 
+						<h:column>
+							<f:facet name="header">#{msg['atm.tipoInmueble']}</f:facet>
+							<h:outputText value="#{atms.atmTipoInmueble}" />
+							
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header">#{msg['atm.descripcion']}</f:facet>
+							<h:outputText value="#{atms.atmDescripcion}" />
+							
+						</h:column>
+					</h:dataTable>
+				</fieldset>
+				<center>
+				<h:commandButton value="#{msg['atm.btnBuscar']}"
+						style="width:140px; margin-right:10px;" class="button-blue jqTransformButton"  actionListener="#{atmGridMB.consultaAtmPorId}">
+					
+						</h:commandButton>
+				
+						</center>
+				
+ 
+
+			</h:form>
+
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+		
+		
+		
+	</ui:define>
+</ui:composition>

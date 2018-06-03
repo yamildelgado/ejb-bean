@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+   template="/WEB-INF/templates/migracionEfectivoTemplate.xhtml">
+   <ui:define name="content">
+
+
+    <div class="lg-cont-top-bg"></div>
+  <div class="lg-cont-center-bg">
+  <div class="section-name">
+<h1>Seccion Ejemplo</h1>
+</div>
+	      <h:form>
+	        <h:panelGrid columns="2" >
+	      <h:outputLabel value="#{msg['modulo.propiedad']}" />
+	      <h:outputText  value="#{personaMB.nombre}" />
+	      
+	      <h:outputLabel value="Paterno" />
+	      <h:outputText  value="#{personaMB.apellidos}" />
+	      
+	      <h:commandButton value="Guardar" action="#{personaMB.guardar}" />
+	        </h:panelGrid>
+	     
+	      
+	      </h:form>
+	      
+</div>
+<div class="lg-cont-bottom-bg"></div>
+   </ui:define>
+</ui:composition>

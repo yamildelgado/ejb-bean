@@ -1,0 +1,115 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+
+	<h:commandLink>procesadorasEdit</h:commandLink>
+	<ui:define name="content">
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> AE-WEB</span> <span> Procesadoras</span> <span>Consulta de Procesadoras</span>
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['procesadora.tituloEdit']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+					<h:form styleClass="horizontal">
+
+
+						<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+
+
+						<fieldset>
+							<legend>#{msg['procesadora.seccionDatosProcesadora']}</legend>
+
+							<h:inputHidden
+								value="#{procesadoraGridMB.procesadoraVO.procesadoraSirhId}" />
+							<h:inputHidden
+								value="#{procesadoraGridMB.procesadoraVO.procesadoraEtvId}" />
+
+							<h:panelGrid columns="3">
+
+
+								<h:outputLabel value="#{msg['procesadora.sirhId']}" />
+								<span />
+								<h:inputText
+									value="#{procesadoraGridMB.procesadoraVO.procesadoraSirhId}"
+									size="34" disabled="true" />
+
+
+								<h:outputLabel value="#{msg['procesadora.etvId']}" />
+								<span />
+								<h:inputText
+									value="#{procesadoraGridMB.procesadoraVO.procesadoraEtvId}"
+									size="34" disabled="true" />
+
+
+								<h:outputLabel value="#{msg['procesadora.frecBusqueda']}" />
+								<span class="required" />
+								<h:inputText
+									value="#{procesadoraGridMB.procesadoraVO.frecBusqueda}"
+									size="34" maxlength="5" />
+
+
+
+
+								<h:outputLabel value="#{msg['procesadora.intelar']}" />
+								<span class="required" />
+								<h:inputText
+									value="#{procesadoraGridMB.procesadoraVO.procesadoraIntelar}"
+									size="34" />
+
+
+								<h:outputLabel value="#{msg['procesadora.estatus']}" />
+								<span class="required" />
+								<h:selectOneMenu
+									value="#{procesadoraGridMB.procesadoraVO.procesadoraBajaLogica}">
+									<f:selectItem itemValue="" itemLabel="--Seleccionar--" />
+									<f:selectItem itemValue="A" itemLabel="Activo" />
+									<f:selectItem itemValue="B" itemLabel="Inactivo" />
+								</h:selectOneMenu>
+
+							</h:panelGrid>
+						</fieldset>
+
+						<br />
+
+
+						<fieldset>
+							<div align="center">
+								<h:panelGrid columns="2" style="width:40px;">
+									<h:commandButton value="#{msg['procesadora.btnGuardar']}"
+										class="button-blue jqTransformButton"
+										actionListener="#{procesadoraGridMB.editProcesadoras}" />
+
+
+									<h:commandButton value="#{msg['procesadora.btnCancelar']}"
+										class="button-blue jqTransformButton"
+										action="procesadorasList" immediate="true" />
+								</h:panelGrid>
+
+							</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> Institucionales</span> <span>Divisas</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['divisa.tituloConsulta']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+							<h:panelGroup id="messagePanel" layout="block">
+								<h:messages errorStyle="color:red" infoStyle="color:blue" layout="table" />
+							</h:panelGroup>
+
+						<fieldset>
+							<legend>#{msg['divisa.criterioBusqueda']}</legend>
+							<h:panelGrid columns="2">
+								<h:outputLabel value="#{msg['divisa.num']}" />
+								<h:inputText value="#{divisaGridMB.divisaVO.divisaNumeroID}" size="20"  />
+								
+								<h:outputLabel value="#{msg['divisa.abreviatura']}" />
+								<h:inputText value="#{divisaGridMB.divisaVO.abreviatura}" size="20" />
+								
+								<h:outputLabel value="#{msg['divisa.nombreLargo']}" />
+								<h:inputText value="#{divisaGridMB.divisaVO.nombreLargo}" size="20"  />
+							</h:panelGrid>
+						</fieldset>
+						
+						<br />
+						<fieldset>
+							<legend>#{msg['divisa.seccionDetalle']}</legend>
+							<h:dataTable class="gridtable" var="divisa" rows="20" value="#{divisaGridMB.listaDivisas}">
+								<h:column>
+								<f:facet name="header">
+								<h:outputLabel value="#{msg['divisa.num']}" style="text-align:center"/>
+								</f:facet>
+								<h:outputLabel value="#{divisa.divisaNumeroID}"/>
+								</h:column>
+								<h:column>
+								<f:facet name="header">
+								<h:outputLabel value="#{msg['divisa.abreviatura']}" style="text-align:center" />
+								</f:facet>
+								<h:outputLabel value="#{divisa.abreviatura}"/>
+								</h:column>
+								
+								<h:column>
+								<f:facet name="header">
+								<h:outputLabel value="#{msg['divisa.nombreLargo']}" style="text-align:center"/>
+								</f:facet>
+								<h:outputLabel value="#{divisa.nombreLargo}"/>
+								</h:column>
+							</h:dataTable>
+						</fieldset>
+												
+						<br />
+
+						<fieldset>
+							<div align="center">
+                              <h:panelGrid columns="3" style="width:40px;">								
+                              
+                              <h:commandButton value="#{msg['divisa.btnConsultar']}"
+									class="button-blue jqTransformButton" 
+									actionListener="#{divisaGridMB.consultaDivisaPorParametro}" />
+								
+								<h:commandButton value="#{msg['divisa.btnLimpiar']}"
+									class="button-blue jqTransformButton" />	
+								
+
+							  </h:panelGrid>
+							</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

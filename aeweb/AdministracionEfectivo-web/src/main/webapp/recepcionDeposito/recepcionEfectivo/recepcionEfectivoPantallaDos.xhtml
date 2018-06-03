@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	
+	<h:commandLink>recepcionEfectivoPantallaDos</h:commandLink>
+	
+	<ui:define name="content">
+		<div id="breadcrumbs">
+			Recepción de Deposito de Clientes y Sucursales<span>Recepción
+				de Efectivo</span>
+		</div>
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name"></div>
+
+			<h:form styleClass="horizontal">
+				<h:panelGroup id="messagePanel" layout="block">
+					<h:messages errorStyle="color: red" infoStyle="color: blue"
+						layout="table" />
+				</h:panelGroup>
+				
+				<fieldset>				
+				<h:panelGrid columns="4" style="width:900px; float:left;">
+					<h:outputLabel value="#{msgjc['recepcionefectivo.camion']}"
+							style="width:90px;" />
+						<h:inputText value="#{recepcionEfectivoGridMB.camion}" size="15" disabled="true"/>
+						
+					<h:outputLabel value="#{msgjc['recepcionefectivo.companiaetv']}"
+							style="width:90px;" />
+						<h:inputText value="COMPAÑÍA MEX DE TRASLADO DE VALORES SA" size="50" disabled="true"/>
+						</h:panelGrid>
+				</fieldset>
+						
+				<fieldset>
+					
+					<legend>#{msg['recepcionEfectivo.totalesRecepcion']}</legend>		
+					<h:panelGrid columns="8" style="width:900px; float:left;">
+						<h:outputLabel value="#{msg['recepcionEfectivo.lotes']}"
+							style="width:90px;"  />
+						<h:inputText value="2" size="15" disabled="true" />
+
+						<h:outputLabel value="#{msg['recepcionEfectivo.comprobantes']}"
+							style="width:90px;" />
+						<h:inputText value="13" size="15" disabled="true"/>
+
+						<h:outputLabel value="#{msg['recepcionEfectivo.envases']}" />
+						<h:inputText value="27" size="15" disabled="true" />
+
+						<h:outputLabel value="#{msg['recepcionEfectivo.importe']}" />
+						<h:inputText value="985,839.00" size="15" disabled="true" />
+						<span></span>
+
+					</h:panelGrid>
+					<br /> <span></span><br />
+
+					<table class="gridtable"
+						style="width: 400px; margin-left: 20px; float: left; border: 1px solid grey">
+						<tr>
+							<th style="border: 1px solid grey" scope="col">#{msg['recepcionEfectivo.comprobanteCapturados']}</th>
+							<th style="border: 1px solid grey" scope="col"></th>
+						</tr>
+						<tr>
+							<td style="border: 1px solid grey"><h:outputLabel value="Comprob-000990" /></td>
+							<td style="border: 1px solid grey"><h:commandButton
+									value="#{msg['recepcionEfectivo.modificar']}"
+									class="button-blue jqTransformButton" /></td>
+						</tr>
+						<tr>
+							<td style="border: 1px solid grey"><h:outputLabel value="Comprob-000991" /></td>
+							<td style="border: 1px solid grey"><h:commandButton
+									value="#{msg['recepcionEfectivo.modificar']}"
+									class="button-blue jqTransformButton" /></td>
+						</tr>
+						<tr>
+							<td style="border: 1px solid grey"><h:outputLabel value="Comprob-000992" /></td>
+							<td style="border: 1px solid grey"><h:commandButton
+									value="#{msg['recepcionEfectivo.modificar']}"
+									class="button-blue jqTransformButton" /></td>
+						</tr>
+
+					</table>
+					<br /> <br />
+					<h:panelGrid columns="1"
+						style="width:900px; float:left; margin-left:20px;">
+						<h:commandButton value="#{msg['recepcionEfectivo.imprimir']}"
+							class="button-blue jqTransformButton" />
+
+					</h:panelGrid>
+				</fieldset>
+				
+				<fieldset>
+					<legend>#{msg['recepcionEfectivo.datosComprobante']}</legend>
+
+
+					<h:panelGrid columns="1" style="width:900px; float:left;">
+						<h:outputLabel value="#{msg['recepcionEfectivo.entidad']}" />
+						
+						<h:selectOneMenu value="#{recepcionEfectivoGridMB.entidad}" >
+							<f:ajax event="change" listener="#{recepcionEfectivoGridMB.setEntidadS}"/>
+							<f:selectItem itemLabel="-----Seleccione-----" itemValue="0" />
+							<f:selectItem itemLabel="CLIENTE" itemValue="1" />
+							<f:selectItem itemLabel="SUCURSAL" itemValue="2" />
+						</h:selectOneMenu>
+						<h:panelGroup >
+						
+							<!-- 
+    						 <h:panelGrid columns="7" style="width:900px; float:left; visibility:#{recepcionEfectivoGridMB.entidadCliente}; ">
+    							<h:outputLabel value="#{msg['recepcionEfectivo.comprobante']}" />
+								<h:inputText value="" size="15" />
+			    		
+			    				<h:outputLabel value="#{msg['recepcionEfectivo.contrato']}" />
+								<h:inputText value="" style="width:40px;" />	
+								
+								<h:outputLabel value="#{msg['recepcionEfectivo.unidad']}" />
+								<h:inputText value="" style="width:40px;" disabled="true" />
+								<h:inputText value="" style="width:40px;" />	
+					
+								<h:outputLabel value="#{msg['recepcionEfectivo.cliente']}" />
+								<h:selectOneMenu value="">
+									<f:selectItem itemLabel="Seleccionar" itemValue="1" />
+								</h:selectOneMenu>
+								<br />
+			
+								<h:outputLabel value="#{msg['recepcionEfectivo.importeTotal']}" style="margin-left:6px;" />
+					            <br /> <br />
+								<h:selectOneMenu value="" style="margin-left:6px;">
+									<f:selectItem itemLabel="Seleccionar" itemValue="0" />
+									<f:selectItems value=""></f:selectItems>
+								</h:selectOneMenu>
+								<h:inputText value="" style="width:40px; margin-left:4px;" />	
+    						</h:panelGrid>  -->  				
+    						<h:panelGrid columns="6" style="width:900px; float:left; visibility: #{recepcionEfectivoGridMB.entidadSucursal};" >
+    					            						
+    							<h:outputLabel value="#{msgjc['recepcionefectivo.numerooperacion']}" />
+    							<h:inputText value="2345" size="25" />
+    							
+    							
+    							<h:outputLabel value="#{msgjc['recepcionefectivo.sirh']}" />
+    							<h:inputText value="15672" size="25" />
+    							
+    							<h:selectOneMenu value=" " style="width:120px;">
+    								<f:selectItem itemLabel="-----Seleccionar-----" itemValue="1"/>
+									<f:selectItem itemLabel="FORD MOTOR COMPANY SA DE CV SUC 1001" itemValue="2" />
+									<f:selectItem itemLabel="IND VINICOLAS PEDRO DOMECQ SUC DOCTORES" itemValue="3" />
+									<f:selectItem itemLabel="LICONSA SA DE CV SUC GUERRERO 1474" itemValue="4" />		
+								</h:selectOneMenu>
+								
+    						</h:panelGrid>
+    						<span><br/></span>
+    						<span><br/></span>
+    						<br/>
+    						<h:panelGrid columns="7" style="width:900px; float:left;">
+    							<h:outputLabel value="Divisa" />
+								<h:selectOneMenu value="#{recepcionEfectivoGridMB.camion}" style="margin-left:6px;">
+									<f:selectItem itemLabel="-----Seleccionar-----" itemValue="0" />
+									<f:selectItems value="#{recepcionEfectivoGridMB.listDivisa}"
+										var="divisa" itemLabel="#{divisa.divisaNomLargo}"
+										itemValue="#{divisa.divisaId}" >
+									</f:selectItems>
+								</h:selectOneMenu>
+								<h:outputLabel value="#{msg['recepcionEfectivo.importeTotal']}" style="margin-left:6px;" />
+								<h:inputText value="$ 12,676.00" style="width:50px; margin-left:4px;" />	
+								<span><br/></span>
+								<span><br/></span>
+								<span><br/></span>
+								<span><br/></span>
+    						</h:panelGrid>		
+						</h:panelGroup>		
+						
+					</h:panelGrid>						
+					
+					<br />
+					<br />
+					
+					
+					
+					
+					<br /> 
+					<fieldset>
+					<legend>#{msg['recepcionEfectivo.envasesSellados']}</legend>
+
+					<h:panelGrid columns="7" style="width:900px; float:left;">
+						<h:outputLabel value="#{msg['recepcionEfectivo.noPlomo']}"
+							style="width:60px;" />
+						<h:inputText value="plomo-278" size="10" />
+
+						<h:outputLabel
+							value="#{msg['recepcionEfectivo.acumuladoEnvases']}" />
+						<h:inputText value="$ 2,465.90" size="3" disabled="true" />
+						
+						<table class="gridtable"
+						style="width: 100px; margin-left: 20px; float: left; border: 1px solid grey">
+							<tr>
+								<th style="border: 1px solid grey" scope="col">envases</th>
+							</tr>
+							<tr>
+								<td style="border: 1px solid grey">plomo-6678</td>
+							</tr>
+							<tr>
+								<td style="border: 1px solid grey">plomo-6677</td>
+							</tr>
+							<tr>
+								<td style="border: 1px solid grey">plomo-6676</td>
+							</tr>
+						</table>
+					
+						<h:outputLabel
+							value="#{msg['recepcionEfectivo.areaVerificacion']}" />
+						<h:selectOneMenu value="">
+							<f:selectItem itemLabel="-----Seleccionar-----" itemValue="1" />
+							<f:selectItem itemLabel="VERIFICACIÓN MONEDA" itemValue="2" />
+							<f:selectItem itemLabel="VERIFICACIÓN BILLETE" itemValue="3" />
+						</h:selectOneMenu>
+
+					</h:panelGrid>
+					<h:commandButton value="#{msg['recepcionEfectivo.agregarEnvases']}"
+						style="width:140px; margin-left:20px;"
+						class="button-blue jqTransformButton">
+					</h:commandButton>
+					<h:commandButton value="#{msgjc['recepcionefectivo.guardarenvases']}"
+						style="width:140px; margin-left:300px;"
+						class="button-blue jqTransformButton">
+					</h:commandButton>
+					<br />
+					<br />
+				</fieldset>
+				<br />
+				<center>
+					<h:commandButton
+						value="#{msg['recepcionEfectivo.termCaptComprobante']}"
+						style="width:220px; margin-right:10px;"
+						class="button-blue jqTransformButton">
+					</h:commandButton>
+				</center>
+					<br />
+					<br />				
+				</fieldset>
+				<center>
+					<h:commandButton value="#{msg['recepcionEfectivo.termRecepcion']}"
+						style="width:140px; margin-right:10px;"
+						class="button-blue jqTransformButton" >
+					</h:commandButton>
+					<h:commandButton value="#{msg['recepcionEfectivo.cancelar']}"
+						style="width:140px; margin-right:10px;"
+						class="button-blue jqTransformButton" >
+					</h:commandButton>
+				</center>
+
+
+
+			</h:form>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+

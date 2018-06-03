@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+
+	<ui:define name="content">
+		<div id="breadcrumbs">
+			<span>Administración</span> <span> Procesadoras</span><span>Carga
+				Manual</span>
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+
+
+
+			<div class="clear-both"></div>
+
+			<div style="color:#006;">
+				<br></br>
+				<h1>#{msg['cargaManual.titulo']}</h1>
+
+			</div>
+			<h:form class="horizontal">
+
+				<h:panelGroup id="messagePanel" layout="block">
+					<h:messages errorStyle="color: red" infoStyle="color: blue"
+						layout="table" />
+				</h:panelGroup>
+
+
+
+				<fieldset>
+					<legend>#{msg['cargaManual.subtitulo']}</legend>
+
+
+					<h:panelGrid columns="2" style="width:700px;">
+
+						<h:outputLabel value="#{msg['cargaManual.procesadora']}" />
+						<h:selectOneMenu value="" style=" width : 300px;">
+							<f:selectItem itemValue=""
+								itemLabel="0001  | SERPAPROSA  |  2719  | CPAE CD. VALLES" />
+
+						</h:selectOneMenu>
+						<h:outputLabel value="#{msg['cargaManual.fechaC']}" />
+						<p:calendar value="#{diferencias.calendario}" id="popupButtonCal" showOn="button" />
+
+						<h:outputLabel value="#{msg['cargaManual.ruta']}" />
+						<h:inputText value="" size="60" />
+						
+						<h:outputLabel value="#{msg['cargaManual.motivo']}" />
+						<h:inputText value="" size="60" />
+						
+					</h:panelGrid>
+
+					<br />
+					<h:panelGrid columns="2" style="width:260px; float:right;">
+					
+						<h:commandButton value="#{msg['cargaManual.btnCargarArchivo']}"
+							class="button-blue jqTransformButton" style="width:120px;" />
+						
+					
+						<h:commandButton value="#{msg['cargaManual.btnSalir']}"
+							class="button-blue jqTransformButton" style="width:120px;" />
+					
+					</h:panelGrid>
+					<br />
+
+				</fieldset>
+
+				<br />
+
+			</h:form>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+

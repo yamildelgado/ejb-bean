@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> AE-WEB</span> <span> Status Envases</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>Status Envases</h1>
+				<h:form class="horizontal">
+					<fieldset>
+
+
+						<legend>Consulta de Status de Envases</legend>
+
+						<p style="width:130px;">
+							<h:outputLabel value="#{msgEnvases['statusEnvases.idStatusEnvases']}" />
+							<h:inputText value=""  />
+						 </p>
+						<p style="width:160px;" >
+							<h:outputLabel value="#{msgEnvases['statusEnvases.descStatusEnvases']}" />
+							<h:inputText value=""  />
+						</p>
+						
+						<p>
+						<br/>
+						<h:commandButton 	value="#{msgEnvases['statusEnvases.consultarStatusEnvases']}" class="button-blue " />
+						</p>
+						<br/>
+						<br/>
+						<table class="gridtable">
+							<tr>
+								<th>ID Status Envases</th>
+								<th>Decripción Status Envases</th>
+								<th>Selección</th>
+							</tr>
+							<tr>
+								<td>sadas</td>
+								<td>asdas</td>
+								<td>asdasd</td>
+																
+							</tr>
+							
+						</table> 
+						
+						
+					</fieldset>
+
+				</h:form>
+			</div>
+
+		</div>
+				<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="AEWeb-unit"  transaction-type="JTA">
+  
+    <jta-data-source>jdbc/DataSource/AdministracionEfectivoDSC018</jta-data-source>
+     <class>mx.com.bcm.banamex.ae.persistencia.modelo.CatEventosBitacora</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Verificacion</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.HistDeVerificacion</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.TipoDeError</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.ComprobanteDeDotacion</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.DiasInhabiles</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Banco</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Divisa</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.SolicitudDotacion</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Caja</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.MovimientosS711</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.FechaContable</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.CatGeneralAeweb</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Diferencia</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.ModuloPorPerfilUsuario</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Cpae</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Contrato</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.CajaHabilitadaPorTurno</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Empleado</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.DenominacionDeDivisa</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Envase</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Bitacora</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Lote</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Etv</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.DetalleTransferencia</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.SubBoveda</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.FichaDeposito</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.DetalleDotacion</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Recepcion</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Plaza</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.DetalleDeDivisaPorEnvase</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.HistTurnoEnOperacion</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.MovimientosS018</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.TipoEntidad</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Procesadora</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Transferencia</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.DetalleDeCorte</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.MovimientosS019</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.MovimientosS500</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.ModulosSistemaAeweb</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.TipoDeOperacion</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Corte</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Estructura</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Turno</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.CuentasMayor</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.CatMensajesAeweb</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.CabceraInterfProcdoraTotls</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Cuenta</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.CajasDeTurno</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.AgrupadorAeweb</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.TipoMovimiento</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.UnidadDeNegocio</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.DetalleDeMovimientoS018</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Atm</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.Comprobante</class>
+    <class>mx.com.bcm.banamex.ae.persistencia.modelo.DetalleInterfaceProcesadora</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="hibernate.show_sql" value="false" />
+
+    </properties>
+  </persistence-unit>
+
+</persistence>

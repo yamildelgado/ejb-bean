@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<h:commandLink >subbovedasList</h:commandLink>
+	<ui:define name="content"> 
+	
+	<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Procesadoras</span> <span> Auditoría de Operaciones</span>
+		</div>
+		
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+		
+		<div id="sub-nav" class="sub-nav" style="height: 40px">
+				<ul class="nav">
+					<li><a href="#">Cátalogos</a></li>
+
+					<li><a href="#"><u>Turnos</u></a></li>
+
+					<li><a href="#">Procesadoras</a></li>
+
+					<li><a href="#">Bitácora</a></li>
+
+					<li><a href="#">Depuración</a></li>
+				</ul>
+		<div class="clear-both"></div>
+			</div>
+		
+			<div class="section-name">
+				<h1>#{msg['auditoriadeoperaciones.titulo']}</h1>
+			
+			</div>
+			<h:form class="horizontal">
+				<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+						
+						
+							
+						
+						<fieldset>
+					<legend>#{msg['auditoriadeoperaciones.detalle']}</legend> 									
+					
+					
+					
+					<div  >
+					<h:panelGrid columns="4" style="width:900px;">								
+					
+					<h:outputLabel value="#{msg['auditoriadeoperaciones.procesadora']}" />
+					
+								<h:selectOneMenu value="" style="width:190px;">
+									   
+            						<f:selectItem itemLabel="0001/SERPAPROSA/0090/CPAE LEON"  itemValue="" />
+									<f:selectItem itemLabel="0002/COMETRA/0350/CPAE METROPOLITANO DE CAJA"  itemValue="" />
+									 <f:selectItem itemLabel="0003/SEGURITEC/0543/PUEBLA"  itemValue="" />    
+									 <f:selectItem itemLabel="0004/SEPSA/0559/VILLAHERMOSA"  itemValue="" />  
+									 <f:selectItem itemLabel="0005/TAMEME/0629/SAN LUIS POTOSI"  itemValue="" />  
+									 <f:selectItem itemLabel="0006/GRUMER/0645/GUADALAJARA"  itemValue="" />  
+									 <f:selectItem itemLabel="0007/TRANSFER/0646/MERIDA"  itemValue="" />  
+									 <f:selectItem itemLabel="0008/CIA. TRAS. BANCO/0665/CHIHUAHUA"  itemValue="" />  
+									 <f:selectItem itemLabel="0009/TECNOVAL/0685/CULIACAN"  itemValue="" />         						
+										<f:selectItem itemLabel="--Seleccionar--" itemValue="" />								
+								</h:selectOneMenu>
+								
+							<h:outputLabel value="#{msg['auditoriadeoperaciones.fecha']}" />
+							<h:outputLabel value="07/02/2014" />
+																						
+								</h:panelGrid>
+							</div>	
+								<br/>
+					<div>										
+						<h:panelGrid columns="5" >
+							<h:outputLabel value="#{msg['cajas.tipoDeCajas']}" />
+							<h:selectOneRadio>
+							<f:selectItem     itemLabel="#{msg['auditoriadeoperaciones.detallado']}" />
+							<f:selectItem    itemLabel="#{msg['auditoriadeoperaciones.concentrado']}" />
+							
+							</h:selectOneRadio>
+							
+							
+							<h:outputLabel
+									value="#{msg['auditoriadeoperaciones.operacion']}" />
+								<!-- <h:selectOneMenu value="#{operProcGridMB.criterioVO.tipomovIdn}"
+									style="width:190px;">
+									<f:selectItem itemLabel="Seleccionar" itemValue="" />
+									<f:selectItems value="#{operProcGridMB.listaMovimientosVO}"
+										var="operaciones" itemLabel="#{operaciones.nombreMovimiento}"
+										itemValue="#{operaciones.tipoMovimiento}" />
+								</h:selectOneMenu> -->
+								
+								<h:selectOneMenu value="" style="width:190px;">
+									   
+            						<f:selectItem itemLabel="DEPOSITO CLIENTE"  itemValue="" />
+									<f:selectItem itemLabel="DEPOSITO PEMEX"  itemValue="" />
+									 <f:selectItem itemLabel="DEPOSITO SEF"  itemValue="" />    
+									 <f:selectItem itemLabel="DOTACION CLIENTE"  itemValue="" />  
+									 <f:selectItem itemLabel="DOTACION SUCURSAL"  itemValue="" />  
+									 <f:selectItem itemLabel="DOTACION ATM"  itemValue="" />  
+									 <f:selectItem itemLabel="DOTACION BANXICO"  itemValue="" />  
+									 <f:selectItem itemLabel="TRASPASO CPAE"  itemValue="" />  
+									 <f:selectItem itemLabel="TRASPASO INTERCAJA"  itemValue="" />         						
+										<f:selectItem itemLabel="--Seleccionar--" itemValue="" />								
+								</h:selectOneMenu>
+							<br/>
+							
+							
+						</h:panelGrid>
+						<div align="right">
+						<h:commandButton
+								value="#{msg['auditoriadeoperaciones.btnAceptar']}"
+								type="submit" class="button-blue jqTransformButton"
+								style="width: 80px" />
+							<h:commandButton
+								value="#{msg['auditoriadeoperaciones.btnSalir']}" type="submit"
+								class="button-blue jqTransformButton" style="width: 80px" />
+					</div>
+										</div>
+				
+				</fieldset>
+				
+				<br/>
+				<br/>
+				<br/>
+				<p:tabView id="tabView" >  
+  
+    <p:tab id="tab1" title="Detallado">  
+        <fieldset>
+							<!-- 
+							<h:dataTable  class="gridtable" var="auditoriadeoperaciones" value="#{audiOperProcGridMB.listaConsultayReportesProcesadoraVO}">
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.fcontable']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.hdInterprocFecContable}" />							  
+								</p:column>
+								
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.corte']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.hdInterprocNumCorte}" />							  
+								</p:column>
+								
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.tmovimiento']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.tipomovIdn}" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.etvTraslado']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.detprocEtvTraslado}" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.sirhOrigen']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.detprocSirhCpaeSirhOrigen}" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.sirhAtmDestino']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.detprocSirhDestinoIdAtm}" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.comprobante']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.detprocComprobServSef}" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.uNegocio']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.detprocNumUneg}" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.contrato']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.detprocContratoEfectivo}" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.importe']}"/>							  
+									  </f:facet>
+										  							  
+								</p:column>
+								
+
+							</h:dataTable> -->
+
+								
+							
+							<h:dataTable  class="gridtable" var="auditoriadeoperaciones" value="#{audiOperProcGridMB.listaConsultayReportesProcesadoraVO}">
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.fcontable']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="10/02/2014" />							  
+								</p:column>
+								
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.corte']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="02" />							  
+								</p:column>
+								
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.tmovimiento']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="001" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.etvTraslado']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="0001" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.sirhOrigen']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="00000001" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.sirhAtmDestino']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="00000001" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.comprobante']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="00000001" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.uNegocio']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="0001" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.contrato']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="0000000000001" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.importe']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="0000000000000001" />							  
+								</p:column>
+								
+
+							</h:dataTable>
+
+
+						</fieldset>
+ 
+            
+    </p:tab>  
+  
+    <p:tab id="tab2" title="Concentrado">  
+       <fieldset>
+							
+							<!-- <h:dataTable  class="gridtable" var="auditoriadeoperaciones" value="#{audiOperProcGridMB.listaConsultayReportesProcesadoraVO}">
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.fcontable']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.hdInterprocFecContable}" />							  
+								</p:column>
+								
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.corte']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.hdInterprocNumCorte}" />							  
+								</p:column>
+								
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.tmovimiento']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.tipomovIdn}" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.etvTraslado']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.detprocEtvTraslado}" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.sirhOrigen']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.detprocSirhCpaeSirhOrigen}" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.sirhAtmDestino']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.detprocSirhDestinoIdAtm}" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.comprobante']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.detprocComprobServSef}" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.uNegocio']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.detprocNumUneg}" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.contrato']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{auditoriadeoperaciones.detprocContratoEfectivo}" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.importe']}"/>							  
+									  </f:facet>
+										  							  
+								</p:column>
+								
+
+							</h:dataTable>
+ -->
+ 							<h:dataTable  class="gridtable" var="auditoriadeoperaciones" value="#{audiOperProcGridMB.listaConsultayReportesProcesadoraVO}">
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.fcontable']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="11/02/2014" />							  
+								</p:column>
+								
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.corte']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="03" />							  
+								</p:column>
+								
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.tmovimiento']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="002" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.etvTraslado']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="0002" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.sirhOrigen']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="00000002" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.sirhAtmDestino']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="00000002" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.comprobante']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="00000002" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.uNegocio']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="0002" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.contrato']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="0000000000002" />							  
+								</p:column>
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['auditoriadeoperaciones.importe']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="0000000000000002" />							  
+								</p:column>
+ </h:dataTable>
+						</fieldset>
+        <br/>
+        <br/>
+        
+    </p:tab>    
+</p:tabView>  				
+						<br />
+			</h:form>		
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+		
+	</ui:define>
+</ui:composition>			

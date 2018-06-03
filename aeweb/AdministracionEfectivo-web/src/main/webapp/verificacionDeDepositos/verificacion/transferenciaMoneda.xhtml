@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+
+	<h:commandLink>subbovedasEdit</h:commandLink>
+	<ui:define name="content">
+		<div class="section-name" style="width:1000px;">
+				<h1 >#{msg['controlTransferencia.tituloTransfMoneda']}</h1>
+			</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+
+			<div class="navMenu">
+				<br></br>
+				<ul class="nav">
+					<li><a href="#">Verificacion Comprobante -Envases-Fichas</a></li>
+
+					<li><a href="#">Autorizacion de Diferencias</a></li>
+					<li><a href="#">Aplicacion de Depostios de Clientes y Sucursales</a></li>
+					<li><a href="#"><u>Transferencias </u></a></li>
+
+				</ul>
+
+				<div class="clear-both"></div>
+			</div>
+			
+			
+			<h:form class="horizontal">
+
+				<h:panelGroup id="messagePanel" layout="block">
+					<h:messages errorStyle="color: red" infoStyle="color: blue"
+						layout="table" />
+				</h:panelGroup>
+
+				<h:panelGrid columns="2" style="width:300px;margin-left:30px">
+					<h:outputLabel value="#{msg['controlTransferencia.divisa']}" />
+					<h:selectOneMenu value=""></h:selectOneMenu>
+				</h:panelGrid>
+				<br />
+
+				<fieldset>
+					
+					<h:dataTable class="gridtable" style="width:850px">
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['controlTransferencia.denominacion']} </f:facet>
+							<h:outputLabel value=" " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['controlTransferencia.cantidadMoneda']} </f:facet>
+							<h:outputLabel value=" " />
+						</h:column>
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['controlTransferencia.importe']} </f:facet>
+							<h:outputLabel value=" " />
+						</h:column>
+
+
+
+						<br></br>
+
+					</h:dataTable>
+					
+				</fieldset>
+				<br />
+				<fieldset>
+
+					<fieldset>
+						<h:panelGrid columns="2" style="width:300px;margin-left:10px">
+							<h:selectBooleanCheckbox value="" />
+							<h:outputLabel
+								value="#{msg['controlTransferencia.importeTotal']}" />
+						</h:panelGrid>
+					</fieldset>
+
+					<div align="center">
+						<h:panelGrid columns="2"  style="width:300px;margin-left:350px">
+							<h:commandButton
+								value="#{msg['controlTransferencia.btnTransferir']}"
+								type="submit" class="button-blue jqTransformButton" />
+							<h:commandButton
+								value="#{msg['controlTransferencia.btnCancelar']}" type="reset"
+								class="button-blue jqTransformButton" />
+
+
+						</h:panelGrid>
+					</div>
+					<br />
+
+
+				</fieldset>
+			</h:form>
+
+
+
+
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+
+
+
+
+
+
+
+
+

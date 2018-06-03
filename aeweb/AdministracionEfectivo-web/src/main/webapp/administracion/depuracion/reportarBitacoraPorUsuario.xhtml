@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<h:commandLink>cajaList</h:commandLink>
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			<span>Administración</span> <span>
+				Bitácora</span>
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['repBitacoraXUsuario.titulo']}</h1>
+
+
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+
+						<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+						<fieldset>
+							<h:panelGrid columns="2" style="width:300px; float:left;">
+									<h:outputLabel value="#{msg['repBitacoraXUsuario.turnoCpae']}" />
+									<h:outputLabel value="(NNNN)" />
+								</h:panelGrid>
+							
+							<h:dataTable class="gridtable" style="width :850px;" value="">
+											
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['repBitacoraXUsuario.turno']} </f:facet>
+							<h:outputLabel value="MATUTINO1 "  />
+						</h:column>
+					
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['repBitacoraXUsuario.iniciado']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 09:00"  />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['repBitacoraXUsuario.fContableInicio']} </f:facet>
+							<h:outputLabel value="04/DIC/2013"  />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['repBitacoraXUsuario.finalizado']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 14:23 "  />
+						</h:column>
+						
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['repBitacoraXUsuario.fContableFinal']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 "  />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['repBitacoraXUsuario.status']} </f:facet>
+							<h:outputLabel value="ABIERTO"  />
+						</h:column>
+						
+						<br></br>
+						
+					</h:dataTable>
+
+						</fieldset>
+
+						<fieldset>
+						
+							<fieldset columns="" style="width:420px; height:260px; float:left;">
+								<fieldset columns="" style="width:350px;margin-left:13px; float:left;">
+										<table class="gridtable" style="width:350px;margin-left:20px; float:left;">
+								<tr>
+								   <td style=""><h:outputLabel   value="#{msg['repBitacoraXUsuario.turnoActivo']}"/><br /><br /><br /><h:outputLabel  value="#{msg['repBitacoraXUsuario.fechaContable']}"/> </td>	
+									<td style=""><h:selectOneRadio
+									value="#{cajaGridMB.cajaVO.cajaEquip}"
+									onclick="SeleccionarTxt(this)"
+									layout="pageDirection">
+									<f:selectItem itemValue=""/>
+									<f:selectItem itemValue=""/>
+								</h:selectOneRadio></td>
+									<td style=""><br/><br/><p:calendar showOn="button" /> </td >	
+									
+								</tr>
+								<br />
+							</table>
+								</fieldset>
+								
+								<table class="gridtable" style="width:350px;margin-left:20px;  float:left;">
+								<tr  >
+									<br />
+								    <td style=""><h:outputLabel value="#{msg['repBitacoraXUsuario.usuario']}" />
+									<br/><br /><br/>
+									<h:outputLabel value="#{msg['repBitacoraXUsuario.caja']}" />
+									<br/><br /><br/>
+									<h:outputLabel value="#{msg['repBitacoraXUsuario.comprobante']}" /> </td>
+								    <td style=""> <h:selectOneRadio
+									value="#{cajaGridMB.cajaVO.cajaEquip}"
+									onclick="SeleccionarTxt(this)"
+									layout="pageDirection">
+									<f:selectItem itemValue=""/>
+									<f:selectItem itemValue=""/>
+									<f:selectItem itemValue=""/>
+								</h:selectOneRadio> </td>
+								    <td style=""> 
+								    	<h:selectOneMenu value="#{cajaGridMB.cajaVO.tipocajaId}"
+									style=" width : 130px;">
+									<f:selectItem itemValue="" itemLabel="Usuario" />
+							</h:selectOneMenu>
+							<br/>
+							<br />
+							<h:selectOneMenu value="#{cajaGridMB.cajaVO.tipocajaId}"
+									style=" width : 130px;">
+									<f:selectItem itemValue="" itemLabel="Id Caja" />
+							</h:selectOneMenu>
+							<br/>
+							<br />
+							
+							<h:inputText value="Id Comprobante" size="17"/>
+								     </td>
+								</tr>
+									</table>
+														
+							</fieldset>
+								
+							<fieldset columns="" style="width:420px;  height:260px;  float:center;">
+								<fieldset columns="" style="width:370px; margin-left:15px;  float:center;">
+								<h:panelGrid columns="2" style="width:100px; margin-left:20px;">
+									<h:outputLabel value="#{msg['repBitacoraXUsuario.procesadora']}" />
+									<h:selectOneRadio
+									value="#{cajaGridMB.cajaVO.cajaEquip}"
+									onclick="SeleccionarTxt(this)"
+									layout="pageDirection">
+									<f:selectItem itemValue=""/>
+								</h:selectOneRadio>
+								</h:panelGrid>
+								<h:panelGrid columns="1" style="width:100px; margin-left:20px;">
+									<h:selectOneMenu value="#{cajaGridMB.cajaVO.tipocajaId}"
+									style=" width : 290px;">
+									<f:selectItem itemValue="" itemLabel="00011 | SERPAPROSA | 2719 | CPAE CD.VALLE" />
+									</h:selectOneMenu>
+									</h:panelGrid>
+									<table class="gridtable" style="width:350px;margin-left:20px; float:left;">
+									<tr  >
+								    <td style=""><h:outputLabel value="#{msg['repBitacoraXUsuario.fechaContable']}" /></td>
+								    <td style=""> <p:calendar showOn="button" style="width:50px;"/></td>
+								</tr>
+									</table>
+									
+								</fieldset>
+									<table class="gridtable" style="width:350px;margin-left:20px; float:left;">
+									<tr  >
+								    <td style=""><h:outputLabel value="#{msg['repBitacoraXUsuario.archivosRecibidos']}" />
+									<br/>
+									<br/>
+									<br/>
+									<h:outputLabel value="#{msg['repBitacoraXUsuario.archivosEnviados']}" /></td>
+								    <td style=""><h:selectOneRadio 
+									value="#{cajaGridMB.cajaVO.cajaEquip}"
+									onclick="SeleccionarTxt(this)"
+									layout="pageDirection">
+									<f:selectItem itemValue=""/>
+									<f:selectItem itemValue=""/>
+								</h:selectOneRadio></td>
+								</tr>
+									</table>
+									
+							</fieldset>
+							<h:panelGrid columns="2" style="width:200px; float:center; margin-right:175px;"  >
+							
+					<h:commandButton  value="#{msg['repBitacoraXUsuario.btoAceptar']}"
+						style="align=left; width:70px" class="button-blue jqTransformButton" /> 
+					<h:commandButton value="#{msg['repBitacoraXUsuario.btoSalir']}"
+						style="align=rigth; width:70px" class="button-blue jqTransformButton" />
+					
+				</h:panelGrid>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

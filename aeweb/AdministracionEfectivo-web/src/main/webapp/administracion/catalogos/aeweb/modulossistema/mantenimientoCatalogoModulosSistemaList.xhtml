@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			<span>Administración</span> <span>
+				Catálogos</span> <span> AE-WEB</span> <span> Módulos del Sistema</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['mantenimientoModulosSistema.tituloConsulta']}
+				<h:commandButton value="#{msg['mantenimientoModulosSistema.btnCrear']}"
+									class="button-blue jqTransformButton" style=" margin-left:580px; position: absolute;"/>
+				</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+					<h:panelGroup id="messagePanel" layout="block">
+								<h:messages errorStyle="color: red" infoStyle="color: blue"
+									layout="table" />
+					</h:panelGroup>
+						<fieldset>
+							<legend>#{msg['catalogoSIRH.seccionDetalleOperacion']}</legend>
+
+								<h:panelGrid columns="3">
+								<h:outputLabel value="#{msg['mantenimientoModulosSistema.idModulo']}"/>
+								<span />
+								<h:inputText value="#{ModuloSistemaGridMB.moduloSistemaVO.modsisNivId}" size="10" maxlength="2"
+								converter="javax.faces.Number" converterMessage="INGRESA UN NÚMERO FORMADO POR MENOS DE 2 DÍGITOS EN EL CAMPO DE CLAVE" 
+								/>
+								
+								<h:outputLabel value="#{msg['mantenimientoModulosSistema.descModulo']}"/>
+								<span />
+								<h:inputText value="#{ModuloSistemaGridMB.moduloSistemaVO.modsisDescripcionMod}" size="34" />
+								
+								<h:outputLabel value="#{msg['mantenimientoModulosSistema.status']}"/>
+								<span />
+								<h:inputText value="#{ModuloSistemaGridMB.moduloSistemaVO.modsisStatus}" size="5" maxlength="1" />
+								
+								</h:panelGrid>
+
+								</fieldset>
+
+						<br />
+						
+						<fieldset>
+						
+							<legend>#{msg['catalogoEmpleado.seccionDetalleOperacion']}</legend>
+							
+							<h:dataTable class="gridtable" value="#{ModuloSistemaGridMB.listaModuloSistema}" var="moduloSistema">
+														
+									
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['mantenimientoModulosSistema.idModulo']}"  	style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel value="#{moduloSistema.modsisNivId}" style="text-align:center"/>
+							</p:column>
+							
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['mantenimientoModulosSistema.status']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel value="#{moduloSistema.modsisStatus}" style="text-align:center"/>
+							</p:column>
+							
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['mantenimientoModulosSistema.descModulo']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel value="#{moduloSistema.modsisDescripcionMod}" style="text-align:center"/>
+							</p:column>
+							
+							
+														
+							</h:dataTable>
+
+						</fieldset>
+						
+						
+						<br />
+						<fieldset>
+						<div align="center">
+						<h:panelGrid columns="3" style="width:40px;">
+						
+								<h:commandButton value="#{msg['mantenimientoModulosSistema.btnConsultar']}"
+									class="button-blue jqTransformButton" 
+									actionListener ="#{ModuloSistemaGridMB.consultaModuloPorParametro}"
+									/>
+								
+								<h:commandButton value="#{msg['mantenimientoModulosSistema.btnLimpiar']}"
+									class="button-blue jqTransformButton" 
+									type="reset"/>	
+									
+						</h:panelGrid>
+						</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

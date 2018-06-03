@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+	<div id="breadcrumbs">
+			 <span>Dotaciones</span> <span>
+				Generación de Solicitudes de Dotación</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['solicitudDotacion.titulo']}
+				</h1>
+			</div>
+			
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+					<h:panelGroup id="messagePanel" layout="block">
+								<h:messages errorStyle="color: red" infoStyle="color: blue"
+									layout="table" />
+							</h:panelGroup>
+			
+						<fieldset style="vertical-align:middle" >
+
+								<h:panelGrid columns="4" >
+															
+								<h:outputLabel value="#{msg['solicitudDotacion.entidad']}"  />
+								<h:selectOneMenu value="" size="15" style="height:25px">
+								<f:selectItem itemValue=""         itemLabel = "--Selecciona descripción--"/>
+                                <f:selectItem itemValue="" itemLabel="Sucursal"/>
+                                </h:selectOneMenu>	
+								
+								
+								<h:outputLabel value="#{msg['solicitudDotacion.fecha']}"  />
+								<p:calendar id="popupButtonCal" showOn="button" size="20"/>   
+								
+								</h:panelGrid>
+								
+								<h:panelGrid columns="2" float="left" >	
+																								
+								<h:outputLabel value="#{msg['solicitudDotacion.SIRHEnvia']}"  />
+								<h:inputText size="25"  maxlength="25" style="height:20px" />
+								
+								</h:panelGrid>
+								
+								<h:panelGrid columns="6" >
+								
+								<h:outputLabel value="#{msg['solicitudDotacion.etv']}" />
+								<h:inputText size="25"  maxlength="25" style="height:20px;" value="123-Nombre ETV"/>								
+								
+								<h:outputLabel value="#{msg['solicitudDotacion.divisa']}"  />
+								<h:selectOneMenu value="" size="15" style="height:25px" >
+								<f:selectItem itemValue=""         itemLabel = "--Selecciona descripción--"/>
+                                <f:selectItem itemValue="" itemLabel="Divisa"/>
+                                </h:selectOneMenu>	
+								
+								
+								
+								
+								<h:outputLabel value="#{msg['solicitudDotacion.importe']}" />
+								<h:inputText size="25"  maxlength="25" style="height:20px; text-align:center" value="$ 000,000,000,000.00"/>
+								
+								</h:panelGrid>						
+				
+						<h:panelGrid columns="3" border="1">
+
+							<h:inputText size="12" style="border:hidden;background-color:#FFFFFF" disabled="true" />
+							
+							<h:dataTable  class="gridtable" value="#{solicitudDotacionGridMB.listadotacionBillete}" var="billete">
+
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['solicitudDotacion.cantidad']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:center" value="#{billete.cantidad}"/>
+							</h:column>
+							
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['solicitudDotacion.billete']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:center" value="#{billete.billete}"/>
+							</h:column>
+							
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['solicitudDotacion.subtotal']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:right" value="#{billete.subtotal}"/>
+							</h:column>		
+														
+							</h:dataTable>
+
+							
+							<h:dataTable  class="gridtable" value="#{solicitudDotacionGridMB.listadotacionMoneda}" var="moneda">
+
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['solicitudDotacion.cantidad']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:center" value="#{moneda.cantidad}"/>
+							</h:column>
+							
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['solicitudDotacion.moneda']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:center" value="#{moneda.moneda}"/>
+							</h:column>
+							
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['solicitudDotacion.subtotal']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:right" value="#{moneda.subtotal}"/>
+							</h:column>		
+														
+							</h:dataTable>
+	
+						</h:panelGrid>
+						
+						
+								<h:panelGrid columns="8">					
+								
+								<h:outputLabel value="#{msg['solicitudDotacion.total']}" />
+								
+								
+								<h:inputText size="15"  maxlength="25"  value="$ 1,402,570.00" style="border:hidden; text-align:right" disabled="true"/>
+								
+								<h:inputText size="43" style="border:hidden;background-color:#FFFFFF" disabled="true" />
+
+								<h:inputText size="15"  maxlength="25" value="$ 1,398,800.00" style="border:hidden; text-align:right" disabled="true"/>
+								
+								<h:inputText size="34" style="border:hidden;background-color:#FFFFFF;text-align:left" disabled="true" value="  +"/>
+
+								<h:inputText size="15"  maxlength="25" value="$ 3,8800.00" style="border:hidden; text-align:right" disabled="true"/>
+								
+								
+								</h:panelGrid>
+
+						
+						
+						
+						<div align="center">
+						<h:panelGrid columns="3" style="width:40px;" >
+						
+								<h:commandButton value="#{msg['solicitudDotacion.btnRegistrar']}"
+									class="button-blue jqTransformButton" />
+								
+								<h:commandButton value="#{msg['solicitudDotacion.btnSalir']}"
+									class="button-blue jqTransformButton"/>	
+									
+
+						</h:panelGrid>
+						</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> AE-WEB</span> <span> Módulos del Sistema</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['mantenimientoModulosSistema.titulo']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+						<fieldset>
+							<legend>#{msg['catalogoSIRH.seccionDetalleOperacion']}</legend>
+
+								<h:panelGrid columns="3">
+								<h:outputLabel value="#{msg['mantenimientoModulosSistema.nombreModulo']}" />
+								<span class="required" />
+								<h:inputText value="" size="34" />
+								
+								<h:outputLabel value="#{msg['mantenimientoModulosSistema.idModulo']}" />
+								<span class="required" />
+								<h:inputText value="" size="34" />
+
+								
+								</h:panelGrid>
+
+								</fieldset>
+
+						<br />
+						
+						
+						
+						<br />
+						<fieldset>
+						<div align="center">
+						<h:panelGrid columns="2" style="width:40px;">
+						
+								<h:commandButton value="#{msg['mantenimientoModulosSistema.btnCancelar']}"
+									class="button-blue jqTransformButton" />
+
+									<h:commandButton value="#{msg['mantenimientoModulosSistema.btnGuardar']}"
+									class="button-blue jqTransformButton"/>
+
+						</h:panelGrid>
+						</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

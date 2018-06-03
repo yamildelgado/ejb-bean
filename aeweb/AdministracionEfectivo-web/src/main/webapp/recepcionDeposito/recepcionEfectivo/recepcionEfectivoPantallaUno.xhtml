@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	
+	
+	
+	<ui:define name="content">
+		<div id="breadcrumbs"> <span>Recepción de Deposito de Clientes y Sucursales</span><span>Recepción de Efectivo</span></div>
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['recepcionEfectivo.tituloRecepcionEfectivo']}</h1>
+			</div>
+
+			<h:form styleClass="horizontal">
+				
+				<fieldset>
+					<legend>#{msg['recepcionEfectivo.tituloRecepcionEfectivoInicio']}</legend>
+
+					<h:panelGrid columns="4" style="width:650px; float:left;">
+					
+					
+						<h:outputLabel value="#{msg['recepcionEfectivo.numCamion']}" />
+						<h:inputText value="#{recepcionEfectivoGridMB.camion}" size="20" >
+						
+						</h:inputText>
+
+						<h:outputLabel value="#{msg['recepcionEfectivo.compTraslado']}" />
+						
+					    <h:selectOneMenu value="#{recepcionEfectivoGridMB.etv.etvNombreLargo}" style="width:190px;">
+									<f:selectItem itemLabel="--Seleccionar--" itemValue="-1" />  
+            						<f:selectItems value="#{recepcionEfectivoGridMB.listEtvIdnNombreVO}"
+										var="compania" itemLabel="#{compania.etvNombreLargo}"
+										itemValue="#{compania.etvNombreLargo}" >
+										<f:param name="parametro" value="#{compania.etvNombreLargo}"></f:param>										
+									</f:selectItems>
+									
+						</h:selectOneMenu>
+								
+					</h:panelGrid>
+
+				</fieldset>
+
+					<center>
+					<h:commandButton  value="#{msg['recepcionEfectivo.inicar']}"
+						style="width:140px; margin-right:10px;"
+						class="button-blue jqTransformButton" action="#{recepcionEfectivoGridMB.iniciarRecepcion}" immediate="true">
+					</h:commandButton>
+					
+					
+					<h:commandButton value="#{msg['recepcionEfectivo.cancelar']}"
+						style="width:140px;" class="button-blue jqTransformButton">
+					</h:commandButton>
+				</center>
+			</h:form>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+

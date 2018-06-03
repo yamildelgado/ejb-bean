@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<h:commandLink>cajaList</h:commandLink>
+	<ui:define name="content">
+<div id="breadcrumbs">
+			<span>Administración</span> <span>
+				Turnos</span> <span> Reporte de Cambio De Fecha Contable </span>
+		</div>
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+		<div id="sub-nav" class="sub-nav" style="height: 40px">
+				<ul class="nav">
+					<li><a href="#">Cátalogos</a></li>
+
+					<li><a href="#"><u>Turnos</u></a></li>
+
+					<li><a href="#">Procesadoras</a></li>
+
+					<li><a href="#">Bitácora</a></li>
+
+					<li><a href="#">Depuración</a></li>
+				</ul>
+		<div class="clear-both"></div>
+			</div>
+			<div class="section-name">
+				<h1>#{msgmv['repofechcont.titulo']}</h1>
+
+
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+
+						<fieldset>
+					<h:outputLabel value="#{msgmv['repofechcont.detalleConsulta']}" />
+							<h:panelGrid columns="2">
+							<h:outputLabel value="#{msgmv['repofechcont.horaCamb']}" />
+						<h:inputText size="30" value="16:30:08" disabled="true"/>	
+						<h:outputLabel value="#{msgmv['repofechcont.fechContAnt']}" />
+						<h:inputText size="30" value="27/01/2014" disabled="true"/> 
+						<h:outputLabel value="#{msgmv['repofechcont.fechContAct']}" />
+						<h:inputText size="30" value="28/01/2014" disabled="true"/> 
+						<h:outputLabel value="#{msgmv['repofechcont.estatus']}" />
+						<h:inputText size="30" value="Ejecutado" disabled="true"/>
+						<h:outputLabel value="#{msgmv['repofechcont.genRepo']}" />
+						<h:inputText size="30" value="Monica 39920" disabled="true"/>
+									</h:panelGrid>
+								</fieldset>
+						<!-- #{cambioDeLaFechaContableGridMB.cambioDeLaFechaContableVO.horafin} -->
+						<!-- #{cambioDeLaFechaContableGridMB.cambioDeLaFechaContableVO.histFecContIni} -->	
+						<!-- #{cambioDeLaFechaContableGridMB.cambioDeLaFechaContableVO.histCambFecCont} -->	
+						<!-- #{cambioDeLaFechaContableGridMB.cambioDeLaFechaContableVO.cadenaEmp} -->
+					
+	<h:outputLabel value="#{msgmv['repofechcont.detConsulta']}" />
+							<br />
+							<br />
+								<fieldset>
+							<h:dataTable class="gridtable" style="width :800px;margin-left:20px; float:left; border:1px solid grey" var="cambioFechaContable" value="#{cambioDeLaFechaContableGridMB.listaFechaCont}">
+								<h:column>
+									<f:facet name="header">#{msgmv['repofechcont.fech']}</f:facet>
+									<h:outputLabel value="#{cambioFechaContable.fecContIdn}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msgmv['repofechcont.hora']}</f:facet>
+									<h:outputLabel value="#{cambioFechaContable.hora}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msgmv['repofechcont.cpae']}</f:facet>
+									<h:outputLabel value="#{cambioFechaContable.cadena}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msgmv['repofechcont.subv']}</f:facet>
+									<h:outputLabel value="#{cambioFechaContable.subboveda}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msgmv['repofechcont.turno']}</f:facet>
+									<h:outputLabel value="#{cambioFechaContable.turnoDes}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msgmv['repofechcont.estatusTurno']}</f:facet>
+									<h:outputLabel value="#{cambioFechaContable.turnoStatus}" />
+									
+								</h:column>
+							<h:column>
+									<f:facet name="header">#{msgmv['repofechcont.estatusCambio']}</f:facet>
+									<h:outputLabel value="#{cambioFechaContable.statusCamb}" />
+									
+								</h:column>
+							
+							
+							
+							</h:dataTable>
+								
+						</fieldset>
+						<fieldset>
+						<div align="right" style="width: 850px">
+								<br/>
+								<br/>
+       							<br/>	
+							    <h:commandButton value="#{msgmv['repofechcont.btnRepo']}"
+								class="button-blue jqTransformButton" style="width: 80px" />
+								</div>
+					</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

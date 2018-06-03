@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubBoveda" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f220bf70-de25-44bd-b3b6-0ca8c65497ce">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="turnoId" class="java.lang.String"/>
+	<field name="turDescripcion" class="java.lang.String"/>
+	<field name="turHoraInicio" class="java.lang.String"/>
+	<field name="turHoraFin" class="java.lang.String"/>
+	<field name="turStatus" class="java.lang.String"/>
+	<field name="subvobeda" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="88" y="11" width="396" height="15" uuid="f47ff486-1ed3-47d3-bc4e-5ec0e536d514"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BANCO NACIONAL DE MÉXICO, S.A.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="361" y="59" width="59" height="10" uuid="613a2704-1f33-4a77-8b22-0fd7a58c88f1"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA Y HORA:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="10" width="555" height="1" uuid="eb752403-498b-4859-aa30-7fb6b360b04a"/>
+			</line>
+			<line>
+				<reportElement x="10" y="28" width="555" height="1" uuid="155ad3a8-2536-4b9c-a0e7-e5ac190c4d7d"/>
+			</line>
+			<staticText>
+				<reportElement x="223" y="29" width="117" height="12" uuid="7e741db7-ee07-4094-996a-dfa4728ac481"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE TURNOS]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="423" y="59" width="100" height="10" uuid="a1f54663-c04e-4975-a822-4e28606345c5"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="16" y="20" width="114" height="20" uuid="f1b0a2cc-5222-45eb-9335-c6f1af5ef0ab"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub bóveda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="20" width="100" height="20" uuid="407f15fc-1b16-43e5-a35c-84001d77bfd3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[3456767]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<line>
+				<reportElement x="16" y="55" width="544" height="1" uuid="12a8768f-5f74-4933-a903-5a5594246792"/>
+			</line>
+			<staticText>
+				<reportElement x="83" y="28" width="47" height="27" uuid="a449d02f-6c28-427d-9aa0-627bf76b348c"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Clave de Turno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="28" width="137" height="20" uuid="c2d64c9d-9661-4c50-8e5f-e47a40bf9826"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="28" width="56" height="27" uuid="d34c0e8b-96f0-4d21-ae93-b2bc809f610a"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Horario de Inicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="361" y="28" width="44" height="27" uuid="9b066ce1-a008-43bb-bd3d-81118b2b2d32"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Horario de Fin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="28" width="48" height="27" uuid="2859cc54-3992-49a5-afd4-3641f2075065"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="374" splitType="Stretch">
+			<staticText>
+				<reportElement x="83" y="5" width="41" height="15" uuid="75cd2d3f-b0b8-4bd3-a424-d5ae4f7f0a58"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[3456767]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="5" width="137" height="15" uuid="25e38f1c-2a1c-4a09-8644-5cb31d29c602"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[MATUTINO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="5" width="56" height="20" uuid="2ef91afe-b13c-4ad1-a8a5-a32d665c567a"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[10:00]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="361" y="5" width="44" height="20" uuid="7ebc6a30-6dca-4e36-a491-6830ca58fc1a"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[16:30]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="5" width="49" height="20" uuid="65c38713-cceb-4645-8c05-f3af85d7f6d3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[ACTIVO]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="443" y="20" width="80" height="20" uuid="ccfa906b-da6f-48cf-97c4-315982a04762"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="240" y="20" width="100" height="20" uuid="ae889fc3-7631-466e-81be-db2e09db1814"/>
+				<textElement textAlignment="Center">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AE-WEB 2013]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="523" y="20" width="42" height="20" uuid="7b46f435-9fed-456a-aad7-752ba604de23"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

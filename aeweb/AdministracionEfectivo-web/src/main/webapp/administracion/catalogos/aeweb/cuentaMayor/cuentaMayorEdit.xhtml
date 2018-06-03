@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<h:commandLink> cuentaMayorEdit</h:commandLink>
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> AE-WEB</span> <span> Cuentas de Mayor</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['cuentasDeMayor.tituloCatalogoEdit']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+					
+					<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: blue" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+                  
+						<fieldset>
+						    
+							<legend>#{msg['cuentasDeMayor.tituloCatalogoVista']}</legend>
+							
+							<h:inputHidden value="#{cuentaMayorGridMB.cuentaMayorVO.conceptoId}" />
+							
+							
+							<h:panelGrid columns="9">
+								<h:outputLabel value="#{msg['cuentasDeMayor.conceptoId']}" />
+									<span class="" />
+								<h:outputLabel value="#{cuentaMayorGridMB.cuentaMayorVO.conceptoId}" size="20" converter="javax.faces.Number" converterMessage="DEBES INGRESAR UN NÚMERO EN CLAVE DE CUENTA DE MAYOR " maxlength="2"/>
+								<h:outputLabel value="#{msg['cuentasDeMayor.conceptoDescripcion']}" />
+									<span class="" />
+								<h:inputText value="#{cuentaMayorGridMB.cuentaMayorVO.conceptoDescripcion}" size="20" maxlength="500"/>
+								<h:outputLabel value="#{msg['cuentasDeMayor.conceptoXdivisas']}" /> 
+									<span class="" />
+								<h:inputText value="#{cuentaMayorGridMB.cuentaMayorVO.conceptoXdivisa}" size="20" converter="javax.faces.Number" converterMessage="DEBES INGRESAR UN NÚMERO EN DIVISAS" maxlength="1"/>
+								<h:outputLabel value="#{msg['cuentasDeMayor.conceptoDoctoEfectivo']}" />
+									<span class="" />
+								<h:inputText value="#{cuentaMayorGridMB.cuentaMayorVO.conceptoDoctoEfectivo}" size="20" converter="javax.faces.Number" converterMessage="DEBES INGRESAR UN NÚMERO EN DOCUMENTO O EFECTIVO" maxlength="1"/>
+								<h:outputLabel value="#{msg['cuentasDeMayor.conceptoBillMon']}" />
+									<span class="" />
+								<h:inputText value="#{cuentaMayorGridMB.cuentaMayorVO.conceptoBillMon}" size="20" converter="javax.faces.Number" converterMessage="DEBES INGRESAR UN NÚMERO EN BILLETE O MONEDA" maxlength="1"/>
+								<h:outputLabel value="#{msg['cuentasDeMayor.conceptoXtipOccto']}" />
+									<span class="" />
+								<h:inputText value="#{cuentaMayorGridMB.cuentaMayorVO.conceptoXtipoctto}" size="20" converter="javax.faces.Number" converterMessage="DEBES INGRESAR UN NÚMERO EN TIPO DE CONTRATO" maxlength="1"/>
+								<h:outputLabel value="#{msg['cuentasDeMayor.conceptoReferencia']}" />
+									<span class="" />
+								<h:inputText value="#{cuentaMayorGridMB.cuentaMayorVO.conceptoReferencia}" size="20" converter="javax.faces.Number" converterMessage="DEBES INGRESAR UN NÚMERO EN REFERENCIA" maxlength="1"/>
+								<h:outputLabel value="#{msg['cuentasDeMayor.conceptoS018']}" />
+									<span class="" />
+								<h:inputText value="#{cuentaMayorGridMB.cuentaMayorVO.conceptoS018}" size="20" converter="javax.faces.Number" converterMessage="DEBES INGRESAR UN NÚMERO EN CONCEPTOS" maxlenght="1"/>                                                                     
+								<h:outputLabel value="#{msg['cuentasDeMayor.bajaLogica']}" />
+									<span class="required" /> 
+								<h:selectOneMenu value="#{cuentaMayorGridMB.cuentaMayorVO.bajaLogica}">
+			
+								<f:selectItem itemValue="A" itemLabel="Activo" />
+								<f:selectItem itemValue="B" itemLabel="Inactivo" />
+								</h:selectOneMenu>
+								
+							</h:panelGrid>
+						
+						</fieldset>
+						
+						<fieldset>
+						<div align ="center">						
+						
+								<h:commandButton   value="#{msg['cuentasDeMayor.btnGuardar']}"  class="button-blue jqTransformButton" actionListener="#{cuentaMayorGridMB.editarCuentaMayor }" >	
+							 		</h:commandButton>			
+						
+						</div>
+						</fieldset>
+						
+						
+						
+						<fieldset>
+						
+							<legend>#{msg['cuentasDeMayor.tituloCatalogoVista']}</legend>
+							<h:dataTable  class="gridtable" var="cuemayor" value="#{cuentaMayorGridMB.listaCuentaMayor}">
+								<h:column >
+							      
+									  <f:facet name="header">#{msg['cuentasDeMayor.conceptoId']}</f:facet>
+										  <h:outputText value="#{cuemayor.conceptoId}" />
+										  
+								</h:column>
+								
+								<h:column >
+									<f:facet name="header">#{msg['cuentasDeMayor.conceptoDescripcion']}</f:facet>
+										<h:outputText value="#{cuemayor.conceptoDescripcion}" />			
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">#{msg['cuentasDeMayor.conceptoXdivisas']}</f:facet>
+										<h:outputText value="#{cuemayor.conceptoXdivisa}" />				
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">#{msg['cuentasDeMayor.conceptoDoctoEfectivo']}</f:facet>
+										<h:outputText value="#{cuemayor.conceptoDoctoEfectivo}" />
+									
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">#{msg['cuentasDeMayor.conceptoBillMon']}</f:facet>
+										<h:outputText value="#{cuemayor.conceptoBillMon}" />
+									
+								</h:column>
+
+
+								<h:column>
+									<f:facet name="header">#{msg['cuentasDeMayor.conceptoXtipOccto']}</f:facet>
+										<h:outputText value="#{cuemayor.conceptoXtipoctto}" />
+									
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">#{msg['cuentasDeMayor.conceptoReferencia']}</f:facet>
+										<h:outputText value="#{cuemayor.conceptoReferencia}" />
+									
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">#{msg['cuentasDeMayor.conceptoS018']}</f:facet>
+										<h:outputText value="#{cuemayor.conceptoS018}" />
+									
+								</h:column>
+
+									<h:column>
+									<f:facet name="header">#{msg['cuentasDeMayor.bajaLogica']}</f:facet>
+										<h:outputText value="#{cuemayor.bajaLogica}" />
+									
+								</h:column>
+								
+							</h:dataTable>
+
+
+						</fieldset>
+						
+						
+						
+						
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	 
+	<div id="breadcrumbs">
+			 <span>Dotaciones</span> <span>
+				Generación de Solicitudes de Dotación</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['solicitudDotacion.titulo']}
+				</h1>
+			</div>
+			
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+					<h:panelGroup id="messagePanel" layout="block">
+								<h:messages errorStyle="color: red" infoStyle="color: blue"
+									layout="table" />
+							</h:panelGroup>										
+			
+								
+								<fieldset>
+								
+								<legend>#{msg['detalleDotacion.relacionDotaciones']}</legend>
+																						
+							
+						<h:panelGrid  border="1" style="width:900px;">
+
+							<h:inputText size="12" style="border:hidden;background-color:#FFFFFF" disabled="true" />
+							
+							<h:dataTable  class="gridtable" value="" var="">
+
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['detalleDotacion.fecha']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:center" value="07/02/2014"/>
+							</h:column>
+							
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['detalleDotacion.hora']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:center" value="7:00pm"/>
+							</h:column>
+							
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['detalleDotacion.unidadDeNegocio']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:right" value="Liverpool Polanco"/>
+							</h:column>	
+							
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['detalleDotacion.divisa']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:right" value="Moneda Nacional"/>
+							</h:column>	
+							
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['detalleDotacion.Etv']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:right" value="Tameme"/>
+							</h:column>	
+								
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['detalleDotacion.importe']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:right" value="1,000,000,000"/>
+							</h:column>						
+													
+														
+							</h:dataTable>
+	
+						</h:panelGrid>
+																
+						<div align="center">
+						<h:panelGrid columns="3" style="width:40px;" >
+						
+								<h:commandButton value="#{msg['detalleDotacion.btnImprimir']}"
+									class="button-blue jqTransformButton" />
+										
+						</h:panelGrid>
+						
+						</div>
+						
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+   <title>..::Administración de Efectivo :::.. </title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="shortcut icon" href="#{facesContext.externalContext.requestContextPath}/resources/images/favicon.ico"
+			type="image/x-icon" />
+
+  
+   <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/resources/css/import.css"/>
+   <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/resources/css/emergentes.css"/>
+   <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/resources/css/sub-subMenu.css"/>
+   <h:outputScript library="js" name="#{facesContext.externalContext.requestContextPath}/resources/js/reloj.js" />
+   <script language="JavaScript">
+   function mueveReloj(){
+		momentoActual = new Date()
+		hora    = momentoActual.getHours()
+		minuto  = momentoActual.getMinutes()
+		segundo = momentoActual.getSeconds()
+		fecha   = momentoActual.getDate()
+		año     = momentoActual.getFullYear()
+				
+		
+		str_segundo = new String (segundo)
+		if (str_segundo.length == 1) 
+			segundo = "0" + segundo;
+			
+		str_minuto = new String (minuto)
+		if (str_minuto.length == 1) 
+			minuto = "0" + minuto;
+
+		str_hora = new String (hora)
+		if (str_hora.length == 1) 
+			hora = "0" + hora;
+
+
+		var dia=new Array(7);
+		dia[0]="Domingo";
+		dia[1]="Lunes";
+		dia[2]="Martes";
+		dia[3]="Miercoles";
+		dia[4]="Jueves";
+		dia[5]="Viernes";
+		dia[6]="Sabado";
+
+
+
+		
+		
+		var mesok=new Array(12);
+		mesok[0]="Enero";
+		mesok[1]="Febrero";
+		mesok[2]="Marzo";
+		mesok[3]="Abril";
+		mesok[4]="Mayo";
+		mesok[5]="Junio";
+		mesok[6]="Julio";
+		mesok[7]="Agosto";
+		mesok[8]="Septiembre";
+		mesok[9]="Octubre";
+		mesok[10]="Noviembre";
+		mesok[11]="Diciembre";
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+			
+		horaImprimible ="Fecha : "+ dia[momentoActual.getDay()]+" " + fecha+"/"+mesok[momentoActual.getMonth()]+"/"+ año  +" Hora :"+ hora + " : " + minuto + " : " + segundo;
+		
+		document.getElementById("Fecha_Reloj").value = horaImprimible;
+		
+		setTimeout("mueveReloj()",1000);
+	}
+
+
+   </script>
+   
+
+
+    
+
+</h:head>
+<h:body onload="mueveReloj()">
+
+  <!--  Encabezado -->
+  <div id="header">
+ 	<!-- Site -->
+ 	<div class="site"> <div class="site-name">Intranet Banamex - AE-Web</div></div>
+    <!-- Menu -->
+    <div id="top-nav">
+      <div class="top-left-nav-container">&nbsp;</div>
+      <div class="top-right-nav-container">&nbsp;</div>
+      <div class="top-center-nav-container">
+
+        <!--  Logotipio -->
+        <div class="app-logo">
+          <a href="#"><img src="#{facesContext.externalContext.requestContextPath}/resources/img/banamex_logo_200.gif" alt="Afore Banamex Suma de Esfuerzos" class="logo" border="0"/></a>
+        </div>
+        
+        <!--  Bienvenida -->
+        <div class="welcome-log-out">Bienvenido: Arturo Robles <br/> <a  class="icon-signon-on" href="../../../banamex/index.html">Cerrar Sesión</a></div>
+        <br class="clear-float"/>
+      </div>
+     
+      <!-- Navegacion Principal -->
+      <div class="middle-container">
+        <div class="middle-left-main-nav-container">&nbsp;</div>
+        <div class="middle-right-main-nav-container">&nbsp;</div>
+        <div class="middle-center-main-nav-container">
+      
+        </div>
+      </div>
+      <div class="clear-menu"></div>
+      <!-- Fin de la Navegacion Principal -->     
+      
+      <!-- Navegacion Secundaria -->  
+      <div id="top-sub-nav-container" class="bottom-outer-sub-nav-container">
+            <div class="bottom-left-sub-nav-container" style="height: 20px;"> </div>
+            <div class="bottom-right-sub-nav-container" style="height: 20px;"> </div>
+            <div id ="sub-nav" class="sub-nav">
+
+
+
+					<ul class="nav">
+						<li><a href="#">Administración</a>|
+
+							<ul>
+								<li><a href="#">Catálogos</a>
+									<ul>
+										<li><a href="#">Institucionales</a>
+
+											<ul>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/institucionales/SIRH/actualizaSIRHList.jsf ">SIRH</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/institucionales/etvs/etvsList.jsf">ETV´s</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/institucionales/Empleados/actualizaEmpleadoList.jsf ">Empleados</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/institucionales/divisas/DivisaList.jsf">Divisas</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/institucionales/denominacionesDivisas/denominacionesDivisa.jsf">Denomicación de Divisas</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/institucionales/FechasContables/fechasContables.jsf">Fechas contables</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/institucionales/bancos/bancoList.jsf">Bancos</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/institucionales/atm/atmList.jsf">ATM´s</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/institucionales/contrato/contratoList.jsf">Contratos</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/institucionales/unidadNegocio/unidadNegocioList.jsf">Unidades de Negocio</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/institucionales/cuentaUnidadNegocio/cuentaUnidadNegocioList.jsf">Cuentas de Unidad de Negocio</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/institucionales/plazas/plazas.jsf">Plazas</a></li>
+											</ul></li>
+										<li><a href="#">AE Web</a>
+
+											<ul>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/aeweb/cpaes/CatalogoDeCpaesEdit.jsf">CPAE´s</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/aeweb/subbovedas/subbovedasList.jsf">Sub bóvedas</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/aeweb/procesadoras/procesadorasList.jsf">Procesadoras</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/aeweb/cajas/cajaList.jsf">Cajas</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/aeweb/turnos/turnosList.jsf ">Turnos</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/aeweb/cuentaMayor/cuentaMayorList.jsf">Cuentas de Mayor</a></li>
+												<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/catalogos/aeweb/modulossistema/mantenimientoCatalogoModulosSistemaList.jsf ">Módulos del Sistema</a></li>
+											</ul></li>
+									</ul>
+								</li>
+								<li><a>Turnos</a>
+									<ul>
+										<li><a href="#{facesContext.externalContext.requestContextPath}/administracion\turnos\asignarCajas_a_Turnos.jsf ">Asignación de Cajas</a></li>
+										<li><a href="#{facesContext.externalContext.requestContextPath}/administracion\turnos\inicioFinTurno.jsf">Inicio</a></li>
+										<li><a>Fin</a></li>
+										<li><a>Corte</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Operaciones de Procesadoras</a>
+									<ul>
+										<li><a>Carga Manual</a></li>
+										<li><a>Reporte de carga Automática</a></li>
+										<li><a>Auditoría de Operaciones</a></li>
+										<li><a href="#{facesContext.externalContext.requestContextPath}/administracion/operacionesdeprocesadoras/consultayreportes/operacionesprocesadoras.jsf">Consultas y Reportes</a></li>
+									</ul>
+								</li>
+							</ul></li>
+							
+						<li><a href="#">Recepción de Depósitos</a>|
+							<ul>
+								<li><a href="#">Impresión de Lote</a></li>
+							</ul></li>
+						<li><a href="#">Verificación de Depósitos</a>|
+							<ul>
+								<li><a href="#">Autorización	de Diferencias</a>
+									<ul>
+										<li><a href="#">Actas de Diferencias</a></li>
+										<li><a href="#">Asiento de Cargo Simple</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Transferencias</a></li>
+							</ul></li>
+						<li><a href="#">Supervisión</a>|
+							<ul>
+								<li><a href="#">Cajas</a>
+									<ul>
+										<li><a href="#">Habilitación</a></li>
+										<li><a href="#">Deshabilitación</a></li>
+										<li><a href="#{facesContext.externalContext.requestContextPath}/supervision/cajas/corteparcialcaja/corteParcialCaja.jsf">Corte Parcial de Caja</a></li>
+										<li><a href="#{facesContext.externalContext.requestContextPath}/supervision/cajas/cortefinalcaja/corteFinalCaja.jsf">Corte Final de Caja</a></li>
+										<li><a href="#">Estado Detalle de Caja</a></li>
+									</ul></li>
+								<li><a href="#">Reasignación de comprobantes</a></li>
+								<li><a href="#">Reportes</a>
+									<ul>
+										<li><a href="#">Diferencias</a></li>
+										<li><a href="#">Auditoria</a></li>
+										<li><a href="#">Bitácora</a></li>
+										<li><a href="#">Depósitos</a>
+											<ul>
+												<li><a href="#">Movimientos S500</a></li>
+												<li><a href="#">Movimientos S018</a></li>
+											</ul></li>
+									</ul>
+								</li>
+							</ul></li>
+						<li><a href="#">Dotaciones</a>|
+							<ul>
+								<li><a href="#">Comprobantes de Traslado</a></li>
+							</ul></li>
+
+
+					</ul>
+					<div class="clear-both"></div>
+            </div>
+      </div>
+      <div class="clear-sub-menu"></div>
+       <!-- Fin de la Navegacion Secundaria -->  
+    
+    </div>
+    <!--  Fin del Menu -->    
+    
+  </div>
+  <!--  Fin Encabezado -->
+  
+  
+  
+  <!--Contenido Central -->
+  <div id="page-container-border">
+  
+     <div class="clear-both"> </div>
+    <!-- Mensajes  -->
+    <div id="messages" class="messages"></div>
+    <!-- Mensajes de Error  -->
+    <div id="errors" class="errors ui-state-error">
+        <span class="ui-icon ui-icon-alert error-icon"></span>
+        <div id="error" class="error"></div>
+    </div>
+    
+    <!--  Contenido  -->
+    <br class="clear-both"/>
+    
+    
+    
+   <ui:insert name="content"/>
+    
+      <br class="clear-float"/>
+      <br/>
+       
+      
+   
+
+   </div>
+   <!-- Fin del Contenido Central -->
+  
+    <!--  Pide de pagina -->
+    <div id="footer">
+        <div id="footer-area">
+            <!--  Pide de pagina -->
+            <div class="footer-area-links">
+                <div class="footer-txt">citigroup.net</div>
+                <div class="footer-links">
+                    <ul class="footer-links-ul">
+                    <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="disclaimer">Copyright &copy; 2013. Derechos Reservados Afore Banamex, S.A. de C.V.</div>
+            
+
+			
+        </div>
+    </div>
+  
+    <div id="barraFlotante">
+	    <div id="centro">
+		    <h:panelGrid columns="7" style="width:655px; margin-left:0px;">
+			    <h:outputLabel value="#{msg['barraEstado.caja']}" />
+			    <h:inputText value="" style="width:35px;"/>
+			    <h:outputLabel value="#{msg['barraEstado.nomina']}" />
+			    <h:inputText value="" style="width:55px;"/>
+			    <h:outputLabel value="#{msg['barraEstado.turno']}" />
+			    <h:inputText value="" style="width:85px;"/>
+			   
+			   
+			    	<h:inputText value="#{atmGridMB.fecha}" id="Fecha_Reloj" style="width:300px;"/>
+			    
+			    	
+			    
+			   
+		    </h:panelGrid>
+	    </div>
+    
+    
+    </div>
+    <!--  Fin del Pide de pagina -->
+
+</h:body>
+</html>
+

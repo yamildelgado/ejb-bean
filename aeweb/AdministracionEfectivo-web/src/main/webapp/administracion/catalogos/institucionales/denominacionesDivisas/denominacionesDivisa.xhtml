@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> Institucionales</span> <span> Denominaciones de Divisas</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['denominaDivisa.titulo']}</h1>
+			</div>
+
+			<h:form styleClass="horizontal">
+			<h:panelGroup id="messagePanel" layout="block">
+						<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+				<fieldset>
+					<legend>#{msg['denominaDivisa.consulta']}</legend>					
+
+					<h:panelGrid columns="2" style="width:650px; float:left;">
+					   <h:outputLabel value="#{msg['denominaDivisa.divisa']}"/>	
+					   
+					   
+					    <h:selectOneMenu value="#{denomDivisaGridMB.critDenominacionDivVO.seleccionDivisa}" >
+					    	<f:selectItem  itemLabel="---------Seleccionar---------" itemValue="" />				    
+					       	<f:selectItems value="#{denomDivisaGridMB.listDivisasVO}"  var="denomDivisas" itemLabel="#{denomDivisas.nombreCorto}" itemValue="#{denomDivisas.divisaNumeroID}" >
+					    	</f:selectItems>
+					    </h:selectOneMenu>                       					
+                                         
+					</h:panelGrid>
+					
+				</fieldset>
+
+				<fieldset>
+					<legend>#{msg['denominaDivisa.denominaciones']}</legend>										
+					
+					 <h:dataTable class="gridtable"    var="listaDenom"   value="#{denomDivisaGridMB.listDenoDivisa}" >							
+						<h:column>
+							<f:facet name="header">#{msg['denominaDivisa.tipoBillete']}</f:facet>
+							<h:outputText value="#{listaDenom.denomTipoBillMon}" />
+						</h:column>
+						
+						
+						<h:column>
+							<f:facet name="header">#{msg['denominaDivisa.denominacion']}</f:facet>
+							<h:outputText value="#{listaDenom.denomNombreDenominacion}" />							
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header">#{msg['denominaDivisa.circulacion']}</f:facet>
+							<h:outputText value="#{listaDenom.denomCirculacion}" />							
+						</h:column>
+						
+					</h:dataTable> 
+				</fieldset>
+				<center>
+				<h:commandButton value="#{msg['denominaDivisa.btnConsultar']}"
+						         style="width:140px; margin-right:10px;" 
+						         class="button-blue jqTransformButton"
+						         actionListener="#{denomDivisaGridMB.consultarDenominacionDivisaPoIdDivisa}" 
+					            >
+				</h:commandButton>	    
+				<h:commandButton value="#{msg['denominaDivisa.btnSalir']}"
+						         style="width:140px;" class="button-blue jqTransformButton" >
+				</h:commandButton>
+				</center>
+				</h:form>						
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

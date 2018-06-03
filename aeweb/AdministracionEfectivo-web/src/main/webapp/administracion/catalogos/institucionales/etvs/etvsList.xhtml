@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<h:commandLink >etvsList</h:commandLink>
+	<ui:define name="content">
+	
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> Institucionales</span> <span> ETV's</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['etv.titulo']} </h1>
+				
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+					<h:panelGroup id="messagePanel" layout="block">
+								<h:messages errorStyle="color: red" infoStyle="color: blue"
+									layout="table" />
+					</h:panelGroup>
+						<fieldset>
+							<legend>#{msg['etv.sessionDatosConsulta']}</legend>
+
+								<h:panelGrid columns="3">
+								<h:outputLabel value="#{msg['etv.id']}" />
+								<span class="" />
+								<h:inputText value="#{EtvGridMB.etvVO.etvIdn}" size="10" maxlength="4"
+								converter="javax.faces.Number" converterMessage="INGRESA UN NÚMERO FORMADO POR MENOS DE 4 DÍGITOS EN EL CAMPO DE CLAVE" 
+								/>
+								
+								<h:outputLabel value="#{msg['etv.nombreCorto']}" />
+								<span class="" />
+								<h:inputText value="#{EtvGridMB.etvVO.etvNombreCorto}" size="34"  maxlength="60"/>
+								
+								<h:outputLabel value="#{msg['etv.nombreLargo']}" />
+								<span class="" />
+								<h:inputText value="#{EtvGridMB.etvVO.etvNombreLargo}" size="34"  maxlength="60"/>
+								
+								<h:outputLabel value="#{msg['etv.subBoveda']}" />
+								<span class="" />
+								<h:inputText value="#{EtvGridMB.etvVO.idnSubboveda}" size="10" maxlength="20"
+								converter="javax.faces.Number" converterMessage="INGRESA UN NÚMERO FORMADO POR MENOS DE 20 DÍGITOS EN EL CAMPO DE SUBBOVEDA" 
+								/>
+								</h:panelGrid>
+								</fieldset>
+
+						<br />
+						<fieldset>
+						
+							<legend>#{msg['etv.seccionDetalleOperacion']}</legend>
+							
+							<h:dataTable  class="gridtable" value="#{EtvGridMB.listaEtv}" var ="etv" rows="10">
+							
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['etv.id']}"  style="height:100%;white-space:normal;text-align:center" />
+							</f:facet>
+							<h:outputLabel value="#{etv.etvIdn}" style="text-align:center" />
+							</p:column>
+																			
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['etv.nombreCorto']}"  style="white-space:normal;text-align:center" />
+							</f:facet>
+							<h:outputLabel value="#{etv.etvNombreCorto}" style="text-align:center"/>
+							</p:column>
+							
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['etv.nombreLargo']}"  style="white-space:normal;text-align:center" />
+							</f:facet>
+							<h:outputLabel value="#{etv.etvNombreLargo}" style="text-align:center"/>
+							</p:column>
+							
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['etv.contacto']}"  style="white-space:normal;text-align:center" />
+							</f:facet>
+							<h:outputLabel value="#{etv.etvContacto}" style="text-align:center"/>
+							</p:column>
+							
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['etv.deleg']}"  style="white-space:normal;text-align:center" />
+							</f:facet>
+							<h:outputLabel value="#{etv.etvDeleg}" style="text-align:center"/>
+							</p:column>
+							
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['etv.colonia']}"  style="white-space:normal;text-align:center" />
+							</f:facet>
+							<h:outputLabel value="#{etv.etvColonia}" style="text-align:center"/>
+							</p:column>
+							
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['etv.subBoveda']}"  style="white-space:normal;text-align:center" />
+							</f:facet>
+							<h:outputLabel value="#{etv.idnSubboveda}" style="text-align:center"/>
+							</p:column>
+							
+							<h:column>
+								<f:facet name="header">#{msg['etv.btnMostrar']}</f:facet>
+								<h:commandLink value="#{msg['etv.btnMostrar']}" 
+								action="#{EtvGridMB.consultaEdit}"
+								 immediate="true">
+								<f:param name="etvNombreCorto"
+								value="#{etv.etvNombreCorto}"></f:param>
+								<f:param name="etvNombreLargo"
+								value="#{etv.etvNombreLargo}"></f:param>
+								<f:param name="etvColonia"
+								value="#{etv.etvColonia}"></f:param>
+								<f:param name="etvCalle"
+								value="#{etv.etvCalle}"></f:param>
+								<f:param name="etvContacto"
+								value="#{etv.etvContacto}"></f:param>
+								<f:param name="etvCp"
+								value="#{etv.etvCp}"></f:param>
+								<f:param name="etvDeleg"
+								value="#{etv.etvDeleg}"></f:param>
+								<f:param name="etvIdn"
+								value="#{etv.etvIdn}"></f:param>
+								<f:param name="etvTipoServicio"
+								value="#{etv.etvTipoServico}"></f:param>
+								<f:param name="etvidEstadoRepublica"
+								value="#{etv.idEstadoRepublica}"></f:param>
+								<f:param name="etvidnSubboveda"
+								value="#{etv.idnSubboveda}"></f:param>
+								
+							</h:commandLink>
+							</h:column>
+												
+							</h:dataTable>
+
+						</fieldset>
+						
+						
+						<br />
+						<fieldset>
+						<div align="center">
+						<h:panelGrid columns="3" style="width:40px;" >
+						
+								<h:commandButton value="#{msg['etv.btnConsultar']}"
+									class="button-blue jqTransformButton" 
+									actionListener="#{EtvGridMB.consultaEtvPorParametro}"
+									/>
+									
+									<!-- <h:commandButton value="#{msg['etv.btnLimpiar']}"
+									class="button-blue jqTransformButton"
+									type="reset"/> -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+
+						</h:panelGrid>
+						</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

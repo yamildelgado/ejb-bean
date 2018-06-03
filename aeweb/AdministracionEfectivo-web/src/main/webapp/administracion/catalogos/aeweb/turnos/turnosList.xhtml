@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> AE-WEB</span> <span> Turnos</span> 
+		</div>
+        
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['turnos.titulo']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+					<h:panelGroup id="messagePanel" layout="block">
+								<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+					</h:panelGroup>
+						<fieldset>
+							<legend>#{msg['turnos.registrarTurno']}</legend>
+							<div align="right">  
+							<h:commandButton   value="#{msg['turnos.btnAgregar']}" type = "submit" class="button-blue jqTransformButton" actionListener="#{turnoGridMB.agregarTurno}" action = "#{turnoGridMB.refresh()}" >
+							
+						 
+							</h:commandButton>  
+									
+						  </div>
+							
+						<h:panelGrid columns="9">
+						
+							    <h:outputLabel value="Subboveda" />
+								<span class="required" />
+								<h:inputText value="#{turnoGridMB.turnoVO.subvobeda}" size="10"  maxlength="2"
+								converter="javax.faces.Number" converterMessage="INGRESA UN NÚMERO FORMADO POR MENOS DE 2 DÍGITOS EN EL CAMPO SUB-BOVEDA" 
+								/>
+								
+								<h:outputLabel value="#{msg['turnos.idTurno']}" />
+								<span class="required" />
+								<h:inputText value="#{turnoGridMB.turnoVO.turnoId}"  size="10" maxlength="5" > 
+								</h:inputText>
+								
+								<h:outputLabel value="#{msg['turnos.descripcion']}" />
+								<span class="required" />
+								<h:selectOneMenu value="#{turnoGridMB.turnoVO.turDescripcion}">
+								<f:selectItem itemValue=""         itemLabel = "--Selecciona descripción--"/>
+                                <f:selectItem itemValue="MATUTINO" itemLabel="Matutino"/>
+                                <f:selectItem itemValue="VESPERTINO" itemLabel="Vespertino"/>
+                                <f:selectItem itemValue="NOCTURNO" itemLabel="Nocturno"/>
+                                </h:selectOneMenu>
+                                
+								<h:outputLabel value="#{msg['turnos.horaInicio']}" />
+								<span class="required" />
+								<h:inputText value="#{turnoGridMB.turnoVO.turHoraInicio}" size="10" maxlength="5" >
+				  				</h:inputText>
+				  				
+								<h:outputLabel value="#{msg['turnos.horaFin']}" />
+								<span class="required" />
+								<h:inputText value="#{turnoGridMB.turnoVO.turHoraFin}" size="10" maxlength="5" > 
+								</h:inputText>
+								
+								<h:outputLabel value="#{msg['turnos.estatus']}" />
+								<span class="required" />
+								<h:selectOneMenu value="#{turnoGridMB.turnoVO.turStatus}">
+								<f:selectItem itemValue ="" itemLabel = "--Selecciona estado--"/>
+                                <f:selectItem itemValue="1" itemLabel="Inactivo"/>
+                                <f:selectItem itemValue="2" itemLabel="Activo"/>
+                                </h:selectOneMenu>
+                                
+                                <h:outputLabel value = "#{msg['turnos.turnoBajaLogica']}"/>
+                                <span class= "required"/>
+                                <h:selectOneMenu value="#{turnoGridMB.turnoVO.turBajaLogica}">
+								<f:selectItem itemValue ="" itemLabel = "--Seleccionar--"/>
+                                <f:selectItem itemValue="A" itemLabel="Activo"/>
+                                <f:selectItem itemValue="B" itemLabel="Baja"/>
+                                </h:selectOneMenu>	
+                                
+                                
+					</h:panelGrid>
+							
+							
+						</fieldset>
+                      
+							
+						<br />
+						<fieldset>
+							<legend>#{msg['turnos.detalleConsulta']}</legend>
+							<h:dataTable    var = "turno" value = "#{turnoGridMB.listaTurno}" class="gridtable"   >
+							
+							<h:column>
+							<f:facet name="header" > Sub-boveda </f:facet>
+							<h:outputLabel value="#{turno.subvobeda}" />
+							</h:column>
+							
+							<h:column>
+							<f:facet name="header" > #{msg['turnos.idTurno']} </f:facet>
+							<h:outputLabel value="#{turno.turnoId}" />
+							</h:column>				
+							
+							<h:column>
+							<f:facet name="header" >#{msg['turnos.descripcion']} </f:facet>
+							<h:outputLabel value="#{turno.turDescripcion}" />
+							
+							</h:column>
+							<h:column>
+							<f:facet name="header">#{msg['turnos.horaInicio']} </f:facet>
+							<h:outputLabel  value="#{turno.turHoraInicio}" >
+							
+							</h:outputLabel>
+							
+							</h:column>
+							<h:column>
+							<f:facet name="header" >#{msg['turnos.horaFin']} </f:facet>
+							<h:outputLabel value="#{turno.turHoraFin}" >
+							
+							</h:outputLabel>
+							
+							</h:column>
+							
+							<h:column>
+							<f:facet name="header">#{msg['turnos.estatus']} </f:facet>
+							<h:outputLabel value="#{turno.turStatus}" />
+							
+							</h:column>
+							<h:column>
+									<f:facet name="header">
+
+									</f:facet>
+									<h:panelGrid columns="2" cellspacing="30">
+										<h:commandLink value="#{msg['turnos.editarDetalle']}"
+											action="#{turnoGridMB.consultaTurnoPorId}"
+											immediate="true">
+											<f:setPropertyActionListener
+												target="#{turnoGridMB.turnoVO}" value="#{turno}"></f:setPropertyActionListener>
+										</h:commandLink>
+									</h:panelGrid>
+								</h:column>
+							</h:dataTable>
+							
+						</fieldset>
+						<div align ="center">
+							<h:commandButton   value="#{msg['turnos.btnGenerarReporte']}" type = "submit" class="button-blue jqTransformButton" action="#{turnoGridMB.generarRepore}"  >
+							</h:commandButton> 
+							</div>
+						<br />
+
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

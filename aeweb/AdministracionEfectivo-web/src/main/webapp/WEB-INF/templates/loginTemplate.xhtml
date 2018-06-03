@@ -1,0 +1,128 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	
+<h:head>
+	<title>..::Administración; de Efectivo :::..</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="shortcut icon"
+		href="#{facesContext.externalContext.requestContextPath}/resources/images/favicon.ico"
+		type="image/x-icon" />
+
+
+	<link rel="stylesheet" type="text/css"
+		href="#{facesContext.externalContext.requestContextPath}/resources/css/import.css" />
+
+
+</h:head>
+<h:body>
+	<!--  Encabezado -->
+	<div id="header">
+		<!-- Site -->
+		<div class="site">
+			<div class="site-name">Intranet Banamex - AE-Web</div>
+		</div>
+		<!-- Menu -->
+		<div id="top-nav">
+			<div class="top-left-nav-container">&nbsp;</div>
+			<div class="top-right-nav-container">&nbsp;</div>
+			<div class="top-center-nav-container">
+
+				<!--  Logotipio -->
+				<div class="app-logo">
+					<a href="#"><img
+						src="#{facesContext.externalContext.requestContextPath}/resources/img/banamex_logo_200.gif"
+						alt="Afore Banamex Suma de Esfuerzos" class="logo" border="0" /></a>
+				</div>
+
+				<!--  Bienvenida -->
+
+				<br class="clear-float" />
+			</div>
+
+			<!-- Navegacion Principal -->
+
+			<div class="clear-menu"></div>
+			<!-- Fin de la Navegacion Principal -->
+
+			<!-- Navegacion Secundaria -->
+			<div id="top-sub-nav-container"
+				class="bottom-outer-sub-nav-container">
+				<div class="bottom-left-sub-nav-container" style="height: 20px;">
+				</div>
+				<div class="bottom-right-sub-nav-container" style="height: 20px;">
+				</div>
+				<div id="sub-nav" class="sub-nav">
+
+					<div class="clear-both"></div>
+				</div>
+			</div>
+			<div class="clear-sub-menu"></div>
+			<!-- Fin de la Navegacion Secundaria -->
+
+		</div>
+		<!--  Fin del Menu -->
+
+	</div>
+	<!--  Fin Encabezado -->
+
+
+
+	<!--Contenido Central -->
+	<div id="page-container-border">
+
+		<!-- Ruta de Navegación -->
+		<div id="breadcrumbs">
+			Usted está; en: <a href="#">Inicio de Sesión</a>
+		</div>
+
+		<div class="clear-both"></div>
+		<!-- Mensajes  -->
+		<div id="messages" class="messages"></div>
+		<!-- Mensajes de Error  -->
+		<div id="errors" class="errors ui-state-error">
+			<span class="ui-icon ui-icon-alert error-icon"></span>
+			<div id="error" class="error"></div>
+		</div>
+
+		<!--  Contenido  -->
+		<br class="clear-both" />
+
+
+
+		<ui:insert name="content" />
+
+		<br class="clear-float" /> <br />
+
+
+
+
+	</div>
+	<!-- Fin del Contenido Central -->
+
+	<!--  Pide de pagina -->
+	<div id="footer">
+		<div id="footer-area">
+			<!--  Pide de pagina -->
+			<div class="footer-area-links">
+				<div class="footer-txt">citigroup.net</div>
+				<div class="footer-links">
+					<ul class="footer-links-ul">
+						<li></li>
+					</ul>
+				</div>
+			</div>
+			<div id="disclaimer">Copyright &copy; 2013. Derechos Reservados
+				Afore Banamex, S.A. de C.V.</div>
+		</div>
+	</div>
+	<!--  Fin del Pide de pagina -->
+
+</h:body>
+</html>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DepositoClientesDepSeguro1" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fac90668-c14b-45a7-a4af-dea40c8f63dc">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="316"/>
+	<property name="ireport.y" value="0"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement x="247" y="25" width="256" height="20" uuid="b0982848-8183-45a2-8bc1-3b2dd2ffcf40"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONDUCCIÓN DE VALORES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="1" width="591" height="14" uuid="b6e78842-b610-41a7-ab12-b33580fadfc8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BANCO NACIONAL DE MÉXICO, S.A.]]></text>
+			</staticText>
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss Z">
+				<reportElement x="630" y="39" width="122" height="20" uuid="4a6e9d81-7866-48dc-8500-896a0aa442a1"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="0" width="750" height="1" uuid="f143ad1b-78f2-4ebc-953d-790103938dc4"/>
+			</line>
+			<staticText>
+				<reportElement x="526" y="39" width="92" height="20" uuid="068dff1a-784c-4ed0-bee2-9a9c7af56091"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA Y HORA :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="19" width="750" height="1" uuid="63a96a25-3dee-479b-a7b7-56a8a707f080"/>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="138" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="40" width="113" height="20" uuid="76885bb5-de98-4eda-97d8-42288b36a9d3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CIA. TRASLADO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="51" width="113" height="20" uuid="a39e6aea-35ac-4748-a060-86aef9439934"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ENTIDAD DESTINO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="421" y="77" width="128" height="20" uuid="f6026379-fbd1-4776-9624-553d7596ee80"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD CON LETRA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="40" width="100" height="20" uuid="5ca73ae5-b660-4a3e-adbd-f131ba9710a0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TECNOVAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="51" width="190" height="20" uuid="c3109dad-8411-42ff-9810-286b867194c7"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[SUPER CENTER HORIZONTE (1202)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="421" y="88" width="240" height="32" uuid="f11f5ce2-249a-4fb6-a287-7e979c4a24a7"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CUARENTA Y OCHO MIL QUINIENTOS PESOS     00/100 M.N.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="421" y="22" width="113" height="20" uuid="c4000d81-f45b-4b3d-87c6-a6bb630cce3c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[FECHA DE ENTREGA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="549" y="22" width="112" height="20" uuid="c843b35b-e721-4a7b-b659-c4d0d9026bc4"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[16/12/2013]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="421" y="10" width="113" height="20" uuid="89a37b40-ebe9-4a96-868e-292569427ac2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[FECHA DE SOLICITUD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="549" y="10" width="112" height="20" uuid="95aca28b-87b1-4982-9b50-f1839361e7e5"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[13/12/2013  11:31]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="549" y="33" width="112" height="20" uuid="40ddcb2b-44e2-43e9-bcd1-527e10faae21"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[00:00]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="421" y="33" width="113" height="20" uuid="ae28cbb2-0fd6-4ade-99e5-5a6c75ea82d5"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[HORA DE ENTREGA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="421" y="52" width="113" height="20" uuid="4cea5f4c-045d-45cf-a9dc-a36f4b158603"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TOTAL REMESA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="549" y="52" width="112" height="20" uuid="e1a01455-107c-4789-8d6c-eb7df447ef62"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[             48,500.00]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="65" width="115" height="20" uuid="c36ae503-f789-4ac9-9b00-b2739994fe18"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[DIRECCION:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="65" width="168" height="45" uuid="2a46c5f7-6a45-4dc9-8f4c-0553b2be0160"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[AV. INGENIEROS NUM. 370 COL. EL AGOSTADERO  DEL/MPO VALLE DE CHAL  C.P 056615]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="117" width="113" height="20" uuid="fcfc771c-4385-42cd-b492-b47e1f808d5f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[REMITENTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="117" width="166" height="20" uuid="2558034f-f0b5-45d3-b42f-bf55dc8d14aa"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[C.P.A.E.  METROPOLITANO 0350]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="549" y="117" width="112" height="20" uuid="3780f9ca-dde0-49ca-b5fe-969406628173"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[0009517960]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="421" y="117" width="113" height="20" uuid="792c592c-b5c4-4c2b-b34e-f4d02c881aad"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[NO. FOLIO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="534" y="53" width="15" height="18" uuid="e260b23d-9d1f-47ce-abdb-a82e04e7217b"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[$]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="168" splitType="Stretch">
+			<staticText>
+				<reportElement x="106" y="29" width="85" height="20" uuid="646a997e-be2e-433c-8604-ef14417143e4"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[NUMERO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="29" width="91" height="20" uuid="84b2eb8a-a82e-4d30-a4c5-82ec65898525"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[LETRA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="29" width="93" height="20" uuid="57e9e235-c041-4cad-9c7c-dafd8684830d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="11" width="93" height="20" uuid="6db0aabe-0733-4d81-bfe5-5292ed508245"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[N.M.S.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="12" width="278" height="19" uuid="9f0e68da-77a3-4323-9b2c-eb548cc1c024"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[SELLO DE PLOMO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="11" width="176" height="20" uuid="302b13fb-b6a7-49d8-b2aa-ccb9c2e2fbdc"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TOTAL DE ENVASES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="39" y="55" width="134" height="31" uuid="3ec19884-a13d-4ab6-80ce-ed1f6aebb167"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CAJERO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="307" y="55" width="133" height="31" uuid="177d073f-c885-4fb4-bb8d-c24cc073e280"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[BANAMEX]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="173" y="55" width="134" height="31" uuid="d680ee27-e45d-4377-9585-461ac9b37c09"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[SUPERVISOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="574" y="55" width="133" height="31" uuid="238905e9-e8e5-4552-91c1-8519f11d0b01"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CONSIGNATORIO RECIBI DE CONFORMIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="55" width="133" height="31" uuid="1b5024cf-7c54-470c-9602-44c67f9fa6dc"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[CIA. DE TRASLADO DE VALORES]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="340" y="34" width="100" height="20" uuid="e53c87f3-ff2e-45e9-b1cb-8794dfab6212"/>
+				<textElement textAlignment="Center">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AE-WEB 2013]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="526" y="34" width="181" height="20" uuid="37884b8f-705c-4227-9516-24bdf844e958"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página"+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="707" y="34" width="40" height="20" uuid="4085b388-886f-4357-b2e8-389f699254be"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

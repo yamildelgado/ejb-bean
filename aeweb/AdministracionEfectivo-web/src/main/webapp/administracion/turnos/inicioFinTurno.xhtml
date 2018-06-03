@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<h:commandLink>cajaList</h:commandLink>
+
+	<ui:define name="content">
+<div id="breadcrumbs">
+			<span>Administración</span> <span>
+				Turnos</span> <span> Inicio y Fin de Turno</span>
+		</div>
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+		<div id="sub-nav" class="sub-nav" style="height: 40px">
+				<ul class="nav">
+					<li><a href="#">Cátalogos</a></li>
+
+					<li><a href="#"><u>Turnos</u></a></li>
+
+					<li><a href="#">Procesadoras</a></li>
+
+					<li><a href="#">Bitácora</a></li>
+
+					<li><a href="#">Depuración</a></li>
+				</ul>
+		<div class="clear-both"></div>
+			</div>
+			<div class="section-name">
+				<h1>#{msg['iniciofinturno.titulo']}</h1>
+
+
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+
+						<fieldset>
+							
+								<h:panelGrid columns="3" style="width:200px; float:left;">
+									<h:outputLabel value="#{msg['iniciofinturno.turnosCpae']}" />
+									<h:outputLabel value="(NNNN)" />
+									<br />
+									<br />
+								</h:panelGrid>
+							
+							
+							<div align="left">
+							<h:dataTable class="gridtable" id="tbl" style="width :400px;margin-left:20px; float:left; border:1px solid grey; " var ="listaTurnos" value="#{inicioFinTurnoGridMB.listaTurnoVO}">
+								<h:column>
+									<f:facet name="header">#{msg['iniciofinturno.turno']}</f:facet>
+									<h:outputLabel value="#{listaTurnos.turDescripcion}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['iniciofinturno.horaInicio']}</f:facet>
+									<h:outputLabel value="#{listaTurnos.turHoraInicio}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['iniciofinturno.horaFin']}</f:facet>
+									<h:outputLabel value="#{listaTurnos.turHoraFin}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['iniciofinturno.estatus']}</f:facet>
+									<h:outputLabel value="#{listaTurnos.turStatus}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['iniciofinturno.seleccionar']}</f:facet>
+									
+									<h:selectBooleanCheckbox  value="#{inicioFinTurnoGridMB.checked[listaTurnos.turnoId]}">
+										<f:ajax event="change" listener="#{inicioFinTurnoGridMB.seleccion}" render="tbl"/>
+									</h:selectBooleanCheckbox>
+									
+								</h:column>
+								
+							
+							</h:dataTable>
+							
+								
+							</div>
+									<div align="center">
+									
+								<br />
+								<br />
+								<br />
+									
+										<h:commandButton value="#{msg['iniciofinturno.iniciar']}" style="visibility:#{inicioFinTurnoGridMB.ocultar}"
+												class="button-blue jqTransformButton"    />
+											
+										<br />
+										<br />
+										<h:commandButton value="#{msg['iniciofinturno.finalizar']}" 
+											class="button-blue jqTransformButton" />
+									</div>
+									
+							<br />
+							<br />
+							<h:outputLabel value="#{msg['iniciofinturno.activo']}" />
+							<br />
+							<br />
+							
+							<h:dataTable class="gridtable" style="width :800px;margin-left:20px; float:left; border:1px solid grey" var="histTurno" value="#{inicioFinTurnoGridMB.listHistTurno}">
+								<h:column>
+									<f:facet name="header">#{msg['iniciofinturno.turno']}</f:facet>
+									<h:outputLabel value="#{histTurno.descripcionTurno}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['iniciofinturno.iniciado']}</f:facet>
+									<h:outputLabel value="#{histTurno.histFecHorIni}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['iniciofinturno.fcontableIni']}</f:facet>
+									<h:outputLabel value="#{histTurno.histFecContInicial}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['iniciofinturno.finalizado']}</f:facet>
+									<h:outputLabel value="#{histTurno.histFecHorFin}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['iniciofinturno.fcontablefin']}</f:facet>
+									<h:outputLabel value="#{histTurno.histFecContInicial}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['iniciofinturno.estatus']}</f:facet>
+									<h:outputLabel value="#{histTurno.histStatus}" />
+								</h:column>
+							
+							
+							
+							</h:dataTable>
+							
+							
+						
+						</fieldset>
+
+						<fieldset>
+						<h:outputLabel value="#{msg['iniciofinturno.habdeshabXturno']}" />
+						<br />
+						<br />
+						<h:dataTable class="gridtable" style="width :500px;margin-left:20px; float:left; border:1px solid grey"  var ="cajasPorTurno" value="#{inicioFinTurnoGridMB.listCajaTurnoVO}">
+							<h:column>
+								<f:facet name="header">#{msg['iniciofinturno.idCaja']}</f:facet>
+								<h:outputText value="#{cajasPorTurno.cajaIdn}" />
+							
+							</h:column>
+							<h:column>
+								<f:facet name="header">#{msg['iniciofinturno.tipoCaja']}</f:facet>
+								<h:outputText value="#{cajasPorTurno.aewebcatgralDescripcion}" />
+							
+							</h:column>
+							<h:column>
+								<f:facet name="header">#{msg['iniciofinturno.estatus']}</f:facet>
+								<h:outputText value="#{cajasPorTurno.status}" />
+							
+							</h:column>
+							<h:column>
+								<f:facet name="header">#{msg['iniciofinturno.habilitar']}</f:facet>
+								<h:selectOneRadio value="">
+									<f:selectItem itemValue=""  />
+									<f:selectItem itemValue=""  />
+								
+								
+								</h:selectOneRadio>
+							
+							</h:column>
+							
+						
+						
+						</h:dataTable>
+						
+								
+								<div align="center">
+								<br />
+								<br />
+								<br />
+								<br />
+								<br />
+								<br />
+								<br />
+								<br />
+								<br />
+									<h:commandButton
+										value="#{msg['iniciofinturno.aplicarCambios']}"
+										class="button-blue jqTransformButton" />
+								</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

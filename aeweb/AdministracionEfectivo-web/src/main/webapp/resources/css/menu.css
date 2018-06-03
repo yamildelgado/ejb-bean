@@ -1,0 +1,40 @@
+ul,li {
+	list-style: none;
+}
+
+.nav>li  a {
+	color: black;
+	padding: 10px 15px;
+	text-decoration: none;
+	height: 20px;
+}
+
+.nav  li ul li a:hover {
+	
+	text-decoration: none;
+	width: 100%;
+}
+
+.nav>li {
+	float: left;
+}
+
+.nav li ul  {
+	display: none;
+	position: absolute;
+	min-width: 135px;
+	
+}
+
+.nav li:hover>ul {
+	display: block;
+}
+
+.nav li ul li {
+	position: relative;
+}
+
+.nav li ul li ul {
+	right: -180px;
+	top: 0px;
+}

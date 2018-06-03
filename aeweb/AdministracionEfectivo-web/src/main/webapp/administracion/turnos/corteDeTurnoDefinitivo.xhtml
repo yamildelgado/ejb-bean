@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+
+	<h:commandLink>subbovedasEdit</h:commandLink>
+	<ui:define name="content">
+		<div id="breadcrumbs">
+			<span>Administración</span> <span> Turnos</span> <span> Corte
+				de Turno</span>
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+
+			<div style="background: url('../../resources/img/navigation/sub-nav2.png'); background-repeat: repeat-x; height : 40px; width : 920px;" >
+			<br/>
+				<ul class="nav">
+				
+					<li><a href="#"  > Cátalogos</a></li>
+
+					<li><a href="#"  ><u>Turnos</u></a></li>
+
+					<li><a href="#"  >Procesadoras</a></li>
+
+					<li><a href="#"  >Bitácora</a></li>
+
+					<li><a href="#"  >Depuración</a></li>
+				</ul>
+
+				<div class="clear-both"></div>
+			
+			</div>
+			<div class="section-name">
+			<br></br>
+				<h1>#{msg['corteCajaDef.titulo']}</h1>
+
+			</div>
+			<h:form class="horizontal">
+
+				<h:panelGroup id="messagePanel" layout="block">
+					<h:messages errorStyle="color: red" infoStyle="color: blue"
+						layout="table" />
+				</h:panelGroup>
+
+
+
+				<fieldset>
+					<legend>#{msg['corteCajaDef.tituloConsulta1']}</legend>
+					<h:dataTable class="gridtable" style="width:850px" var="subBoveda"
+						value="">
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['corteCajaDef.turno']} </f:facet>
+							<h:outputLabel value="MATUTINO 1 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['corteCajaDef.iniciado']} </f:facet>
+							<h:outputLabel value="04/DIC/201309:00 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['corteCajaDef.fContableInicio']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['corteCajaDef.finalizado']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 14:34 " />
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['corteCajaDef.fContableFinal']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['corteCajaDef.estatus']} </f:facet>
+							<h:outputLabel value="ABIERTO " />
+						</h:column>
+
+						<br></br>
+						<br></br>
+						<br></br>
+
+					</h:dataTable>
+					<div align="right" style="width: 850px">
+						<h:commandButton value="#{msg['corteCajaDef.btnCortePreliminar']}"
+							type="submit" class="button-blue jqTransformButton"
+							style="align=right" />
+						<h:commandButton value="#{msg['corteCajaDef.btnCorteDefinitivo']}"
+							type="submit" class="button-blue jqTransformButton"
+							style="align=right" />
+						<br></br> <br></br>
+					</div>
+				</fieldset>
+				<br />
+				<fieldset>
+					<legend>#{msg['corteCajaDef.tituloConsulta2']}</legend>
+
+
+
+
+					<h:dataTable class="gridtable" style="width:850px" var="subBoveda"
+						value="">
+
+
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['corteCajaDef.idCaja']} </f:facet>
+							<h:outputLabel value="0001" size="2" />
+							<h:outputLabel value="0002" size="2" />
+							<h:outputLabel value="..." size="2" />
+							<h:outputLabel value="..." size="2" />
+							<h:outputLabel value="..." size="2" />
+							<h:outputLabel value="..." size="2" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['corteCajaDef.tipoCaja']} </f:facet>
+							<h:outputLabel value="RECEPTORA" size="2" />
+							<h:outputLabel value="VERIFICADORA DE BILLTE" size="2" />
+							<h:outputLabel value="VERIFICADORA DE MONEDA" size="2" />
+							<h:outputLabel value="VERIFICADORA DE PICO DE BILLETE" size="2" />
+							<h:outputLabel value="VERIFICADORA DE PICO DE MONEDA" size="2" />
+							<h:outputLabel value="ATENCIÓN A CLIENTES" size="2" />
+
+
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['corteCajaDef.estatus']} </f:facet>
+							<h:outputLabel value="CERRADA" size="2" />
+							<h:outputLabel value="CERRADA" size="2" />
+							<h:outputLabel value="HABILITADA" size="2" />
+							<h:outputLabel value="HABILITADA" size="2" />
+							<h:outputLabel value="DESHABILITADA" size="2" />
+							<h:outputLabel value="HABILITADA" size="2" />
+						</h:column>
+
+						<br></br>
+
+					</h:dataTable>
+
+				</fieldset>
+
+			</h:form>
+
+
+
+
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+

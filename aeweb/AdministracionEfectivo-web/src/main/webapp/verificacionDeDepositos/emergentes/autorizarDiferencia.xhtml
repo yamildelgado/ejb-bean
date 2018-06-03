@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/emergentesTemplate.xhtml">
+	<ui:define name="content">
+
+
+
+
+
+		<h:form styleClass="horizontal">
+			<h:panelGroup id="messagePanel" layout="block">
+				<h:messages errorStyle="color: red" infoStyle="color: blue"
+					layout="table" />
+			</h:panelGroup>
+			<fieldset>
+				<legend>#{msg['verificacionAutoDif.autorizacionDifDos']}</legend>
+				<h:outputLabel value="#{msg['verificacionAutoDif.resumenAutoEnvases']}" style="margin-left:10px;" />
+				<center>
+					<h:inputTextarea value=""  style="width:578px; height:50px;"/>
+				</center>
+				<br />
+		
+			
+			<h:outputLabel value="#{msg['verificacionAutoDif.seleccioneMN']}" style="margin-left:10px;" />
+			<center>
+				<table class="gridtable"  id="bordeTr2" style=" width:578px;">
+					<tr >
+						<td ><h:outputLabel value="" /></td>
+						<td ><h:outputLabel value="" /></td>
+						<td ><h:outputLabel value="" /></td>
+						<td ><h:outputLabel value="" /></td>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="" /></td>
+						<td><h:outputLabel value="" /></td>
+						<td><h:outputLabel value="" /></td>
+						<td><h:outputLabel value="" /></td>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="" /></td>
+						<td><h:outputLabel value="" /></td>
+						<td><h:outputLabel value="" /></td>
+						<td><h:outputLabel value="" /></td>
+					</tr>
+				</table>
+			</center>
+			<br/>
+			<h:outputLabel value="#{msg['verificacionAutoDif.refEdoCta']}" style="margin-left:10px;" />
+			<h:inputText value="" /><br/>
+			<br/>
+			<h:outputLabel value="#{msg['verificacionAutoDif.seleccioneDolares']}" style="margin-left:10px; " />
+			<center>
+				<table class="gridtable"  id="bordeTr2" style="width:578px; ">
+					<tr >
+						<td ><h:outputLabel value="" /></td>
+						<td ><h:outputLabel value="" /></td>
+						<td ><h:outputLabel value="" /></td>
+						<td ><h:outputLabel value="" /></td>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="" /></td>
+						<td><h:outputLabel value="" /></td>
+						<td><h:outputLabel value="" /></td>
+						<td><h:outputLabel value="" /></td>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="" /></td>
+						<td><h:outputLabel value="" /></td>
+						<td><h:outputLabel value="" /></td>
+						<td><h:outputLabel value="" /></td>
+					</tr>
+				</table>
+			</center>
+				
+				<br /> 
+				<br />
+				<h:outputLabel value="#{msg['verificacionDif.leyendaAuto']}" style="margin-left:10px;" />
+				<center>
+					<h:inputText value=""  style=" width:578px; height:50px;"/>
+				</center>
+			
+				<br/>
+
+
+
+			</fieldset>
+
+
+
+			<h:commandButton value="#{msg['verificacionAutoDif.btnAceptar']}"
+				style="width:150px;margin-left:9px;" class="button-blue jqTransformButton">
+			</h:commandButton>
+			<h:commandButton value="#{msg['verificacionAutoDif.btnCancelar']}"
+				style="width:150px; margin-left:9px;" class="button-blue jqTransformButton">
+			</h:commandButton>
+
+
+		</h:form>
+
+
+
+
+	</ui:define>
+</ui:composition>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

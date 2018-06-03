@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<h:commandLink>actualizaSIRHList</h:commandLink>
+	<ui:define name="content">
+
+		<div id="breadcrumbs">
+			<span>Administración</span> <span> Catálogos</span> <span>
+				Institucionales</span> <span> SIRH</span>
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['catalogoSIRH.tituloConsulta']}</h1>
+
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+						<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+						<fieldset>
+							<legend>#{msg['catalogoSIRH.sessionDatosConsulta']}</legend>
+
+							<h:panelGrid columns="3">
+								<h:outputLabel value="#{msg['catalogoSIRH.Idn']}" />
+								<span class="" />
+								<h:inputText value="#{SirhGridMB.estructuraVO.estructraSirhIdn}"
+									size="10" maxlength="8" converter="javax.faces.Integer"
+									converterMessage="INGRESA UN NÚMERO FORMADO POR MENOS DE 8 DÍGITOS EN EL CAMPO DE CLAVE" />
+
+								<h:outputLabel value="#{msg['catalogoSIRH.Tipo']}" />
+								<span class="" />
+								<h:inputText
+									value="#{SirhGridMB.estructuraVO.estructraTipoSirh}" size="10"
+									maxlength="2" />
+
+								<h:outputLabel value="#{msg['catalogoSIRH.nombreCorto']}" />
+								<span class="" />
+								<h:inputText
+									value="#{SirhGridMB.estructuraVO.estructraNombreCorto}"
+									size="34" maxlength="20" />
+
+								<h:outputLabel value="#{msg['catalogoSIRH.Edo']}" />
+								<span class="" />
+								<h:inputText value="#{SirhGridMB.estructuraVO.estructraEdo}"
+									size="10" maxlength="2" />
+
+								<h:outputLabel value="#{msg['catalogoSIRH.Poblacion']}" />
+								<span class="" />
+								<h:inputText
+									value="#{SirhGridMB.estructuraVO.estructraPoblacion}" size="34"
+									maxlength="2" />
+
+								<h:outputLabel value="#{msg['catalogoSIRH.Rpta']}" />
+								<span class="" />
+								<h:inputText value="#{SirhGridMB.estructuraVO.estructraRpta}"
+									size="10" maxlength="4" converter="javax.faces.Integer"
+									converterMessage="INGRESA UN NÚMERO FORMADO POR MENOS DE 4 DÍGITOS EN EL CAMPO DE RPTA" />
+
+							</h:panelGrid>
+
+						</fieldset>
+						<fieldset>
+							<div align="center">
+								<h:panelGrid columns="3" style="width:40px;">
+
+									<h:commandButton value="#{msg['catalogoSIRH.btnConsultar']}"
+										class="button-blue jqTransformButton"
+										actionListener="#{SirhGridMB.consultaSirhPorParametro}" />
+
+								</h:panelGrid>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<legend>#{msg['catalogoSIRH.seccionDetalleOperacion']}</legend>
+
+
+
+
+							<p:dataTable value="#{SirhGridMB.listaEstructura}" var="sirh"
+								rows="20" paginator="true" paginatorposition="bottom"
+								lazy="true" dynamic="true">
+								<p:column>
+									<f:facet name="header">
+
+										<h:outputText value="#{msg['catalogoSIRH.Idn']}"></h:outputText>
+									</f:facet>
+									<h:outputText value="#{sirh.estructraSirhIdn}"></h:outputText>
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{msg['catalogoSIRH.Tipo']}"></h:outputText>
+									</f:facet>
+									<h:outputText value="#{sirh.estructraTipoSirh}"></h:outputText>
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{msg['catalogoSIRH.nombreCorto']}"></h:outputText>
+									</f:facet>
+									<h:outputText value="#{sirh.estructraNombreCorto}"></h:outputText>
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{msg['catalogoSIRH.Edo']}"></h:outputText>
+									</f:facet>
+									<h:outputText value="#{sirh.estructraEdo}"></h:outputText>
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{msg['catalogoSIRH.Poblacion']}"></h:outputText>
+									</f:facet>
+									<h:outputText value="#{sirh.estructraPoblacion}"></h:outputText>
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{msg['catalogoSIRH.Rpta']}"></h:outputText>
+									</f:facet>
+									<h:outputText value="#{sirh.estructraRpta}"></h:outputText>
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+                #{msg['catalogoSIRH.btnMostrar']}
+            </f:facet>
+									<h:commandLink value="#{msg['catalogoSIRH.btnMostrar']}"
+										action="#{SirhGridMB.consultaEditSirh()}" immediate="true"
+										ajax="false">
+										<f:param name="estructraCalleNum"
+											value="#{sirh.estructraCalleNum}"></f:param>
+										<f:param name="estructraColonia"
+											value="#{sirh.estructraColonia}"></f:param>
+										<f:param name="estructraCp" value="#{sirh.estructraCp}"></f:param>
+										<f:param name="estructraEdo" value="#{sirh.estructraEdo}"></f:param>
+										<f:param name="estructraLada" value="#{sirh.estructraLada}"></f:param>
+										<f:param name="estructraNombreCorto"
+											value="#{sirh.estructraNombreCorto}"></f:param>
+										<f:param name="estructraNombreLargo"
+											value="#{sirh.estructraNombreLargo}"></f:param>
+										<f:param name="estructraPoblacion"
+											value="#{sirh.estructraPoblacion}"></f:param>
+										<f:param name="estructraRpta" value="#{sirh.estructraRpta}"></f:param>
+										<f:param name="estructraSirhIdn"
+											value="#{sirh.estructraSirhIdn}"></f:param>
+										<f:param name="estructraTelefono"
+											value="#{sirh.estructraTelefono}"></f:param>
+										<f:param name="estructraTipoSirh"
+											value="#{sirh.estructraTipoSirh}"></f:param>
+
+									</h:commandLink>
+
+								</p:column>
+
+							</p:dataTable>
+
+
+
+						</fieldset>
+
+
+						<br />
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

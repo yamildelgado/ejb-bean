@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CorteParcialVes" language="groovy" pageWidth="595" pageHeight="842" columnWidth="545" leftMargin="30" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dbd47ff1-6d5a-4e98-9fc6-b9019b610a63">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1168"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="18" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="-1" width="555" height="1" uuid="e3b19054-aa1d-4701-8f81-12510b5e8114"/>
+			</line>
+			<line>
+				<reportElement x="0" y="17" width="555" height="1" uuid="710eed21-bf5c-4bf9-9f8c-37c44ea709e9"/>
+			</line>
+			<staticText>
+				<reportElement x="78" y="0" width="396" height="15" uuid="ccbd57fa-463a-44f3-88ae-9bb40e38fe64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BANCO NACIONAL DE MÉXICO, S.A.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="134" y="2" width="323" height="12" uuid="3bb2c3c7-4167-41c0-bcb6-ef52be6395ab"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DETALLE CAMBIO DE FECHA CONTABLE AUTOMÁTICO]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="93" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="55" width="85" height="10" uuid="962a1855-b7ed-4258-8018-43e004920ee1"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GENERO REPORTE: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="13" width="110" height="10" uuid="15a309cf-c2cd-4cc9-9374-eb9c6e033459"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA CONTABLE ANTERIOR:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="25" width="110" height="10" uuid="c122f608-3697-4ced-881a-18366b22d315"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA CONTABLE ACTUAL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="1" width="110" height="10" uuid="62f439df-7c70-4263-bf00-bb3a97558059"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA DE CAMBIO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="35" width="50" height="10" uuid="b7544ef0-ca1f-441f-b204-be7b4a392f26"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTATUS:]]></text>
+			</staticText>
+			<textField pattern="h.mm.ss a">
+				<reportElement x="116" y="1" width="64" height="10" uuid="13eff50e-241d-4b38-a133-bcee3ccc5424"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="117" y="13" width="63" height="10" uuid="201f059f-9eed-4d47-841a-9fa22170123c"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="117" y="25" width="62" height="10" uuid="03d2972b-a746-4223-b859-01ffc86a145d"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="588" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="6" width="87" height="10" uuid="c48b8ee4-8643-4ef2-a837-ca6d99cc4cde"/>
+				<textElement>
+					<font size="7" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[FALTANTES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="22" width="51" height="10" uuid="73e8577e-15ae-4ad8-b062-0676e38b8776"/>
+				<textElement textAlignment="Center">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="12" width="37" height="20" uuid="25b0ea14-b7b6-4107-8a02-dbbb90e22ed0"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ ESTATUS TURNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="99" y="22" width="131" height="10" uuid="83790a42-9abd-47cd-9530-ce69bba12e73"/>
+				<textElement textAlignment="Center">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPAE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="57" y="22" width="35" height="10" uuid="66068530-5a70-4ed2-8ccf-bf6bb8beae9a"/>
+				<textElement textAlignment="Center">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="22" width="26" height="10" uuid="93b0b77e-23e2-4c03-8e8f-1d5b49e67091"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUBOV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="22" width="100" height="10" uuid="8adf8ec5-004c-4144-aab7-71ef3934876a"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TURNO	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="447" y="12" width="37" height="20" uuid="d0db7d53-f04d-449d-9a06-cf991a640884"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTATUS CAMBIO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="38" width="50" height="10" uuid="192502ed-aade-4172-aa23-b93ba0fb8664"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="57" y="38" width="35" height="10" uuid="e50db748-4280-4a26-972a-20f9d08a28d5"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="57" y="38" width="35" height="10" uuid="5b1ef7ac-5c31-4c3d-ac5a-2908fc1551c5"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="38" width="131" height="10" uuid="63034293-d108-4bb6-bc1a-6bcc500277fc"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="238" y="38" width="26" height="10" uuid="8237e2d8-85f5-4f7e-a40a-a0a260bbacda"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="38" width="100" height="10" uuid="15d5f7b6-6d17-4138-9121-eb5c76e8819b"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="387" y="38" width="37" height="10" uuid="52c85808-a826-44d0-a903-784bf742dcd3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="447" y="38" width="37" height="10" uuid="e2faa023-b339-4726-8d7d-064196dce2f6"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="59" splitType="Stretch">
+			<textField>
+				<reportElement x="394" y="24" width="80" height="20" uuid="f6d0bdad-a7cf-4aa2-8444-b545a91b624d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="474" y="24" width="42" height="20" uuid="c319fda8-011b-4973-adf2-fe5f8584197b"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="211" y="24" width="100" height="20" uuid="9a7ddf7e-b288-488a-ad88-c7085279966a"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AE-WEB 2013]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

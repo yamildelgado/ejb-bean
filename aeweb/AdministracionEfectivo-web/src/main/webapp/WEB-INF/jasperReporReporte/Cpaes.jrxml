@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cpaes" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f220bf70-de25-44bd-b3b6-0ca8c65497ce">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="cpaesEstructuraSirhIdn" class="java.lang.Integer"/>
+	<field name="sirhNombre" class="java.lang.String"/>
+	<field name="sirhHorContable" class="java.lang.Short"/>
+	<field name="sirhNumCompLote" class="java.lang.Short"/>
+	<field name="sirhNumCompAsignaXCajero" class="java.lang.Short"/>
+	<field name="sirhMontMinDifImprActa" class="java.math.BigDecimal"/>
+	<field name="sirhNumCopiasActas" class="java.math.BigInteger"/>
+	<field name="sirhHorEnvaseCritico" class="java.lang.Short"/>
+	<field name="sirhLimPiso" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="18" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="-1" width="555" height="1" uuid="e3b19054-aa1d-4701-8f81-12510b5e8114"/>
+			</line>
+			<line>
+				<reportElement x="0" y="17" width="555" height="1" uuid="710eed21-bf5c-4bf9-9f8c-37c44ea709e9"/>
+			</line>
+			<staticText>
+				<reportElement x="78" y="0" width="396" height="15" uuid="ccbd57fa-463a-44f3-88ae-9bb40e38fe64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BANCO NACIONAL DE MÉXICO, S.A.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="217" y="2" width="111" height="12" uuid="3bb2c3c7-4167-41c0-bcb6-ef52be6395ab"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE CPAES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="396" y="24" width="59" height="10" uuid="ccb1a852-d8c7-42cd-8d32-5b6f70411eee"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA Y HORA:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="455" y="24" width="100" height="10" uuid="d351bcdc-5b3d-4de6-b4e2-64c6d597f239"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="436" splitType="Stretch">
+			<textField>
+				<reportElement x="397" y="95" width="83" height="20" uuid="9f78568f-5072-4283-85ed-8d62815f9628"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sirhNombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="200" width="103" height="20" uuid="09dc95b2-553f-4e24-8070-2e73db742c20"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sirhHorEnvaseCritico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="116" width="83" height="20" uuid="412f4ee9-eb1b-43f2-962b-09cdbec9949d"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sirhHorContable}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="79" y="95" width="89" height="20" uuid="a449d02f-6c28-427d-9aa0-627bf76b348c"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre de la CPAE :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="159" width="159" height="20" uuid="9b066ce1-a008-43bb-bd3d-81118b2b2d32"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número de Copias a Imprimir por Acta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="117" width="188" height="20" uuid="c2d64c9d-9661-4c50-8e5f-e47a40bf9826"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora de Cambio de Fecha Contable de la CPAE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="138" width="176" height="20" uuid="d34c0e8b-96f0-4d21-ae93-b2bc809f610a"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número Máximo de Comprobantes por Lote:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="195" width="105" height="20" uuid="2859cc54-3992-49a5-afd4-3641f2075065"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Horas para Envase Crítico:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="216" width="105" height="20" uuid="11fc6c33-f40e-4c2f-b699-46e0e78f12b2"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Límite de Piso de la CPAE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="236" width="201" height="20" uuid="7ee9247c-213c-406c-bb0b-fdfc998c3454"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número de Comprobantes Asignados por Cajero:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="396" y="137" width="103" height="20" uuid="6c4d288f-a242-4116-8240-a2da7fc0c9f7"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sirhNumCompLote}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="242" width="140" height="20" uuid="e8f8711e-0dd7-4c48-9c9d-641d99c15efd"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sirhNumCompAsignaXCajero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="221" width="83" height="20" uuid="dfee9240-e32d-45fa-926c-e13154a002bd"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sirhLimPiso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="158" width="103" height="20" uuid="68f1de84-a4c4-4b90-affb-59a530624d4d"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sirhNumCopiasActas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="79" y="175" width="188" height="19" uuid="7f33b211-c865-4e0b-b257-d1c64fc9a8f5"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monto Mínimo de Diferencia para Imprimir Acta:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="397" y="179" width="103" height="20" uuid="af504de0-8d7f-4451-ac22-0449789ccaaa"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sirhMontMinDifImprActa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="451" y="19" width="80" height="20" uuid="f6d0bdad-a7cf-4aa2-8444-b545a91b624d"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="531" y="19" width="42" height="20" uuid="c319fda8-011b-4973-adf2-fe5f8584197b"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="211" y="19" width="100" height="20" uuid="9a7ddf7e-b288-488a-ad88-c7085279966a"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AE-WEB 2013]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/emergentesTemplate.xhtml">
+	<ui:define name="content">
+
+		<h:form styleClass="horizontal">
+			<h:panelGroup id="messagePanel" layout="block">
+				<h:messages errorStyle="color: red" infoStyle="color: blue"
+					layout="table" />
+			</h:panelGroup>
+
+
+
+			<fieldset>
+				<legend>#{msg['reporteControl.impresionLote']} </legend>
+				<br />
+				<div align="center">
+					<h:inputText value="" size="16">
+					</h:inputText>
+					<hr style="width: 550px; color: #ccc;" />
+				</div>
+
+
+
+				<h:panelGrid columns="2" style="float:center;">
+
+					<h:outputLabel value="#{msg['reporteControl.areaVerificacion']}" />
+
+					<h:selectOneMenu value="" style="width:160px;">
+						<f:selectItems value="---Seleccionar---" var="operaciones"
+							itemLabel="#{operaciones.nombreOperacion}"
+							itemValue="#{operaciones.tipoOperacion}" />
+					</h:selectOneMenu>
+
+
+					<h:outputLabel value="#{msg['reporteControl.totalComprobantes']}" />
+
+					<h:inputText value="" size="10">
+					</h:inputText>
+
+					<h:outputLabel value="#{msg['reporteControl.totalEnvases']}" />
+
+					<h:inputText value="" size="10">
+					</h:inputText>
+
+					<h:outputLabel value="#{msg['reporteControl.totalLote']}" />
+
+					<h:inputText value="" size="22">
+					</h:inputText>
+
+
+				</h:panelGrid>
+				
+					<hr style="width: 550px; color: #ccc;" />
+					<br />
+
+					<div align="center">
+						<h:commandButton value="Aceptar" type="submit"
+							class="button-blue jqTransformButton"
+							action="#{operProcGridMB.consultarOpracionesDeProcesadora}">
+						</h:commandButton>
+					</div>
+				<br />
+		
+			</fieldset>
+
+
+
+		</h:form>
+
+	</ui:define>
+</ui:composition>

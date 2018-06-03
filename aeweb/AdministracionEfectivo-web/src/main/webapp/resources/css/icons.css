@@ -1,0 +1,89 @@
+@charset "utf-8";
+/*----------------------------------------------------- 
+Afore Banamex Estilos 
+Uso por: ABANSE
+$Id: icons.css,v 1.0 02 Agosto 2010 adalaros $
+-----------------------------------------------------*/ 
+
+/*Estatus de coneccion*/
+
+#connection-status-icon {
+	display:block;
+	padding:12px;
+	float:right;
+	margin-right:15px;
+}
+#connection-status-window #connection-status-icon {
+	float:left;
+	margin:0;
+}
+
+.connection-status-idle {
+	background:url(../img/icons/connect-idle.gif) no-repeat;
+}
+.connection-status-active {
+	background:url(../img/icons/connect-active.gif) no-repeat;
+}
+
+.icon-print {
+	background:transparent url(../img/icons/print_btn1.gif) no-repeat scroll 0 1px; 
+	padding:5px 12px;
+}
+a.icon-print {
+	background:transparent url(../img/icons/print_btn0.gif) no-repeat scroll 0 1px; 
+	padding:5px 12px;
+}
+a.icon-print:hover {
+	background:transparent url(../img/icons/print_btn1.gif) no-repeat scroll 0 1px; 
+
+}
+
+/* Login */
+.icon-signon-on {
+	background:transparent url('../img/icons/signon_on.gif') no-repeat scroll 0 1px; 
+}
+.icon-link-calendar	{
+	background:url('../img/icons/calendar.gif') 0 1px no-repeat;
+	display:block;
+	float:left;
+	height:16px;
+	margin-left:4px;
+	margin-top:3px;
+	padding:0 0 0 0;
+	width:16px;
+}
+.ui-datepicker-trigger{
+	cursor: pointer;
+}
+#dialog_link {
+
+}
+#dialog_link span.ui-icon {
+	margin: 0 5px 0 0;
+	position: absolute;
+	left: .2em;
+	top: 50%;
+	margin-top: -8px;
+}
+
+
+ul#icons {
+	margin: 0; 
+	padding: 0;
+}
+ul#icons li {
+	margin: 2px; 
+	position: relative; 
+	padding: 4px 0; 
+	cursor: pointer; 
+	float: left;  
+	list-style: none;
+}*
+span.ui-icon {
+	float: left; 
+	margin: 0 4px;
+}
+div.ui-icon {
+	float: left; 
+	margin: 0 4px;
+}

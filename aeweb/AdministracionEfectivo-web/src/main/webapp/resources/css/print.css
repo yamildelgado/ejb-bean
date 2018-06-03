@@ -1,0 +1,242 @@
+@charset "utf-8";
+/*----------------------------------------------------- 
+Afore Banamex Estilos 
+Uso por: paginas que seran impresas 
+$Id: print.css,v 1.0 29 Septiembre 2010 adalaros $
+-----------------------------------------------------*/ 
+body,
+table caption, 
+table th, 
+table tr, 
+table td, 
+table tr th, 
+table tr td,
+.fg-toolbar,
+.jqTransformInputInner div input,
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default,
+select,
+.visualize-labels-x li span.label, 
+.visualize-labels-y li span.label,
+.visualize .visualize-title ,
+a.collapsable-title,
+.screenid
+{
+	font-family: Arial, Helvetica, sans-serif;
+	color:#000 !important;
+}
+#header{
+	margin:0px;
+}
+#footer-area{
+	margin:0 auto;
+}
+.top-left-nav-container, 
+.top-right-nav-container, 
+.middle-container,
+.sub-left-col-cont,
+.sub-right-col-cont ,
+.bottom-outer-sub-nav-container,
+.clear-sub-menu, 
+.welcome-log-out,
+.lg-cont-top-bg,
+#breadcrumbs ,
+#connection-status,
+#connection-status-icon,
+.dataTables_filter,
+.dataTables_paginate,
+.errors ,
+.footer-txt,
+.footer-links,
+.ui-datepicker-trigger,
+.jqTransformSelectWrapper a.jqTransformSelectOpen,
+.commands-page
+{
+	display:none;
+}
+.top-center-nav-container,
+.lg-cont-center-bg,
+.lg-cont-bottom-bg,
+.left-top-box 
+.right-top-box,
+.left-top-box,
+.left-middle-box,
+.right-middle-box,
+.left-box, 
+.left-bottom-box,
+.right-bottom-box,
+.right-box,
+.left-bottom-box .right-bottom-box,
+form.vertical fieldset, 
+form.horizontal fieldset,
+form.vertical fieldset fieldset, 
+form.horizontal fieldset fieldset,
+.solid,
+.ui-widget-header,
+.ui-tabs .ui-tabs-panel,
+.lg-cont-divider-bg-2col-left,
+.lg-cont-divider-bg-2col-right,
+.lg-cont-divider-bg-3col-middle 
+{
+	background: transparent none repeat scroll 0 0 !important;
+}
+.ui-tabs .ui-tabs-panel{
+	background: #fff none repeat scroll 0 0 !important;
+}
+.visualize{
+	background: #fff; none repeat scroll 0 0;
+}
+.visualize ul.visualize-key{
+	background: #f5f5f5; none repeat scroll 0 0;
+}
+#page-container-border{
+	border-top: 1px solid #000;
+	margin-top: 10px;
+}
+.right-cont,
+.left-cont{
+	margin:0;
+	width:100%;
+}
+.left-middle-box{
+	border: 0px solid #000;
+	padding:5px;
+}
+
+.footer-area-links{
+	border-top:0px solid #000 ;
+	border-bottom:1px solid #000 ;
+}
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default,
+.jqTransformInputWrapper,
+.jqTransformInputInner,
+.jqTransformSelectWrapper,
+.jqTransformInputInner div
+{
+	background: transparent none repeat scroll 0 0;
+}
+form.vertical fieldset, form.horizontal fieldset,
+form.vertical legend, form.horizontal legend,
+.jqTransformInputInner,
+.jqTransformSelectWrapper,
+.visualize canvas,
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default,
+.solid
+{
+	border: 1px solid #000 !important;
+	color:#000;
+}
+
+table tr.odd.blue,
+tr.odd.blue td.sorting_1,
+table tr.odd.blue-light,
+tr.odd.blue-light td.sorting_1,
+table tr.odd.pink,
+tr.odd.pink td.sorting_1,
+tr.odd.gray td.sorting_1,
+table tr.odd.gray,
+tr.even.blue td.sorting_1,
+table tr.even.pink,
+table tr.even.blue-light,
+tr.even.pink td.sorting_1,
+tr.even.blue-light td.sorting_1
+{
+	background-color: #fff;
+}
+
+table tr{
+	border-bottom:1px solid #000;
+}
+table.display thead th{
+	border:1px solid #000 !important;
+}
+table thead th{
+	border-bottom:1px solid #000;
+}
+
+
+a { 
+	color:#333; 
+	font-weight:bold;
+}
+a:hover {color:#333;}
+
+.ui-widget-content a{color:#000  !important;}
+.ui-widget-content a:hover{	color:#000 !important;}
+
+.blue-dark	{color:#000;}
+.blue-med-dark	{color:#000;}
+.blue-med	{color:#666;}
+.blue-med-light	{color:#666;}
+.blue-light	{color:#666;}
+
+.white	{color:#fff;}
+.black	{color:#000;}
+
+.gray-dark	{color:#666;}
+.gray-med-dark	{color:#666;}
+.gray-med	{color:#666;}
+.gray-med-light	{color:#666;}
+.gray-light	{color:#666666;}
+.gray-lightest	{color:#666;}
+
+.orange	{color:#666;}
+.orange-light	{color:#666;}
+
+.red	{color:#666;}
+.red-dark	{color:#666;}
+.red-med	{color:#666;}
+
+.pink	{color:#666;}
+.pink-light	{color:#666;}
+
+.green	{color:#666;}
+.green-light	{color:#666;}
+
+.bg-yellow	{background-color:#666;}
+.bg-yellow-light	{background-color:#666;}
+
+.alert-stop	{color:#666;}
+.alert-go	{color:#666;}
+.alert-caution	{color:#666;}
+
+/* ------- Colores de fondo ------- */
+
+.bg-blue-dark, 
+.bg-blue-med-dark, 
+.bg-blue-med, 
+.bg-blue-med,
+.bg-blue-med-light,
+.bg-blue-light,
+.bg-gray-dark ,
+.bg-gray-med-dark ,
+.bg-white,
+.bg-gray-med,
+.bg-gray-med-light,
+.bg-gray-light,
+.bg-gray-lightest,
+.bg-green,
+.bg-green-light,
+.bg-yellow,
+.bg-yellow-light,
+.bg-orange,
+.bg-orange-light,
+.bg-pink-light,
+.bg-violet-med-light,
+.bg-violet-light
+{
+	background-color:#fff;
+	color:#000;
+}
+	
+
+	
+
+
+
+

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	
+	<h:commandLink >subbovedasEdit</h:commandLink>
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> AE-WEB</span> <span> Sub Bóvedas</span> 
+		</div>
+		
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['subbovedas.titulo']}</h1>
+			
+			</div>
+			<h:form class="horizontal">
+			
+			<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+							
+		
+						
+				<fieldset>
+					<legend>#{msg['subbovedas.tituloEditar']}</legend>
+					<h:inputHidden value="#{subBovedaGridMB.subBovedaVO.sirhIdn}" />
+					<h:inputHidden value="#{subBovedaGridMB.subBovedaVO.subBovedaNombreCpae}" />
+					<h:inputHidden value="#{subBovedaGridMB.subBovedaVO.plazaIdn}" />
+					<h:inputHidden value="#{subBovedaGridMB.subBovedaVO.idnSubBoveda}" />
+
+					<h:panelGrid columns="4" >
+						<h:outputLabel value="#{msg['subbovedas.idnSirh']}"/>
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.sirhIdn}" disabled="true"/>
+						
+						<h:outputLabel value="#{msg['subbovedas.nombreCPAE']}"/>
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.subBovedaNombreCpae}" disabled="true"/>
+						
+						<h:outputLabel value="#{msg['subbovedas.idnPlaza']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.plazaIdn}" disabled="true" />
+
+						<h:outputLabel value="#{msg['subbovedas.idnSubboveda']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.idnSubBoveda}" disabled="true" />
+
+						<h:outputLabel value="#{msg['subbovedas.descripcion']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.subBovedaDescripcion}" maxlength="34" />
+
+						<h:outputLabel value="#{msg['subbovedas.calle']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.subBovedaCalleNum}" maxlength="34" />
+
+						<h:outputLabel value="#{msg['subbovedas.colonia']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.subBovedaColonia}" maxlength="34" />
+						
+						<h:outputLabel value="#{msg['subbovedas.Poblacion']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.subBovedaPoblacion}" maxlength="34" />
+						
+						<h:outputLabel value="#{msg['subbovedas.cp']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.subBovedaCp}" maxlength="34" />
+						
+						<h:outputLabel value="#{msg['subbovedas.edo']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.subBovedaEdo}" maxlength="34" />
+						
+						<br></br>
+					</h:panelGrid>
+				</fieldset>
+						<br />
+						<fieldset>
+						<div align="center">
+						<h:panelGrid columns="3" style="width:40px;">
+						
+								<h:commandButton value="#{msg['subbovedas.btnEditar']}"
+									class="button-blue jqTransformButton"  actionListener="#{subBovedaGridMB.editar}"  action="subbovedasList"/>
+									
+									
+								<h:commandButton value="Cancelar"
+									class="button-blue jqTransformButton"    action="subbovedasList"/>
+									
+
+
+						</h:panelGrid>
+						</div>
+						</fieldset>
+
+			</h:form>
+			
+		
+			
+
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+			

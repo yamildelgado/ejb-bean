@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+		<div id="breadcrumbs">
+			Verificación de Depóstos<span>Verificación</span>
+		</div>
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name"></div>
+
+			<h:form styleClass="horizontal">
+				<h:panelGroup id="messagePanel" layout="block">
+					<h:messages errorStyle="color: red" infoStyle="color: blue"
+						layout="table" />
+				</h:panelGroup>
+				<div align="center">
+				<fieldset style="width:300px;">
+				
+				<h:panelGrid columns="1" >
+				<h:outputLabel value="#{msg['transferirComprobante.title']}" />
+				<hr />
+				</h:panelGrid>
+					<h:panelGrid columns="2" >
+
+							
+							
+
+						
+						<h:outputLabel value="#{msg['transferirComprobante.noNomina']}"
+							style="width:90px;" />
+						<h:inputText value="" size="15" />
+
+						<h:outputLabel value="#{msg['transferirComprobante.Contrasenia']}" />
+						<h:inputText value="" size="15" />
+
+
+						<h:commandButton value="#{msg['transferirComprobante.btnAceptar']}"
+						
+						class="button-blue jqTransformButton">
+					</h:commandButton>
+					<h:commandButton
+						value="#{msg['transferirComprobante.btnCancelar']}"
+						
+						class="button-blue jqTransformButton">
+					</h:commandButton>
+
+
+					</h:panelGrid>
+					<hr />
+						
+					<br />
+
+
+
+					
+
+				
+
+
+
+				</fieldset>
+
+				</div>
+
+
+
+			</h:form>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+

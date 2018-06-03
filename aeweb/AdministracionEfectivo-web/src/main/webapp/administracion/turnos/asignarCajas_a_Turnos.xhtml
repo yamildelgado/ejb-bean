@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+
+	<ui:define name="content">
+
+
+		<div id="breadcrumbs">
+			<span>Administración</span> <span> Catálogos</span> <span>
+				Operaciones de Procesadoras</span> <span> Bitacora</span><span>Depuración</span>
+		</div>
+
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['asignarcajaTurno.DelCasoTitulo']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+
+						<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+
+						</h:panelGroup>
+
+
+
+
+						<fieldset>
+							<legend>#{msg['asignarcajaTurno.SeccionTurnos']}</legend>
+							
+							<br/>
+							
+							<h:panelGrid columns="6">
+
+
+
+								<h:dataTable class="gridtable" var="tur" value="#{cajaTurnoGridMB.listaTurnoVO}" id="tblTurno">
+									<h:column>
+										<f:facet name="header">#{msg['asignarcajaTurno.SeccionTunosTablaHD1']}</f:facet> 
+  										<h:outputLabel  value="#{tur.turDescripcion}" />  
+									</h:column>
+									<h:column>
+										<f:facet name="header">#{msg['asignarcajaTurno.SeccionTunosTablaHD2']}</f:facet> 
+										<h:outputLabel  value="#{tur.turHoraInicio}" />    
+									</h:column>
+									<h:column>
+										<f:facet name="header">#{msg['asignarcajaTurno.SeccionTunosTablaHD3']}</f:facet> 
+										<h:outputLabel  value="#{tur.turHoraFin}" />    
+									</h:column>
+									<h:column>
+										<f:facet name="header">#{msg['asignarcajaTurno.SeccionTunosTablaHD4']}</f:facet> 
+										<h:outputLabel  value="#{tur.turStatus}" />    
+									</h:column>
+									<h:column>
+										<f:facet name="header">#{msg['asignarcajaTurno.SeccionTunosTablaHD5']}</f:facet> 
+  										<h:selectBooleanCheckbox value="#{tur.seleccionar}" /> 
+									</h:column>
+								</h:dataTable>
+								
+							</h:panelGrid>
+							<div align="right">
+								<h:commandButton value="Aplicar Cambios" class="button-blue jqTransformButton" action="#{cajaTurnoGridMB.aplicarCambios}" />
+							</div>
+							<br />
+						</fieldset>
+
+						<br />
+
+
+						<h:panelGrid columns="2">
+
+<h:outputLabel value="#{msg['asignarcajaTurno.SeccionCjsRecpTitulo']}"/>
+<h:outputLabel value="#{msg['asignarcajaTurno.SeccionCjsVerifTitulo']}" />
+
+							<h:dataTable class="gridtable" id="tblCajaRec" var="rec" value="#{cajaTurnoGridMB.tiposdeCajaRec}">
+								<h:column>
+									<f:facet name="header">#{msg['asignarcajaTurno.SeccionCjsRecpTablaHD1']}</f:facet> 
+									<h:outputLabel  value="#{rec.cajaIdn}" /> 
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['asignarcajaTurno.SeccionCjsRecpTablaHD2']}</f:facet> 
+  									<h:outputLabel  value="#{rec.aewebcatgralDescripcion}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['asignarcajaTurno.SeccionCjsRecpTablaHD3']}</f:facet> 
+									<h:dataTable var="recT" value="#{rec.cajasTurno}">
+										<h:column>
+  											<h:outputLabel  value="#{recT.turnoDescr}" />
+										</h:column>
+									</h:dataTable>
+								</h:column>
+								<h:column>
+									<f:facet name="header" style="text-align:center">#{msg['asignarcajaTurno.SeccionCjsRecpTablaHD4']}</f:facet>  
+									 <h:selectOneRadio id="customRadio" value="#{rec.seleccion}">  
+        							 <f:selectItem itemLabel="Asignar" itemValue="asignar" />  
+        							 <f:selectItem itemLabel="Quitar" itemValue="quitar" />  
+   									 </h:selectOneRadio>
+								</h:column>
+							</h:dataTable>
+
+							<h:dataTable class="gridtable" id="tblCajaVer" var="ver" value="#{cajaTurnoGridMB.tiposdeCajaVer}">
+								<h:column>
+									<f:facet name="header">#{msg['asignarcajaTurno.SeccionCjsVerfTablaHD1']}</f:facet> 
+  									<h:outputLabel  value="#{ver.cajaIdn}" /> 
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['asignarcajaTurno.SeccionCjsVerfTablaHD2']}</f:facet> 
+									<h:outputLabel  value="#{ver.aewebcatgralDescripcion}" />  
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['asignarcajaTurno.SeccionCjsVerfTablaHD3']}</f:facet> 
+									<h:dataTable var="verT" value="#{ver.cajasTurno}">
+										<h:column>
+  											<h:outputLabel  value="#{verT.turnoDescr}" />
+										</h:column>
+									</h:dataTable>
+								</h:column>
+								<h:column>
+									<f:facet name="header" style="text-align:center">#{msg['asignarcajaTurno.SeccionCjsVerfTablaHD4']}</f:facet>  
+									 <h:selectOneRadio id="customRadio" value="#{ver.seleccion}">  
+        							 <f:selectItem itemLabel="Asignar" itemValue="asignar" />  
+        							 <f:selectItem itemLabel="Quitar" itemValue="quitar" />  
+   									 </h:selectOneRadio>
+								</h:column>
+
+							</h:dataTable>
+						</h:panelGrid>
+
+
+
+
+						<br />
+
+
+						<h:panelGrid columns="2">
+<h:outputLabel value="#{msg['asignarcajaTurno.SeccionCjsAttClientesTitulo']}"/>
+<h:outputLabel value="#{msg['asignarcajaTurno.SeccionCjsPicosClientesTitulo']}" />
+
+
+							<h:dataTable class="gridtable" id="tblCajaAt" var="ate" value="#{cajaTurnoGridMB.tiposdeCajaAt}">
+								<h:column>
+									<f:facet name="header">#{msg['asignarcajaTurno.SeccionCjsAttClientesHD1']}</f:facet> 
+									<h:outputLabel  value="#{ate.cajaIdn}" />   
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['asignarcajaTurno.SeccionCjsAttClientesHD2']}</f:facet> 
+									<h:outputLabel  value="#{ate.aewebcatgralDescripcion}" />    
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['asignarcajaTurno.SeccionCjsAttClientesHD3']}</f:facet> 
+									<h:dataTable var="ateT" value="#{ate.cajasTurno}">
+										<h:column>
+  											<h:outputLabel  value="#{ateT.turnoDescr}" />
+										</h:column>
+									</h:dataTable>
+								</h:column>
+								<h:column>
+									<f:facet name="header" style="text-align:center">#{msg['asignarcajaTurno.SeccionCjsAttClientesHD4']}</f:facet>  
+									 <h:selectOneRadio id="customRadio" value="#{ate.seleccion}">  
+        							 <f:selectItem itemLabel="Asignar" itemValue="asignar" />  
+        							 <f:selectItem itemLabel="Quitar" itemValue="quitar" />  
+   									 </h:selectOneRadio>
+								</h:column>
+
+							</h:dataTable>
+
+							<h:dataTable class="gridtable" id="tblCajaPico" var="otro" value="#{cajaTurnoGridMB.tiposdeCajaOt}">
+								<h:column>
+									<f:facet name="header">#{msg['asignarcajaTurno.SeccionCjsPicosClientesHD1']}</f:facet> 
+									<h:outputLabel  value="#{otro.cajaIdn}" />     
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['asignarcajaTurno.SeccionCjsPicosClientesHD2']}</f:facet>
+									<h:outputLabel  value="#{otro.aewebcatgralDescripcion}" />    
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['asignarcajaTurno.SeccionCjsPicosClientesHD3']}</f:facet> 
+									<h:dataTable var="otroT" value="#{otro.cajasTurno}">
+										<h:column>
+  											<h:outputLabel  value="#{otroT.turnoDescr}" />
+										</h:column>
+									</h:dataTable>
+								</h:column>
+								<h:column>
+									<f:facet name="header" style="text-align:center">#{msg['asignarcajaTurno.SeccionCjsPicosClientesHD4']}</f:facet>  
+									 <h:selectOneRadio id="customRadio" value="#{otro.seleccion}">  
+        							 <f:selectItem itemLabel="Asignar" itemValue="asignar" />  
+        							 <f:selectItem itemLabel="Quitar" itemValue="quitar" />  
+   									 </h:selectOneRadio>
+								</h:column>
+
+							</h:dataTable>
+						</h:panelGrid>
+
+
+						<br />
+
+						<fieldset>
+							<div align="center">
+								<h:panelGrid columns="3" style="width:40px;">
+									<h:commandButton value="#{msg['operacionesProcesadoras.btoRegresar']}" class="button-blue jqTransformButton"/>
+									<h:commandButton value="#{msg['subbovedas.btnGenerarReporte']}"
+										class="button-blue jqTransformButton"
+										action="#{operProcGridMB.generarRepore}" />
+
+								</h:panelGrid>
+							</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<h:commandLink>cajaList</h:commandLink>
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			<span>Administración</span> <span>
+				Catálogos</span> <span> AE-WEB</span> <span> Cajas</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['cajas.tituloConsulta']}</h1>
+
+
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+
+						<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+						<div align="right">
+							<h:commandButton value="#{msg['cajas.btoAgregar']}"
+								class="button-blue jqTransformButton"
+								action="cajaAdd.xhtml" immediate="true"/>
+
+
+						</div>
+						<fieldset>
+							<legend>#{msg['cajas.criterioDeBusqueda']}</legend>
+							
+
+							<h:panelGrid columns="2" style="width:500px; float:left">
+								<h:outputLabel value="#{msg['cajas.sirh']}" />
+								<h:inputText 
+									size="12" Style="float:center;" converter="javax.faces.Number"
+									converterMessage="INGRESA UN NÚMERO FORMADO POR MENOS DE 3 DÍGITOS"
+									maxlength="2" />
+
+								<h:outputLabel value="#{msg['cajas.id']}" />
+								<h:inputText 
+									size="8" converter="javax.faces.Number"
+									converterMessage="INGRESA UN NÚMERO FORMADO POR DÍGITOS"
+									maxlength="4" />
+
+								<h:outputLabel value="#{msg['cajas.ipAddress']}" />
+								<h:inputText 
+									size="20" maxlength="15" />
+
+
+								<h:outputLabel value="#{msg['cajas.descripcion']}" />
+								
+								
+								
+								<h:selectOneMenu 
+									style=" width : 130px;">
+									<f:selectItem itemLabel="---Seleccionar ---" />
+									<f:selectItem itemValue="1" 
+									    itemLabel="RECEPTORA" />
+									<f:selectItem itemValue="2"
+										itemLabel="CAJA VERIFICADORA DE MONEDA" />
+									<f:selectItem itemValue="3"
+										itemLabel="CAJA VERIFICADORA DE BILLETE" />
+									<f:selectItem itemValue="4"
+										itemLabel="CAJA VERIFICADORA DE PICO DE MONEDA" />
+									<f:selectItem itemValue="5"
+										itemLabel="CAJA VERIFICADORA DE PICO DE BILLETE" />
+									<f:selectItem itemValue="6" 
+										itemLabel="ATENCIÓN A CLIENTES" />
+										<f:selectItem itemValue="6" 
+										itemLabel="SUPERVISOR - CONTROLES" />
+										<f:selectItem itemValue="6" 
+										itemLabel="DOTACIONES" />
+										<f:selectItem itemValue="6" 
+										itemLabel="OTROS" />
+										
+								</h:selectOneMenu>
+
+							</h:panelGrid>
+
+						</fieldset>
+
+						<br />
+						<fieldset>
+							<legend>#{msg['cajas.seccionDetalle']}</legend>
+							<h:dataTable class="gridtable" var="caja">
+								<h:column>
+									<f:facet name="header"> #{msg['cajas.id']}</f:facet>
+									<h:outputLabel value="1234" />
+								</h:column>
+								<h:column>
+									<f:facet name="header"> #{msg['cajas.sirh']}</f:facet>
+									<h:outputLabel value="3423" />
+								</h:column>
+								<h:column>
+									<f:facet name="header"> #{msg['cajas.ipAddress']}</f:facet>
+									<h:outputLabel value="192.168.3.247" />
+								</h:column>
+								<h:column>
+									<f:facet name="header"> #{msg['cajas.tipoDeCajas']}</f:facet>
+									<h:outputLabel value="Receptora" />
+								</h:column>
+								<h:column>
+									<f:facet name="header"> #{msg['cajas.modelo']}</f:facet>
+									<h:outputLabel value="2918239304548" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">#{msg['cajas.btoEditar']}</f:facet>
+									<h:commandLink
+												value="#{msg['cajas.btoEditar']}"
+												action="cajaEdit.xhtml">
+											</h:commandLink>
+
+
+								</h:column>
+							</h:dataTable>
+
+						</fieldset>
+
+						<fieldset>
+							<div align="center">
+								<h:panelGrid columns="2" style="width:40px;">
+									<h:commandButton value="#{msg['cajas.btoConsultar']}"
+										class="button-blue jqTransformButton">
+										</h:commandButton>
+									<h:commandButton value="#{msg['cajas.btoReporte']}"
+										class="button-blue jqTransformButton">
+									</h:commandButton>
+								</h:panelGrid>
+							</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

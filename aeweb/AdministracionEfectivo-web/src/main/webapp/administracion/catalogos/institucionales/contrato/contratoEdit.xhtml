@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+
+		<div id="breadcrumbs">
+			<span>Administración</span> <span> Catálogos</span> <span>
+				Institucionales</span> <span> Contrato</span>
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['contrato.titulo']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+
+
+
+						<br />
+						<fieldset>
+							<legend>#{msg['contrato.seccionDetalleOperacion']}</legend>
+							<h:panelGrid columns="6">
+								<h:outputLabel value="#{msg['contrato.num']}" />
+								<span />
+								<h:outputLabel value="#{contratoGridMB.contratoVO.num}"
+									size="34" />
+
+								<h:outputLabel value="#{msg['contrato.nombreCliente']}" />
+								<span />
+								<h:outputLabel value="#{contratoGridMB.contratoVO.nombreCte}"
+									size="34" />
+
+
+
+								<h:outputLabel value="#{msg['contrato.diferenciaPermitida']}" />
+								<span />
+								<h:outputLabel value="#{contratoGridMB.contratoVO.difPermitida}"
+									size="34" />
+
+
+								<h:outputLabel value="#{msg['contrato.tipoIntrumento']}" />
+								<span />
+								<h:outputLabel
+									value="#{contratoGridMB.contratoVO.tipoInstrumento}" size="34" />
+
+
+
+								<h:outputLabel value="#{msg['contrato.tipoProcBill']}" />
+								<span />
+								<h:outputLabel value="#{contratoGridMB.contratoVO.tipoProcBill}"
+									size="34" />
+
+								<h:outputLabel value="#{msg['contrato.tipoProcMoneda']}" />
+								<span />
+								<h:outputLabel value="#{contratoGridMB.contratoVO.tipoProcMon}"
+									size="34" />
+
+
+
+
+								<h:outputLabel value="#{msg['contrato.fechaAltaDeposito']}" />
+								<span />
+								<h:outputLabel
+									value="#{contratoGridMB.contratoVO.fecAltaDeposito}" size="20" />
+
+								<h:outputLabel value="#{msg['contrato.fechaBajaDeposito']}" />
+								<span />
+								<h:outputLabel value="#{contratoGridMB.contratoVO.fecCancCte}"
+									size="20" />
+								<h:outputLabel value="#{msg['contrato.fechaAltaDotacion']}" />
+								<span />
+								<h:outputLabel
+									value="#{contratoGridMB.contratoVO.fecAltaDotacion}" size="20" />
+
+								<h:outputLabel value="#{msg['contrato.fechaVencimiento']}" />
+								<span />
+								<h:outputLabel
+									value="#{contratoGridMB.contratoVO.fecVencContrato}" size="20" />
+
+							</h:panelGrid>
+							<fieldset>
+								<legend>#{msg['contrato.sessionDomicilio']}</legend>
+								<h:panelGrid columns="6">
+									<h:outputLabel value="#{msg['contrato.calle']}" />
+									<span />
+									<h:outputLabel value="#{contratoGridMB.contratoVO.calleNum}"
+										size="34" />
+									<h:outputLabel value="#{msg['contrato.colonia']}" />
+									<span />
+									<h:outputLabel value="#{contratoGridMB.contratoVO.colonia}"
+										size="34" />
+									<h:outputLabel value="#{msg['contrato.cp']}" />
+									<span />
+									<h:outputLabel value="#{contratoGridMB.contratoVO.cp}"
+										size="34" />
+									<h:outputLabel value="#{msg['contrato.telfono1']}" />
+									<h:outputLabel value="#{contratoGridMB.contratoVO.tel1}"
+										size="34" />
+									<span />
+									<h:outputLabel value="#{msg['contrato.telfono2']}" />
+									<h:outputLabel value="#{contratoGridMB.contratoVO.tel2}"
+										size="34" />
+									<span />
+
+								</h:panelGrid>
+							</fieldset>
+
+							<fieldset>
+								<legend>#{msg['contrato.detalleContrato']}</legend>
+								<h:panelGrid columns="6">
+									<h:outputLabel value="#{msg['contrato.impCshPolicy']}" />
+									<span />
+									<h:outputLabel
+										value="#{contratoGridMB.contratoVO.impCshPolicy}" size="34" />
+									<h:outputLabel value="#{msg['contrato.cshPolicy']}" />
+									<span />
+									<h:outputLabel
+										value="#{contratoGridMB.contratoVO.cveCshPolicy}" size="34" />
+									<h:outputLabel value="#{msg['contrato.manejoProcPrevFich']}" />
+									<span />
+									<h:outputLabel
+										value="#{contratoGridMB.contratoVO.manejoProcPrevFich}"
+										size="34" />
+									<h:outputLabel value="#{msg['contrato.telfono1']}" />
+									<h:outputLabel
+										value="#{contratoGridMB.contratoVO.tipoInstrumento}" size="34" />
+									<span />
+									<h:outputLabel value="#{msg['contrato.rfc']}" />
+									<h:outputLabel value="#{contratoGridMB.contratoVO.rfc}"
+										size="34" />
+									<span />
+									<h:outputLabel value="#{msg['contrato.estatus']}" />
+									<h:outputLabel value="#{contratoGridMB.contratoVO.status}"
+										size="34" />
+									<span />
+
+									<h:outputLabel value="#{msg['contrato.bajaLogica']}" />
+									<h:outputLabel value="#{contratoGridMB.contratoVO.bajaLogica}"
+										size="34" />
+									<span />
+
+								</h:panelGrid>
+							</fieldset>
+
+						</fieldset>
+
+
+
+
+
+						<br />
+
+						<fieldset>
+							<div align="center">
+
+								<h:commandButton value="#{msg['contrato.btnRegresar']}"
+									action="contratoList.jsf" class="button-blue jqTransformButton" />
+
+
+							</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

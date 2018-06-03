@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			<span>Administración</span> <span>
+				Catálogos</span> <span> AE-WEB</span> <span> Cuentas de Mayor</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['cuentasDeMayor.tituloCatalogo']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form id="cuentamayorForm" styleClass="horizontal" >
+						
+						<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+						
+						<br />
+						<fieldset>
+							<legend>#{msg['cuentasDeMayor.tituloCatalogoVista']}</legend>
+						
+						
+						
+							<h:dataTable  class="gridtable" var="cuemayor" value="#{cuentaMayorGridMB.listaCuentaMayor}">
+								<p:column>						      
+									  <f:facet name="header">			  
+									  <h:outputLabel value= "#{msg['cuentasDeMayor.conceptoId']}"/>							  
+									  </f:facet>
+										  <h:outputLabel value="#{cuemayor.conceptoId}" />							  
+								</p:column>
+								
+								<p:column >
+									<f:facet name="header">
+									<h:outputLabel value="#{msg['cuentasDeMayor.conceptoDescripcion']}" />
+									</f:facet>
+									<h:outputLabel value="#{cuemayor.conceptoDescripcion}" />			
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">								
+									<h:outputLabel value="#{msg['cuentasDeMayor.conceptoXdivisas']}"/>
+									</f:facet>
+									<h:outputLabel value="#{cuemayor.conceptoXdivisa}" />				
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+									<h:outputLabel value="#{msg['cuentasDeMayor.conceptoDoctoEfectivo']}"/>
+									</f:facet>
+									<h:outputLabel value="#{cuemayor.conceptoDoctoEfectivo}" />									
+								</p:column>
+								
+								<p:column>
+									<f:facet name="header"> 							
+									<h:outputLabel value="#{msg['cuentasDeMayor.conceptoBillMon']}"/>								
+									</f:facet>
+									<h:outputLabel value="#{cuemayor.conceptoBillMon}" />						
+								</p:column>
+
+
+								<p:column>
+									<f:facet name="header">
+									<h:outputLabel value="#{msg['cuentasDeMayor.conceptoXtipOccto']}"/>
+									</f:facet>
+									<h:outputLabel value="#{cuemayor.conceptoXtipoctto}" />
+								</p:column>
+								
+								<p:column>
+									<f:facet name="header">	
+									<h:outputLabel value="#{msg['cuentasDeMayor.conceptoReferencia']}"/>
+									</f:facet>
+									<h:outputLabel value="#{cuemayor.conceptoReferencia}" />
+								</p:column>
+								
+								<p:column>
+									<f:facet name="header">
+									<h:outputLabel value="#{msg['cuentasDeMayor.conceptoS018']}"/>
+									</f:facet>
+									<h:outputLabel value="#{cuemayor.conceptoS018}" />
+								</p:column>
+								
+								<p:column>
+									<f:facet name="header">
+									<h:outputLabel value="#{msg['cuentasDeMayor.bajaLogica']}"/>
+									</f:facet>
+									<h:outputLabel value="#{cuemayor.bajaLogica}" />
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+								    </f:facet>
+			                        <h:panelGrid columns="2" cellspacing="30">                                                  
+			                   <h:commandLink   value="#{msg['cuentasDeMayor.btnEditar']}"  action="#{cuentaMayorGridMB.consultaCuentaMayorPorId}" immediate="true" >
+											 <f:setPropertyActionListener target="#{cuentaMayorGridMB.cuentaMayorVO}" value="#{cuemayor}"></f:setPropertyActionListener>
+								</h:commandLink>
+									
+									</h:panelGrid>
+									
+								</p:column>
+
+							</h:dataTable>
+
+						</fieldset>
+
+								<fieldset>
+							     <div align ="center">						
+									<h:commandButton value="#{msg['cuentasDeMayor.btnGenerarReporte']}"  class="button-blue jqTransformButton" actionListener="#{cuentaMayorGridMB.generarRepore }"/>
+							
+							     </div>
+							   </fieldset>
+
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+

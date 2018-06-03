@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<h:commandLink> cuentaMayorEdit</h:commandLink>
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> AE-WEB</span> <span> Procesadoras</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['procesadora.tituloReporteCargaAutomatica']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+					
+					
+                  
+						<fieldset>
+						    
+						
+							<h:panelGrid columns="3">
+										
+										
+										
+						<div align ="right">	
+						
+						<h:commandButton   value="#{msg['procesadora.btnAceptar']}"  class="button-blue jqTransformButton"  >	
+							 </h:commandButton>	
+											
+							<h:commandButton   value="#{msg['procesadora.btnSalir']}"  class="button-blue jqTransformButton"  >	
+							 </h:commandButton>			
+						</div>
+													
+							</h:panelGrid>
+						
+						</fieldset>
+						
+					
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

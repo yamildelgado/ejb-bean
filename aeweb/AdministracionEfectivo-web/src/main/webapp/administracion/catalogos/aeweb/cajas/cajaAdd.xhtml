@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			<span>Administración</span> <span>
+				Catálogos</span> <span> AE-WEB</span> <span> Cajas</span> 
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-latest.min.js"
+			type="text/javascript"></script>
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['cajas.tituloAgregar']}</h1>
+
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+
+						<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+
+						<fieldset>
+							<legend>#{msg['cajas.detalle']}</legend>
+							<h:panelGrid columns="9" style="width:900px;">
+								<h:outputLabel value="#{msg['cajas.sirh']}" />
+								<span class="required" />  
+								<h:inputText value="#{cajaGridMB.cajaVO.subbovedaIdn}" size="12"
+									Style="float:center;" converter="javax.faces.Number"
+									converterMessage="INGRESA UN NÚMERO FORMADO POR MENOS DE 3 DÍGITOS"
+									maxlength="2" />
+								<h:outputLabel value="#{msg['cajas.id']}" />
+								<span class="required" />  
+								<h:inputText value="#{cajaGridMB.cajaVO.cajaIdn}" size="8"
+									Style="float:center;" converter="javax.faces.Number"
+									converterMessage="INGRESA UN NÚMERO FORMADO POR MENOS DE 5 DÍGITOS"
+									maxlength="4" />
+								<h:outputLabel value="#{msg['cajas.ipAddress']}" />
+								<span class="required" />  
+								<h:inputText value="#{cajaGridMB.cajaVO.cajaIpAddress}"
+									size="20" Style="float:center;" converter="javax.faces.Number"
+									maxlength="15" />
+								<h:outputLabel value="#{msg['cajas.descripcion']}" />
+								<span class="required" />  
+								<h:selectOneMenu value="#{cajaGridMB.cajaVO.tipocajaId}"
+									style=" width : 130px;">
+									<f:selectItem itemValue="" itemLabel="---Seleccionar---" />
+									<f:selectItem itemValue="1" itemLabel="Receptora" />
+									<f:selectItem itemValue="2"
+										itemLabel="Caja verificadora de moneda" />
+									<f:selectItem itemValue="3"
+										itemLabel="Caja verificadora de billete" />
+									<f:selectItem itemValue="4"
+										itemLabel="Caja verificadora de pico de moneda" />
+									<f:selectItem itemValue="5"
+										itemLabel="Caja verificadora de pico de billete" />
+									<f:selectItem itemValue="6" itemLabel="Atención a clientes" />
+								</h:selectOneMenu>
+								<h:outputLabel value="#{msg['cajas.tipoDeCajas']}" />
+								<span class="required" />  
+								<h:selectOneRadio id="radio_equipobill"
+									value="#{cajaGridMB.cajaVO.cajaEquip}"
+									onclick="SeleccionarTxt(this)">
+									<f:selectItem itemValue="b"
+										itemLabel="#{msg['cajas.labelBilletes']}" />
+									<f:selectItem itemValue="m"
+										itemLabel="#{msg['cajas.labelMonedas']}" />
+								</h:selectOneRadio>
+								<h:outputLabel value="#{msg['cajas.modelo']}" />
+								<span class="required" />  
+								<h:inputText value="#{cajaGridMB.cajaVO.cajaModeloEquipoBill}"
+									size="20" maxlength="20" />
+
+
+							</h:panelGrid>
+
+						</fieldset>
+
+
+						<fieldset>
+							<div align="center">
+								<h:panelGrid columns="2" style="width:40px;">
+									<h:commandButton value="#{msg['cajas.btoGuardar']}"
+										class="button-blue jqTransformButton"
+										type="submit">
+									</h:commandButton>
+								<h:commandButton value="#{msg['cajas.btoRegresar']}"
+								class="button-blue jqTransformButton"
+								action="cajaList.xhtml" immediate="true">
+								</h:commandButton>
+								</h:panelGrid>
+							</div>
+						</fieldset>
+					</h:form>
+
+				</div>
+
+			</div>
+			<div class="lg-cont-bottom-bg"></div>
+		</div>
+	</ui:define>
+</ui:composition>

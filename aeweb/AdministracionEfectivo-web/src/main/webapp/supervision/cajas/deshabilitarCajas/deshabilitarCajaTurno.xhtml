@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<h:commandLink >subbovedasList</h:commandLink>
+	<ui:define name="content"> 
+	
+	<div id="breadcrumbs">
+			 <span>Supervisión</span> <span>
+				Cajas</span> <span> Deshabilitar Cajas</span>
+		</div>
+		
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+		
+		
+		
+			<div class="section-name">
+				<h1>#{msg['deshabilitarCajaTurno.titulo']}</h1>
+			
+			</div>
+			<h:form class="horizontal">
+				<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+						
+						
+							
+						
+						<fieldset>
+					<legend>#{msg['deshabilitarCajaTurno.turnoActivoCpae']}</legend> 									
+					<h:dataTable class="gridtable" style="width :850px;" value="">
+											
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['deshabilitarCajaTurno.turno']} </f:facet>
+							<h:outputLabel value="MATUTINO1 "  />
+						</h:column>
+					
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['deshabilitarCajaTurno.iniciado']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 09:00"  />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['deshabilitarCajaTurno.fContableIni']} </f:facet>
+							<h:outputLabel value="04/DIC/2013"  />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['corteCajaDef.finalizado']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 14:23 "  />
+						</h:column>
+						
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['deshabilitarCajaTurno.fContableFinal']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 "  />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['deshabilitarCajaTurno.status']} </f:facet>
+							<h:outputLabel value="ABIERTO"  />
+						</h:column>
+						
+						<br></br>
+						
+					</h:dataTable>
+					
+				</fieldset>
+			
+			<br/>
+			<br/>
+			<br/>
+			
+				<fieldset>
+					<legend>#{msg['deshabilitarCajaTurno.cjasHabilitadasDesTurno']}</legend> 
+					
+					
+					
+									
+					<h:dataTable class="gridtable" style=" width :650px;float:left;" value="">
+					
+						
+						
+						<h:column style="width:100px">
+							<f:facet name="header" >#{msg['deshabilitarCajaTurno.idCaja']} </f:facet>
+							<h:outputLabel value="0001" size="2" />
+							<h:outputLabel value="0002" size="2" />
+							<h:outputLabel value="0003" size="2" />
+							<h:outputLabel value="0004" size="2" />
+							<h:outputLabel value="0005" size="2" />
+							<h:outputLabel value="0006" size="2" />
+						</h:column>
+					
+						<h:column style="width:100px">
+							<f:facet name="header" >#{msg['deshabilitarCajaTurno.tipoCaja']} </f:facet>
+							<h:outputLabel value="RECEPTORA" size="2" />
+							<h:outputLabel value="VERIFICADORA BILLETE" size="2" />
+							<h:outputLabel value="VERIFICADORA MONEDA" size="2" />
+							<h:outputLabel value="VERIFICADORA PICO BILLETE" size="2" />
+							<h:outputLabel value="VERIFICADORA PICO MONEDA" size="2" />
+							<h:outputLabel value="ATENCION A CLIENTES" size="2" />
+							
+							
+						</h:column>
+						
+						<h:column style="width:100px; border:1px solid #ccc;" >
+							<f:facet name="header" >#{msg['deshabilitarCajaTurno.status']} </f:facet>
+							<h:outputLabel value="DESHABILITADA"  />
+							<h:outputLabel value="DESHABILITADA"  />
+							<h:outputLabel value="DESHABILITADA" />
+							<h:outputLabel value="HABILITADA"  />
+							<h:outputLabel value="HABILITADA"  />
+							<h:outputLabel value="HABILITADA"  />
+							
+						</h:column>
+						<h:column style="width:200px; border:1px solid #ccc;">
+							<f:facet name="header" >#{msg['deshabilitarCajaTurno.habilitar']} </f:facet>
+							<center>
+							<h:selectBooleanCheckbox value=" " ></h:selectBooleanCheckbox>
+							<br/>
+							<h:selectBooleanCheckbox value=" "></h:selectBooleanCheckbox>
+							<br/>
+							<h:selectBooleanCheckbox value=" "></h:selectBooleanCheckbox>
+							
+							</center>
+							
+							
+						</h:column>
+						
+						<h:column style="width:500px; border:1px solid #ccc;">
+							<f:facet name="header" style="size=6">#{msg['deshabilitarCajaTurno.dehabilitar']} </f:facet>
+							<center>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							<h:selectBooleanCheckbox value=" "></h:selectBooleanCheckbox>
+							<br/>
+							<h:selectBooleanCheckbox value=" "></h:selectBooleanCheckbox>
+							<br/>
+							<h:selectBooleanCheckbox value=" "></h:selectBooleanCheckbox>
+							</center>	
+							
+						</h:column>
+						
+						<br></br>
+						
+					</h:dataTable>
+									
+				</fieldset>
+				<div align="right">				
+				<h:commandButton value="#{msg['deshabilitarCajaTurno.aplicarCambios']}" type="submit" class="button-blue jqTransformButton" style="align=right"/>
+				</div>
+						<br />
+
+			</h:form>
+			
+		
+			
+
+		
+		</div>
+	</ui:define>
+</ui:composition>
+			
+			

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> Institucionales</span> <span>Plazas</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['plazas.titulo']}</h1>
+			</div>
+			
+                        <h:panelGroup id="messagePanel" layout="block">
+						<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form id="plazaForm" styleClass="horizontal">
+
+						<fieldset>
+							<legend>#{msg['plazas.criterioBusqueda']}</legend>
+							<h:panelGrid columns="9">
+								<h:outputLabel value="#{msg['plazas.IdPlazas']}" />
+								<h:inputText value="#{plazaGridMB.plazaVO.plazaIdn}" size="10"  converter="javax.faces.Number" converterMessage="#{msg['plazas.errorBusquedaId']}" maxlength="4"/>
+							
+								<h:outputLabel value="#{msg['plazas.NomPlazas']}" />
+								<h:inputText value="#{plazaGridMB.plazaVO.plazaNombre}" size="50" converter="javax.faces.Character" converterMessage="#{msg['plazas.errorBusquedaNom']}" maxlength="4" />
+									
+								
+								
+							</h:panelGrid>
+						</fieldset>
+
+						<br />
+						<fieldset>
+							<legend>#{msg['plazas.seccionDetalleConsulta']}</legend>
+
+<br/>
+							<h:dataTable  class="gridtable" var="plaza" value="#{plazaGridMB.listaPlaza}"  style="width:500px;" > 
+								
+								<h:column >
+									
+									<f:facet name="header" >
+									<h:outputLabel value="#{msg['plazas.IdPlazas']} " /> 
+									</f:facet>
+										<h:outputText  value="#{plaza.plazaIdn}" /> 
+									  <f:attribute name="width" value="10" />
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">
+									<h:outputLabel value="#{msg['plazas.NomPlazas']} "/>
+									</f:facet>
+										<h:outputText value="#{plaza.plazaNombre}"/> 
+								
+								</h:column>
+														
+
+							</h:dataTable>
+
+						</fieldset>
+
+						<br />
+						<fieldset>
+							<div align="center">
+								<h:panelGrid columns="2" style="width:40px;">
+
+									<h:commandButton value="#{msg['plazas.btnConsultar']}"
+										class="button-blue jqTransformButton" actionListener="#{plazaGridMB.consultaPlazaIdn}" /> 
+
+								
+
+								</h:panelGrid>
+							</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

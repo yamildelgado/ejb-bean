@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package mx.com.bcm.banamex.ae.persistencia.constantes;
+
+/**
+ * @author OCE-WCD YAMIL OMAR DELGADO GONZALEZ
+ *
+ */
+public enum CodigoMensajeType {
+	CONTRATO_CODIGO_NO_ENCONTRATO(1),
+    CONTRATO_CONSULTA_CATALOGO(2),
+    ALTA_CATALOGO(3),
+	PROCESADORA_SIRH_NO_ENCONTRADO(4),
+	PROCESADORA_ETV_NO_ENCONTRADO(5),
+	ACTUALIZACION_CATALOGO(6),
+	PROCESADORA_SIRH_CAPTURA(7),
+	PROCESADORA_ETV_CAPTURA(8),
+	PROCESADORA_FREQBUSQUEDA_CAPTURA(9),
+	PROCESADORA_CARPETAINTELAR_CAPTURA(10),
+	DATO_INCORRECTO(14),
+	CAJA_FILTRO(19),
+	IPADDRESS(21),
+	CAJAIDN(22),
+	HORA(23),
+	PATH(24),
+	DIVISA_CLAVE_FILTRO(25),
+	EDICION_CUENTAS_MAYOR(17),
+	CONSULTA_VACIA(20),
+	ERROR_ALTA_CATALOGO(26),
+	REPORTE_GENERADO(13);
+
+    private int value;
+
+    private CodigoMensajeType(int val){
+        value = val;
+    }
+
+    public int getValue(){
+        return value;
+    }
+}

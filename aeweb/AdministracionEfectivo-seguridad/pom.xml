@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>AdministracionEfectivo</artifactId>
+		<groupId>AdministracionEfectivoGrupo</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>AdministracionEfectivo-seguridad</artifactId>
+	<packaging>ejb</packaging>
+
+	<name>AdministracionEfectivo Seguirdad module</name>
+	<properties>
+		<spring.version>3.0.5.RELEASE</spring.version>
+	</properties>
+	<dependencies>
+
+		<!-- Spring 3 dependencies -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- <dependency> <groupId>AdministracionEfectivoGrupo</groupId> <artifactId>AdministracionEfectivo-jpa</artifactId> 
+			</dependency> -->
+		<dependency>
+			<groupId>AdministracionEfectivoGrupo</groupId>
+			<artifactId>AdministracionEfectivo-ejb</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<!-- <dependency> <groupId>org.jboss.spec.javax.ejb</groupId> <artifactId>jboss-ejb-api_3.1_spec</artifactId> 
+			<scope>provided</scope> </dependency> <dependency> <groupId>javax.enterprise</groupId> 
+			<artifactId>cdi-api</artifactId> <scope>provided</scope> </dependency> <dependency> 
+			<groupId>org.hibernate.javax.persistence</groupId> <artifactId>hibernate-jpa-2.0-api</artifactId> 
+			<scope>provided</scope> </dependency> <dependency> <groupId>org.hibernate</groupId> 
+			<artifactId>hibernate-validator</artifactId> <scope>provided</scope> </dependency> -->
+
+		<!-- Test scope dependencies -->
+		<dependency>
+			<groupId>AdministracionEfectivoGrupo</groupId>
+			<artifactId>AdministracionEfectivo-jpa</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+	</dependencies>
+	<description>Capa de seguridad</description>
+</project>

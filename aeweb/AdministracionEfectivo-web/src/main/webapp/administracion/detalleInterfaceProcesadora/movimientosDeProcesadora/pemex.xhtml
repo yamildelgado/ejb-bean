@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+		<h:commandLink>pemex</h:commandLink>
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> Operaciones de Procesadoras</span> <span> Consultas y Reportes</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['operacionesprocesadoras.tituloPemex']}</h1>
+				
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+					
+							<h:panelGroup id="messagePanel" layout="block">
+								<h:messages errorStyle="color: red" infoStyle="color: blue"
+									layout="table" />
+							</h:panelGroup>
+
+						<fieldset>
+							<legend>#{msg['operacionesprocesadoras.dotacionatmsdetalle']}</legend>
+						
+							<h:panelGrid columns="4" style="width:800px;" >
+							 <!--  <h:outputLabel value="#{msg['operacionesprocesadoras.identificador']}" />
+				              	 <h:inputText value="#{operProcGridMB.operacionVO.tipoMovimiento}"  size="6"/>
+							 	 <h:outputLabel value="#{msg['operacionesprocesadoras.etv']}" />
+				              	 <h:inputText value="#{operProcGridMB.operacionVO.detprocEtvTraslado}" size="6"/>
+				              	 <h:outputLabel value="#{msg['operacionesprocesadoras.sirh']}" />
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocSirhCpaeSirhOrigen}" size="6" />
+								<h:outputLabel value="#{msg['operacionesprocesadoras.recoleccion']}"/> 
+								<h:inputText  value="#{operProcGridMB.operacionVO.detprocRecoleccion}" size="12"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.recepcionEtv']}"/> 
+								<h:inputText  value="#{operProcGridMB.operacionVO.detprocRecepcionEnEtv}"  size="12"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.verificacion']}"/> 
+								<h:inputText  value="#{operProcGridMB.operacionVO.detprocVerificacion}"  size="12"/>
+								 <h:outputLabel value="#{msg['operacionesprocesadoras.acreditacionBanamex']}" />
+				              	 <h:inputText  value="#{operProcGridMB.operacionVO.detprocAcreditacionEnBnmx}"  size="12"/>
+				              	 <h:outputLabel value="#{msg['operacionesprocesadoras.numeroComprobante']}" />
+								<h:inputText  value="#{operProcGridMB.operacionVO.detprocNumDeComprobante}" size="22" />
+								<h:outputLabel value="#{msg['operacionesprocesadoras.globalParcialContenedor']}"/> 
+								<h:inputText  value="#{operProcGridMB.operacionVO.detprocGloblParclContendor}"  size="3"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.divisa']}"/> 
+								<h:inputText  value="#{operProcGridMB.operacionVO.detprocDivisa}" size="5"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.numerocliente']}"/> 
+								<h:inputText  value="#{operProcGridMB.operacionVO.detprocNumCliente}"  size="16"/>
+				              	 <h:outputLabel value="#{msg['operacionesprocesadoras.unidadNegocio']}" />
+								<h:inputText  value="#{operProcGridMB.operacionVO.detprocUnegPemex}"  size="12" />
+								<h:outputLabel value="#{msg['operacionesprocesadoras.importe']}"/> 
+								<h:inputText  value="#{operProcGridMB.operacionVO.detprocImpteDeposDotacion}"  size="16"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.fechaHoraRetencion']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocFecHrRetencion}" size="12"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.causaRetencion']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocCausaRetencion}" size="4"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.importeDiferencia']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocImpteDiferencia}" size="18"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.faltanteSobrante']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocFaltanteSobrante}" size="3"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.sucCargoAbonoDiferencia']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocSuccargoAbonoDif}" size="6"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.ctaCargoAbonoDiferencia']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocCntacargoAbonodif}" size="10"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.referenciaNumerica']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocReferenciaNumerica}" size="14"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.referenciaAlfanumerica']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocReferenciaAlf}" size="22"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.numeroParcialDiferencia']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocNumParcDif}" size="5"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.denominacionBpf']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocDenominacionBpf}" size="8"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.serieBpf']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocSerieBpf}" size="16"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.folioBpf']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocFolioBpf}" size="22"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.folioSam']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocFolioSam}" size="9"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.efectivoIntegradoCajaSN']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocEfectivoIntegrCaja}" size="3"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.transmisionS500']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocTransmisionS500}" size="3"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.nombreCajeroEtvBpf']}"/> 
+								<h:inputText value="#{operProcGridMB.operacionVO.detprocNombreCajeroEtv}" size="20"/>-->
+									
+								<h:outputLabel value="#{msg['operacionesprocesadoras.identificador']}" />
+				              	 <h:inputText value="209"  size="6"/>
+							 	 <h:outputLabel value="#{msg['operacionesprocesadoras.etv']}" />
+				              	 <h:inputText value="2341" size="6"/>
+				              	 <h:outputLabel value="#{msg['operacionesprocesadoras.sirh']}" />
+								<h:inputText value="6746" size="6" />
+								<h:outputLabel value="#{msg['operacionesprocesadoras.recoleccion']}"/> 
+								<h:inputText  value="2701141200" size="12"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.recepcionEtv']}"/> 
+								<h:inputText  value="2701141300"  size="12"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.verificacion']}"/> 
+								<h:inputText  value="2701140800"  size="12"/>
+								 <h:outputLabel value="#{msg['operacionesprocesadoras.acreditacionBanamex']}" />
+				              	 <h:inputText  value="2701177800"  size="12"/>
+				              	 <h:outputLabel value="#{msg['operacionesprocesadoras.numeroComprobante']}" />
+								<h:inputText  value="3945678354546470" size="22" />
+								<h:outputLabel value="#{msg['operacionesprocesadoras.globalParcialContenedor']}"/> 
+								<h:inputText  value="1"  size="3"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.divisa']}"/> 
+								<h:inputText  value="001" size="5"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.numerocliente']}"/> 
+								<h:inputText  value="0003056753"  size="16"/>
+				              	 <h:outputLabel value="#{msg['operacionesprocesadoras.unidadNegocio']}" />
+								<h:inputText  value="2784563789"  size="12" />
+								<h:outputLabel value="#{msg['operacionesprocesadoras.importe']}"/> 
+								<h:inputText  value="0000000013800000"  size="16"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.fechaHoraRetencion']}"/> 
+								<h:inputText value="13/11/2013" size="12"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.causaRetencion']}"/> 
+								<h:inputText value="23" size="4"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.importeDiferencia']}"/> 
+								<h:inputText value="00000000300000" size="18"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.faltanteSobrante']}"/> 
+								<h:inputText value="F" size="3"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.sucCargoAbonoDiferencia']}"/> 
+								<h:inputText value="0642" size="6"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.ctaCargoAbonoDiferencia']}"/> 
+								<h:inputText value="266" size="10"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.referenciaNumerica']}"/> 
+								<h:inputText value="0077511" size="14"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.referenciaAlfanumerica']}"/> 
+								<h:inputText value="123456789012DEPOSITO" size="22"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.numeroParcialDiferencia']}"/> 
+								<h:inputText value="038" size="5"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.denominacionBpf']}"/> 
+								<h:inputText value="23456" size="8"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.serieBpf']}"/> 
+								<h:inputText value="4446DGB6566F7" size="16"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.folioBpf']}"/> 
+								<h:inputText value="DFGRT456787JJ78KF4R3" size="22"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.folioSam']}"/> 
+								<h:inputText value="456789" size="9"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.efectivoIntegradoCajaSN']}"/> 
+								<h:inputText value="1" size="3"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.transmisionS500']}"/> 
+								<h:inputText value="1" size="3"/>
+								<h:outputLabel value="#{msg['operacionesprocesadoras.nombreCajeroEtvBpf']}"/> 
+								<h:inputText value="A345678B" size="20"/>
+							</h:panelGrid>
+							 <h:dataTable style="width:900px;" var="operaciondos"
+									value="#{operProcGridMB.operacionVO}"
+									class="gridtable">
+									<h:column>
+										<f:facet name="header">#{msg['operacionesprocesadoras.tipodebillete']} </f:facet>
+										<br /><h:outputLabel value="BPS"/><br />
+										<h:outputLabel value="BPS" /><br />
+										<h:outputLabel value="BPS"/><br />
+										<h:outputLabel value="BPS" /><br />
+										<h:outputLabel value="BPS"/><br />
+										<h:outputLabel value="BPS" /><br />
+										<h:outputLabel value="BPS"/><br />
+										<h:outputLabel value="MCA" /><br />
+										<h:outputLabel value="MCA"/><br />
+										<h:outputLabel value="MCA" /><br />
+										<h:outputLabel value="MCA"/><br />
+										<h:outputLabel value="MCA" /><br />
+										<h:outputLabel value="MCA"/><br />
+										<h:outputLabel value="MCA" /><br />
+										<h:outputLabel value="MCA"/><br />
+										<h:outputLabel value="MCA" /><br />
+										<h:outputLabel value="BCP"/><br />
+										<h:outputLabel value="BCA" /><br />
+										<h:outputLabel value="BCP"/><br />
+										<h:outputLabel value="BCA" /><br />
+										<h:outputLabel value="BCA"/><br />
+										<h:outputLabel value="MCA" /><br />
+										<h:outputLabel value="BCA" /><br />
+								
+									</h:column>
+									<h:column>
+										<f:facet name="header"> #{msg['operacionesprocesadoras.denominacion']} </f:facet>
+											<br /><h:outputLabel value="000100000"/><br />
+										<h:outputLabel value="000050000" /><br />
+										<h:outputLabel value="000020000"/><br />
+										<h:outputLabel value="000010000" /><br />
+										<h:outputLabel value="000005000"/><br />
+										<h:outputLabel value="000002000" /><br />
+										<h:outputLabel value="000001000"/><br />
+										<h:outputLabel value="000000500" /><br />
+										<h:outputLabel value="000000200"/><br />
+										<h:outputLabel value="000000100" /><br />
+										<h:outputLabel value="000000050"/><br />
+										<h:outputLabel value="000000020" /><br />
+										<h:outputLabel value="000000010"/><br />
+										<h:outputLabel value="00000100000" /><br />
+										<h:outputLabel value="000000005"/><br />
+										<h:outputLabel value="000000000" /><br />
+										<h:outputLabel value="000000000"/><br />
+										<h:outputLabel value="000000000" /><br />
+										<h:outputLabel value="000000000"/><br />
+										<h:outputLabel value="000000000" /><br />
+										<h:outputLabel value="000000000"/><br />
+										<h:outputLabel value="000000000" /><br />
+										<h:outputLabel value="000000000" /><br />
+									</h:column>
+									<h:column>
+										<f:facet name="header">#{msg['operacionesprocesadoras.importe']} </f:facet>
+										<br /><h:outputLabel value="000100000"/><br />
+										<h:outputLabel value="000050000" /><br />
+										<h:outputLabel value="000020000"/><br />
+										<h:outputLabel value="000010000" /><br />
+										<h:outputLabel value="000005000"/><br />
+										<h:outputLabel value="000002000" /><br />
+										<h:outputLabel value="000001000"/><br />
+										<h:outputLabel value="000000500" /><br />
+										<h:outputLabel value="000000200"/><br />
+										<h:outputLabel value="000000100" /><br />
+										<h:outputLabel value="000000050"/><br />
+										<h:outputLabel value="000000020" /><br />
+										<h:outputLabel value="000000010"/><br />
+										<h:outputLabel value="00000100000" /><br />
+										<h:outputLabel value="000000005"/><br />
+										<h:outputLabel value="000000000" /><br />
+										<h:outputLabel value="000000000"/><br />
+										<h:outputLabel value="000000000" /><br />
+										<h:outputLabel value="000000000"/><br />
+										<h:outputLabel value="000000000" /><br />
+										<h:outputLabel value="000000000"/><br />
+										<h:outputLabel value="000000000" /><br />
+										<h:outputLabel value="000000000" /><br />
+									
+									</h:column>
+									
+								</h:dataTable>
+							</fieldset>
+						
+						<fieldset>
+							<div align="center">
+                              <h:panelGrid columns="2" style="width:40px;">								
+                              <h:commandButton 
+                              	value="Generar Reporte"
+								class="button-blue jqTransformButton" 
+								actionListener="#{operProcGridMB.generarRepore}">
+							</h:commandButton>
+								   <h:commandButton 
+                              	value="Regresar"
+								class="button-blue jqTransformButton" 
+								action="#{operProcGridMB.regresar}">
+							</h:commandButton>
+								
+</h:panelGrid>
+							</div>
+						</fieldset>
+					</h:form>
+				
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</div> </ui:define>
+</ui:composition>

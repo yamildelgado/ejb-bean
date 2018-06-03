@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> Institucionales</span> <span> Contrato</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['contrato.tituloConsulta']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+
+							<h:panelGroup id="messagePanel" layout="block">
+								<h:messages errorStyle="color: red" infoStyle="color: blue"
+									layout="table" />
+							</h:panelGroup>
+
+						<fieldset>
+							<legend>#{msg['contrato.criterioBusqueda']}</legend>
+							
+							<h:panelGrid columns="9">
+								<h:outputLabel value="#{msg['contrato.num']}" />
+								
+								<h:inputText
+									value="#{contratoGridMB.criterioContratoVO.numContrato}"
+									size="20"  maxlength="16"  />
+
+
+							</h:panelGrid>
+						</fieldset>
+
+						<br />
+						<fieldset>
+							<legend>#{msg['contrato.seccionDetalleOperacion']}</legend>
+
+							<br />
+							<h:dataTable class="gridtable" var="contrato"
+								value="#{contratoGridMB.listaContratoVO}">
+								<h:column>
+									<f:facet name="header">
+										<h:outputLabel value="#{msg['contrato.num']}" />
+									</f:facet>
+
+									<h:outputLabel value="#{contrato.num}"  />
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputLabel value="#{msg['contrato.tipoIntrumento']}" />
+									</f:facet>
+									<h:outputLabel value="#{contrato.tipoInstrumento}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputLabel value="#{msg['contrato.fechaAltaDeposito']}" />
+									</f:facet>
+
+									<h:outputLabel value="#{contrato.fecAltaDeposito}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputLabel value="#{msg['contrato.fechaAltaDotacion']}" />
+									</f:facet>
+									<h:outputLabel value="#{contrato.fecAltaDotacion}" />
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+
+									</f:facet>
+									<h:panelGrid columns="2" cellspacing="30">
+										<h:commandLink value="#{msg['contrato.verDetalle']}"
+											action="#{contratoGridMB.consultaVerContrato}"
+											immediate="true">
+										
+												<f:param name="parametro" value="#{contrato.num}"></f:param>
+										</h:commandLink>
+
+									</h:panelGrid>
+								</h:column>
+
+							</h:dataTable>
+
+						</fieldset>
+
+
+
+
+
+						<br />
+
+						<fieldset>
+							<div align="center">
+								<h:panelGrid columns="2" style="width:40px;">
+
+									<h:commandButton value="#{msg['contrato.btnConsultar']}"
+										class="button-blue jqTransformButton"
+										actionListener="#{contratoGridMB.consultaContratoPorId}" />
+
+									<h:commandButton type="reset"
+										value="#{msg['contrato.btnReset']}"
+										class="button-blue jqTransformButton" />
+
+								</h:panelGrid>
+							</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

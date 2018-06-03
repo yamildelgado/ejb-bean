@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Transferencia de Documentos (Documentos S.B.C.)_v1.0" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="891c743a-8643-431f-9f76-9eb82c4cdba6">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="595"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="187" y="1" width="222" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="3269c133-5b20-4ec8-8401-48abba75b79f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[BANCO NACIONAL DE MÉXICO, S.A. ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="1" width="555" height="1" uuid="a42cd413-e1cf-4033-b9da-e6b91f304837"/>
+			</line>
+			<line>
+				<reportElement x="0" y="16" width="555" height="1" uuid="0a32262f-b220-4c11-9fc9-8ce19424396b"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="390" y="27" width="63" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="808bfa53-dfb7-4354-a954-51f436efdbb6"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[FECHA Y HORA :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="130" y="-3" width="314" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="f5e518d3-05c9-4d6e-b113-156c92e7f1b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[        TRANSFERENCIA DE DOCUMENTOS SBC]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="453" y="27" width="100" height="10" uuid="8f7ba4b9-2824-499c-8f43-7bc2441525c1"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="169" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="353" y="11" width="99" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="82c66228-bd6a-424e-9403-9d2456559309"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[CPAE: 0350]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="462" y="11" width="90" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="d73e8b45-22d1-4fbc-83c6-3c61e543f537"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[SUB BÓVEDA: 00]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="1" y="60" width="80" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="ccafd442-e217-4b08-b921-8bfceb956bed"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[TURNO :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="81" y="60" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="3095f334-9729-44ac-b3eb-6a9e3e631358"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[VESPERTINO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="1" y="80" width="80" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="5ebbf80c-32a1-423c-89c2-355a77e2274a"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[CAJERO :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="81" y="118" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="43e62970-6b02-4956-b802-b1f72f9f4589"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[VERIFICADORA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="80" y="80" width="160" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="c36f360c-2273-439f-9ee1-1591a7157745"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[ANGEL DANIEL SANTOS CRUZ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="81" y="98" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="35d96bbc-7dc6-4366-91e7-aa8a1e66b7ea"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[23]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="1" y="98" width="80" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="b752bc80-960d-4fc8-9013-1579a8d82fee"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[CAJA :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="1" y="118" width="80" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="1516555e-adb4-43eb-a35b-7c87e596a4ba"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[TIPO CAJA :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="1" y="138" width="80" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="079196f5-0243-471a-82c3-251c8741085c"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[TIPO DE MONEDA :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="80" y="138" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="c1730489-c22d-4973-b2fc-926d8bb124bc"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[MONEDA NACIONAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="268" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="25" y="16" width="172" height="32" forecolor="#000000" backcolor="#FFFFFF" uuid="30625b73-53e1-4f7d-adc9-342bf76d667f"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[0180628668	    345678901233   LIBRERÍA PORRÚA HNOS CIA SA.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="25" y="78" width="172" height="28" forecolor="#000000" backcolor="#FFFFFF" uuid="5fe2e90f-2a7e-460f-90df-b118fe6008b7"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[0180628668	    345678901233 LIBRERÍA PORRÚA HNOS CIA SA.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="25" y="136" width="172" height="27" forecolor="#000000" backcolor="#FFFFFF" uuid="0216e539-d17c-4b88-8f3d-03bcdf5de1a7"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[0176674894	    559044716619 LIBRERÍA PORRÚA HNOS CIA SA.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="542" y="16" width="13" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="ac2bb6dc-3651-4ee5-8cc9-3bcdb1bde4bf"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="206" y="16" width="196" height="32" forecolor="#000000" backcolor="#FFFFFF" uuid="ac7bfe6f-7c2c-4680-966c-0d2f6773340b"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[COMPAÑÍA MEXICANA DE TRASLADO DE VALORES SA  8,000.00]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="413" y="16" width="27" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="c55adb7c-91a3-4a0b-9e65-e753adcc85c6"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[0870]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="453" y="16" width="83" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="a75b70e6-8ef8-4685-98b0-620bd30f987f"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[000000570739]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="300" y="201" width="140" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="5f58302f-0d0f-4c18-b5fa-3042a198b320"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Número de Documentos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="542" y="201" width="13" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="20600fa1-3a9c-4072-a61b-8e8b91d6f63d"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="4" y="16" width="11" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="18163f29-4298-4c74-ab6a-791f02986b53"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="4" y="136" width="11" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="a6b0fde2-000f-466a-b69e-79c65d980b77"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="4" y="78" width="11" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="f5e281d7-fa94-490f-8608-83878a900f92"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="206" y="78" width="196" height="28" forecolor="#000000" backcolor="#FFFFFF" uuid="e0d01f29-2740-4b8c-9118-98fe46fd450e"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[COMPAÑÍA MEXICANA DE TRASLADO DE VALORES SA  3,000.00]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="542" y="78" width="13" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="101bc4be-1cc0-4a47-adaa-427ab0b082c9"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="453" y="78" width="83" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="539331e5-54c7-4017-ae58-ff6235af8e20"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[000009017898]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="413" y="78" width="27" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="1fbb9953-73dd-4053-8ca3-6c52b4346a1c"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[7001]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="206" y="136" width="196" height="28" forecolor="#000000" backcolor="#FFFFFF" uuid="7394beff-7b1d-48a2-b9b8-7b074beb323a"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[COMPAÑÍA MEXICANA DE TRASLADO DE VALORES SA  5,000.00]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="542" y="136" width="13" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="fd47fa2c-1bc5-4387-8013-26144f928ea9"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="413" y="136" width="27" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="ad0a783d-d800-4442-b8b0-693d5dee4c00"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[0505]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="453" y="136" width="83" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="1363db14-37f2-4c7a-a399-00968b92c0d1"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[000005939502]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="300" y="231" width="140" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="8191acf4-0b82-4712-8a39-42f913e93f5d"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="496" y="231" width="63" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="84a2fe5f-86cf-4b74-8ffa-c7e266fb00a9"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[$ 16,000.00]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="1" y="0" width="265" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="999f6903-e6d2-4248-bf7b-061de11db7be"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[INFORMACIÓN CONFIDENCIAL]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="49" splitType="Stretch">
+			<textField>
+				<reportElement x="412" y="18" width="80" height="20" uuid="a162bc92-8155-48da-af2f-4882cab43311"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="492" y="18" width="42" height="20" uuid="638fcdf0-8a48-4d7d-acd8-ffdedddea7bd"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="229" y="18" width="100" height="20" uuid="a9b46c68-2252-4bf4-a4ee-d910f7719a02"/>
+				<textElement textAlignment="Center">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AE-WEB 2013]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+		<div id="breadcrumbs">
+			Recepción de Deposito de Clientes y Sucursales<span>Recepción
+				de Efectivo</span>
+		</div>
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name"></div>
+
+			<h:form styleClass="horizontal">
+				<h:panelGroup id="messagePanel" layout="block">
+					<h:messages errorStyle="color: red" infoStyle="color: blue"
+						layout="table" />
+				</h:panelGroup>
+				<fieldset>
+					<legend>#{msg['recepcionEfectivo.totalesRecepcion']}</legend>
+
+					<h:panelGrid columns="8" style="width:900px; float:left;">
+						<h:outputLabel value="#{msg['recepcionEfectivo.lotes']}"
+							style="width:90px;" />
+						<h:inputText value="" size="15" />
+
+						<h:outputLabel value="#{msg['recepcionEfectivo.comprobantes']}"
+							style="width:90px;" />
+						<h:inputText value="" size="15" />
+
+						<h:outputLabel value="#{msg['recepcionEfectivo.envases']}" />
+						<h:inputText value="" size="15" />
+
+						<h:outputLabel value="#{msg['recepcionEfectivo.importe']}" />
+						<h:inputText value="" size="15" />
+
+
+
+					</h:panelGrid>
+					<br /> <br />
+
+					<table class="gridtable"
+						style="width: 400px; margin-left: 20px; float: left; border: 1px solid grey">
+						<tr>
+							<th style="border: 1px solid grey" scope="col">#{msg['recepcionEfectivo.comprobanteCapturados']}</th>
+							<th style="border: 1px solid grey" scope="col"></th>
+						</tr>
+						<tr>
+							<td style="border: 1px solid grey"><h:outputLabel value="" /></td>
+							<td style="border: 1px solid grey"><h:commandButton
+									value="#{msg['recepcionEfectivo.modificar']}"
+									class="button-blue jqTransformButton" /></td>
+						</tr>
+						<tr>
+							<td style="border: 1px solid grey"><h:outputLabel value="" /></td>
+							<td style="border: 1px solid grey"><h:commandButton
+									value="#{msg['recepcionEfectivo.modificar']}"
+									class="button-blue jqTransformButton" /></td>
+						</tr>
+
+					</table>
+					<br /> <br />
+					<h:panelGrid columns="1"
+						style="width:900px; float:left; margin-left:20px;">
+						<h:commandButton value="#{msg['recepcionEfectivo.imprimir']}"
+							class="button-blue jqTransformButton" />
+
+					</h:panelGrid>
+
+
+
+
+
+
+				</fieldset>
+				<fieldset>
+					<legend>#{msg['recepcionEfectivo.datosComprobante']}</legend>
+
+
+					<h:panelGrid columns="4" style="width:700px; float:left;">
+						<h:outputLabel value="#{msg['recepcionEfectivo.entidad']}" />
+						<h:selectOneMenu value="">
+							<f:selectItem itemLabel="-----Seleccione-----" itemValue="1" />
+						</h:selectOneMenu>
+
+						<h:outputLabel value="#{msg['recepcionEfectivo.numOperacion']}" />
+						<h:inputText value="" size="15" disabled="true"/>
+
+						
+					</h:panelGrid>
+					<h:panelGrid columns="3" style="width:200px;  margin-left:6px;">
+					
+						<h:outputLabel value="#{msg['recepcionEfectivo.sirh']}" />
+						<h:inputText value="" size="15" disabled="true"/>
+						<h:selectOneMenu value="">
+							<f:selectItem itemLabel="-----Seleccionar-----" itemValue="1" />
+						</h:selectOneMenu>
+					</h:panelGrid>
+					<br />
+
+					<h:outputLabel value="#{msg['recepcionEfectivo.importeTotal']}"
+						style="margin-left:6px;" />
+					<br /> <br />
+					<h:selectOneMenu value="" style="margin-left:6px;">
+						<f:selectItem itemLabel="-----Seleccionar-----" itemValue="1" />
+					</h:selectOneMenu>
+					<h:inputText value="" style="width:40px; margin-left:4px;" />
+
+					<br /> <br />
+
+
+
+
+
+				</fieldset>
+				<fieldset>
+					<legend>#{msg['recepcionEfectivo.envasesSellados']}</legend>
+
+					<h:panelGrid columns="7" style="width:900px; float:left;">
+						<h:outputLabel value="#{msg['recepcionEfectivo.noPlomo']}"
+							style="width:90px;" />
+						<h:inputText value="" size="5" disabled="true" />
+
+						<h:outputLabel
+							value="#{msg['recepcionEfectivo.acumuladoEnvases']}" />
+						<h:inputText value="" size="3" />
+						<h:inputTextarea value="" />
+
+						<h:outputLabel
+							value="#{msg['recepcionEfectivo.areaVerificacion']}" />
+						<h:selectOneMenu value="">
+							<f:selectItem itemLabel="-----Seleccionar-----" itemValue="1" />
+						</h:selectOneMenu>
+
+					</h:panelGrid>
+					<h:commandButton value="#{msg['recepcionEfectivo.agregarEnvases']}"
+						style="width:140px; margin-left:20px;"
+						class="button-blue jqTransformButton">
+					</h:commandButton>
+					<h:commandButton value="#{msg['recepcionEfectivo.guardar']}"
+						style="width:140px; margin-left:300px;"
+						class="button-blue jqTransformButton">
+					</h:commandButton>
+					<h:commandButton value="#{msg['recepcionEfectivo.devolver']}"
+						style="width:140px; margin-left:20px;"
+						class="button-blue jqTransformButton">
+					</h:commandButton>
+					<br />
+
+
+
+
+				</fieldset>
+				<fieldset>
+
+
+					<h:panelGrid columns="4" style="width:300px; float:left;">
+						<h:outputLabel value="#{msg['recepcionEfectivo.caja']}" />
+						<h:inputText value="" size="15" disabled="true"/>
+
+						<h:outputLabel value="#{msg['recepcionEfectivo.nomina']}" />
+						<h:inputText value="" size="15" disabled="true" />
+
+
+					</h:panelGrid>
+
+				</fieldset>
+				<center>
+					<h:commandButton
+						value="#{msg['recepcionEfectivo.termCaptComprobante']}"
+						style="width:220px; margin-right:10px;"
+						class="button-blue jqTransformButton">
+					</h:commandButton>
+					<h:commandButton value="#{msg['recepcionEfectivo.termRecepcion']}"
+						style="width:140px; margin-right:10px;"
+						class="button-blue jqTransformButton">
+					</h:commandButton>
+					<h:commandButton value="#{msg['recepcionEfectivo.cancelar']}"
+						style="width:140px; margin-right:10px;"
+						class="button-blue jqTransformButton">
+					</h:commandButton>
+				</center>
+
+
+
+			</h:form>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+

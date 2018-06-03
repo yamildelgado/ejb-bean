@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+
+
+		<div id="breadcrumbs">
+			<span>Administración</span> <span>
+				Catálogos</span> <span> Operaciones de Procesadoras</span> <span>
+				Consultas y Reportes</span>
+		</div>
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['operacionesProcesadoras.titulo2']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+
+						<fieldset>
+							<legend>#{msg['operacionesprocesadoras.dotacionatmsdetalle']}</legend>
+
+							<h:panelGrid columns="4">
+								<h:outputLabel
+									value="#{msg['operacionesprocesadoras.procesadoralist']}" />
+								<h:selectOneMenu value="#{operProcGridMB.criterioVO.estructraSirh}" style="width:190px;">
+									<f:selectItem itemLabel="--Seleccionar--" itemValue="-1" />  
+            						<f:selectItems value="#{operProcGridMB.listaProcesadoraVO}"
+										var="procesadora" itemLabel="#{procesadora.procesadoraCpae}"
+										itemValue="#{procesadora.procesadoraSirhId}" />
+								</h:selectOneMenu>
+								
+								<h:outputLabel
+									value="#{msg['operacionesprocesadoras.tipodeoperacion']}" />
+								<h:selectOneMenu value="#{operProcGridMB.criterioVO.tipomovIdn}"
+									style="width:190px;">
+									<f:selectItem itemLabel="--Seleccionar--" itemValue="" />
+									<f:selectItems value="#{operProcGridMB.listaMovimientosVO}"
+										var="operaciones" itemLabel="#{operaciones.nombreMovimiento}"
+										itemValue="#{operaciones.tipoMovimiento}" />
+								</h:selectOneMenu>
+								
+								<h:outputLabel
+									value="#{msg['operacionesProcesadoras.fechaIni']}" />
+								<p:calendar value="#{operProcGridMB.criterioVO.fechaInicial}"
+									id="popupButtonCal" showOn="button" />
+
+								<h:outputLabel
+									value="#{msg['operacionesProcesadoras.fechaFin']}" />
+								<p:calendar value="#{operProcGridMB.criterioVO.fechaFinal}"
+									id="popupButtonCal2" showOn="button" />
+							</h:panelGrid>
+
+
+						</fieldset>
+
+
+
+
+						<br />
+						<fieldset>
+							<legend>#{msg['turnos.detalleConsulta']}</legend>
+							<div style="overflow: scroll; width: 900px;">
+								<h:dataTable style="width:1900px;" var="operacion"
+									value="#{operProcGridMB.listaConsultayReportesProcesadoraVO}"
+									class="gridtable">
+
+									<h:column>
+										<f:facet name="header"> Sub-boveda </f:facet>
+										<h:outputLabel value="#{operacion.estructraSirh}" />
+									</h:column>
+									<h:column>
+										<f:facet name="header">#{msg['operacionesprocesadoras.sirhOrigen']} </f:facet>
+										<h:outputLabel value="#{operacion.detprocSirhCpaeSirhOrigen}" />
+
+									</h:column>
+									<h:column>
+										<f:facet name="header">#{msg['operacionesprocesadoras.sirhDestino']} </f:facet>
+										<h:outputLabel value="#{operacion.detprocSirhDestinoIdAtm}">
+
+										</h:outputLabel>
+
+									</h:column>
+									<h:column>
+										<f:facet name="header">#{msg['operacionesprocesadoras.folio']} </f:facet>
+										<h:outputLabel value="#{operacion.detprocFolioS018}">
+
+										</h:outputLabel>
+
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">#{msg['operacionesprocesadoras.numeroComprobante']} </f:facet>
+										<h:outputLabel value="#{operacion.detprocNumDeComprobante}" />
+
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">#{msg['operacionesprocesadoras.unidadNegocio']} </f:facet>
+										<h:outputLabel value="#{operacion.detprocUnegPemex}" />
+
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">#{msg['operacionesprocesadoras.unidadNegocioSef']} </f:facet>
+										<h:outputLabel value="#{operacion.detprocUnegSefDepos}" />
+
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">#{msg['operacionesprocesadoras.inconsistencia']} </f:facet>
+										<h:outputLabel value="#{operacion.detprocInconsistencia}" />
+
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">#{msg['operacionesprocesadoras.divisa']} </f:facet>
+										<h:outputLabel value="#{operacion.detprocDivisa}" />
+
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">#{msg['operacionesprocesadoras.unidadNegocio']} </f:facet>
+										<h:outputLabel value="#{operacion.detprocUnegSefEnvase}" />
+
+									</h:column>
+
+
+									<h:column>
+										<f:facet name="header"> #{msg['operacionesprocesadoras.etv']} </f:facet>
+										<h:outputLabel value="#{operacion.tipoperIdn}" />
+									</h:column>
+									<h:column>
+										<f:facet name="header">
+
+										</f:facet>
+										<h:panelGrid columns="2" cellspacing="30">
+											<h:commandLink
+												value="#{msg['operacionesProcesadoras.btover']}"
+												action="#{operProcGridMB.consDetalle}" immediate="true">
+												<f:setPropertyActionListener
+													target="#{operProcGridMB.operacionVO}" value="#{operacion}"></f:setPropertyActionListener>
+											</h:commandLink>
+										</h:panelGrid>
+									</h:column>
+								</h:dataTable>
+							</div>
+							<br />
+							<div align="center">
+								<h:commandButton
+									value="#{msg['operacionesProcesadoras.btoConsultar']}"
+									type="submit" class="button-blue jqTransformButton"
+									action="#{operProcGridMB.consultarOpracionesDeProcesadora}">
+								</h:commandButton>
+							</div>
+						</fieldset>
+						<br />
+
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

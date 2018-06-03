@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is not required if you don't need any extra configuration. -->
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://java.sun.com/xml/ns/javaee
+        http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+	
+
+    
+   
+    
+    <application>
+    	<message-bundle>resources.application</message-bundle>
+     	   <locale-config>
+     	        <default-locale>en</default-locale>
+     	   </locale-config>
+	   <resource-bundle>
+		<base-name>mx.com.bcm.banamex.ae.apliacion.web.controller.internalizacion.i18n</base-name>
+		<var>msg</var>
+	   </resource-bundle>
+	   <resource-bundle>
+		<base-name>mx.com.bcm.banamex.ae.apliacion.web.controller.internalizacion.i18njesusc</base-name>
+		<var>msgjc</var>
+	   </resource-bundle>
+	   <resource-bundle>
+		<base-name>mx.com.bcm.banamex.ae.apliacion.web.controller.internalizacion.i18njuan</base-name>
+		<var>msgjm</var>
+	   </resource-bundle>
+	   <resource-bundle>
+		<base-name>mx.com.bcm.banamex.ae.apliacion.web.controller.internalizacion.i18nmario</base-name>
+		<var>msgmv</var>
+	   </resource-bundle>
+	   <resource-bundle>
+		<base-name>mx.com.bcm.banamex.ae.apliacion.web.controller.internalizacion.i18nomar</base-name>
+		<var>msgjol</var>
+	   </resource-bundle>
+	   <resource-bundle>
+		<base-name>mx.com.bcm.banamex.ae.apliacion.web.controller.internalizacion.i18ncarlos</base-name>
+		<var>msgjct</var>
+	   </resource-bundle>
+	   <resource-bundle>
+		<base-name>mx.com.bcm.banamex.ae.apliacion.web.controller.internalizacion.i18neder</base-name>
+		<var>msgjev</var>
+	   </resource-bundle>
+		<resource-bundle>
+		<base-name>mx.com.bcm.banamex.ae.apliacion.web.controller.internalizacion.i18nabraham</base-name>
+		<var>msgjad</var>
+	   </resource-bundle>
+	   <resource-bundle>
+		<base-name>mx.com.bcm.banamex.ae.apliacion.web.controller.internalizacion.i18ningret</base-name>
+		<var>msgia</var>
+	   </resource-bundle>
+	   
+     </application>
+	<!-- <navigation-rule>
+
+		<navigation-case>
+			<from-outcome>index</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>view</from-outcome>
+			<to-view-id>/blogEntry.xhtml</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-action>#{blogEntryService.newInstance}</from-action>
+			<from-outcome>true</from-outcome>
+			<to-view-id>/blogEntryEdit.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+
+		<navigation-case>
+			<from-action>#{blogEntryService.persistOrUpdate}</from-action>
+			<from-outcome>true</from-outcome>
+			<to-view-id>/blogEntry.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+		<navigation-case>
+			<from-action>#{authenticator.logout}</from-action>
+			<from-outcome>true</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect include-view-params="false" />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/blogEntry.xhtml</from-view-id>
+
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/blogEntryEdit.xhtml</to-view-id>
+		</navigation-case>
+		
+		
+		<navigation-case>
+		<from-action>#{blogEntryService.delete}</from-action>
+			<from-outcome>true</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect include-view-params="false" />
+		</navigation-case>
+
+	</navigation-rule>
+
+ -->
+
+</faces-config>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+
+
+	<ui:define name="content">
+		<div id="breadcrumbs">
+			<span>Supervisión</span> <span> Cajas</span> <span> Estado
+				Detalle de Cajas</span>
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+
+			<div class="clear-both"></div>
+
+			<div class="section-name">
+				<br></br>
+				<h1>#{msg['estadoDetalleCajas.tituloEstadoDetalle']}</h1>
+
+			</div>
+			<h:form class="horizontal">
+
+				<h:panelGroup id="messagePanel" layout="block">
+					<h:messages errorStyle="color: red" infoStyle="color: blue"
+						layout="table" />
+				</h:panelGroup>
+
+				<fieldset>
+					<legend>#{msg['estadoDetalleCajas.tituloTunoActivo']}</legend>
+					<h:dataTable class="gridtable" style="width:850px" var="subBoveda"
+						value="">
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.turno']} </f:facet>
+							<h:outputLabel value="MATUTINO 1 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.iniciado']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 09:00 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.fContableInicio']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.finalizado']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 14:34 " />
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.fContableFinal']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.estatus']} </f:facet>
+							<h:outputLabel value="CERRADO" />
+						</h:column>
+
+						<br></br>
+						<br></br>
+						<br></br>
+
+					</h:dataTable>
+					<div align="right" style="width: 850px">
+						<h:commandButton value="#{msg['corteCajaDef.btnCortePreliminar']}"
+							type="submit" class="button-blue jqTransformButton"
+							style="align=right" />
+						<h:commandButton value="#{msg['corteCajaDef.btnCorteDefinitivo']}"
+							type="submit" class="button-blue jqTransformButton"
+							style="align=right" />
+						<br></br> <br></br>
+					</div>
+				</fieldset>
+				<br />
+				<fieldset>
+					<legend>#{msg['estadoDetalleCajas.tituloTablero']}</legend>
+
+						<fieldset columns="2"
+							style="width: 440px; float: left;">
+							<legend>#{msg['estadoDetalleCajas.tituloRecepcion']}</legend>
+							
+							<h:panelGrid columns="2">
+								<h:outputLabel value="#{msg['estadoDetalleCajas.noLotes']}" />
+								<h:outputLabel value="1" />
+								
+								<h:outputLabel value="#{msg['estadoDetalleCajas.noComprobantes']}" /> 
+								<h:outputLabel value="10" />
+								
+								<h:outputLabel value="#{msg['estadoDetalleCajas.noEnvases']}" /> 
+								<h:outputLabel value="20" />
+									
+							</h:panelGrid>
+
+						</fieldset>
+
+					<fieldset  columns="2"
+						style="width: 440px; float: rigth;">
+
+						<legend>#{msg['estadoDetalleCajas.tituloVerificacion']}</legend>
+							<h:panelGrid columns="2">
+								<h:outputLabel value="#{msg['estadoDetalleCajas.envasesProcedencia']}  " />							
+								<h:outputLabel value="4" />
+								
+								<h:outputLabel value="#{msg['estadoDetalleCajas.envasesVerificados']}" />
+								<h:outputLabel value="4" />
+								
+								<h:outputLabel value="#{msg['estadoDetalleCajas.envasesPendientes']}" />
+								<h:outputLabel value="10" />
+								
+								<h:outputLabel value="#{msg['estadoDetalleCajas.envasesCriticos']}" />
+								<h:outputLabel value="2" />
+								
+							</h:panelGrid>
+						
+
+					</fieldset>
+
+					<br /> <br /> <br />
+
+					<h:dataTable class="gridtable" style="width:850px" var="subBoveda"
+						value="">
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.tablaCaja']} </f:facet>
+							<h:outputLabel value="1" size="2" />
+							<h:outputLabel value="2" size="2" />
+							<h:outputLabel value="3" size="2" />
+							<h:outputLabel value="4" size="2" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.tablaTipo']} </f:facet>
+							<h:outputLabel value="MONEDA" size="2" />
+							<h:outputLabel value="BILLTE" size="2" />
+							<h:outputLabel value="PICO BILLETE" size="2" />
+							<h:outputLabel value="ATN. CLIENTES" size="2" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.tablaEstatus']} </f:facet>
+							<h:outputLabel value="HABILITADA" size="2" />
+							<h:outputLabel value="HABILITADA" size="2" />
+							<h:outputLabel value="HABILITADA" size="2" />
+							<h:outputLabel value="HABILITADA" size="2" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.tablaComprobantes']} </f:facet>
+							<h:outputLabel value="2" size="2" />
+							<h:outputLabel value="2" size="2" />
+							<h:outputLabel value="2" size="2" />
+							<h:outputLabel value="4" size="2" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.tablaEnvases']} </f:facet>
+							<h:outputLabel value="4" size="2" />
+							<h:outputLabel value="4" size="2" />
+							<h:outputLabel value="10" size="2" />
+							<h:outputLabel value="2" size="2" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.tablaDificultad']} </f:facet>
+							<h:outputLabel value="0" size="2" />
+							<h:outputLabel value="0" size="2" />
+							<h:outputLabel value="0" size="2" />
+							<h:outputLabel value="9" size="2" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.tablaProcesados']} </f:facet>
+							<h:outputLabel value="0" size="2" />
+							<h:outputLabel value="0" size="2" />
+							<h:outputLabel value="5" size="2" />
+							<h:outputLabel value="9" size="2" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.tablaPendientes']} </f:facet>
+							<h:outputLabel value="4" size="2" />
+							<h:outputLabel value="4" size="2" />
+							<h:outputLabel value="5" size="2" />
+							<h:outputLabel value="0" size="2" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.tablaCriticos']} </f:facet>
+							<h:outputLabel value="2" size="2" />
+							<h:outputLabel value="2" size="2" />
+							<h:outputLabel value="3" size="2" />
+							<h:outputLabel value="0" size="2" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['estadoDetalleCajas.tablaOperador']} </f:facet>
+							<h:outputLabel value="RUBÉN/ROBLES" size="2" />
+							<h:outputLabel value="MARÍA/MEDINA" size="2" />
+							<h:outputLabel value="JOSÉ/ESPARZA" size="2" />
+							<h:outputLabel value="RAÚL/NORIEGA" size="2" />
+						</h:column>
+
+						<br></br>
+
+					</h:dataTable>
+
+					<br /> <br /> <br />
+					
+
+				</fieldset>
+
+				<fieldset>
+					<table style="float: left;">
+
+						<tr>
+							<td>
+								<fieldset >
+									<legend>#{msg['estadoDetalleCajas.tituloCortes']}</legend>
+									<h:panelGrid columns="1">
+										<h:selectOneRadio layout="pageDirection">
+											<f:selectItem
+												itemLabel="#{msg['estadoDetalleCajas.corteParcial']} " size="13" />
+											<f:selectItem
+												itemLabel="#{msg['estadoDetalleCajas.corteFinal']}" size="13"  />
+										</h:selectOneRadio>
+										
+										
+
+									</h:panelGrid>
+
+									<div align="right">
+									<h:commandButton
+											value="#{msg['estadoDetalleCajas.btnRealizarCorte']}"
+											type="submit" class="button-blue jqTransformButton" />
+										<br></br>
+										<br></br>
+									</div>
+								</fieldset>
+							</td>
+
+							<td>
+
+								<fieldset columns="2">
+
+									<legend>#{msg['estadoDetalleCajas.Consultas']}</legend>
+									<h:panelGrid columns="2">
+
+										<h:outputLabel
+											value="#{msg['estadoDetalleCajas.tablaCaja']}  " />
+										<h:outputLabel value="6" />
+										
+										<br></br>
+										<br></br>
+										<br></br>
+										<br></br>
+										<br></br>
+									</h:panelGrid>
+									<div align="right">
+										<h:commandButton
+											value="#{msg['estadoDetalleCajas.btnAplicarConsulta']}"
+											type="submit" class="button-blue jqTransformButton" />
+											<br></br>
+										<br></br>
+									</div>
+
+								</fieldset>
+							</td>
+
+							<td>
+								<fieldset >
+
+									<legend>#{msg['estadoDetalleCajas.reportes']}</legend>
+									<h:panelGrid columns="2" >
+										<h:selectOneRadio layout="pageDirection" >
+											<f:selectItem 
+												itemLabel="#{msg['estadoDetalleCajas.soloReporteDetalle']}" />
+
+											<f:selectItem 
+												itemLabel="#{msg['estadoDetalleCajas.soloReporteConsolidado']}" />
+
+											<f:selectItem 
+												itemLabel="#{msg['estadoDetalleCajas.ambosReportes']}" />
+
+										</h:selectOneRadio>
+										
+									</h:panelGrid>
+									
+									<div align="right">
+										<h:commandButton
+											value="#{msg['estadoDetalleCajas.btnGenerarImpresion']}"
+											type="submit" class="button-blue jqTransformButton" />
+											<br></br>
+										<br></br>
+									</div>
+
+								</fieldset>
+							</td>
+						</tr>
+
+					</table>
+				</fieldset>
+
+
+				<br /> <br />
+					<div align="right" style="width: 850px">
+						<h:commandButton value="#{msg['estadoDetalleCajas.btnSalir']}"
+							type="submit" class="button-blue jqTransformButton" />
+						<br /> <br />
+					</div>
+
+			</h:form>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+

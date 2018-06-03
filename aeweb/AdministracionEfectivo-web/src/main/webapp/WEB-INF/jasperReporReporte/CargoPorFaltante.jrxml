@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubBoveda" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f220bf70-de25-44bd-b3b6-0ca8c65497ce">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="tipomovIdn" class="java.lang.Short"/>
+	<field name="detprocEtvTraslado" class="java.lang.Short"/>
+	<field name="detprocSirhCpaeSirhOrigen" class="java.lang.Short"/>
+	<field name="detprocRecoleccion" class="java.lang.Long"/>
+	<field name="detprocRecepcionEnEtv" class="java.lang.Long"/>
+	<field name="detprocVerificacion" class="java.lang.Long"/>
+	<field name="detprocAcreditacionEnBnmx" class="java.lang.Long"/>
+	<field name="detprocNumDeComprobante" class="java.lang.String"/>
+	<field name="detprocDiceContener" class="java.lang.String"/>
+	<field name="detprocNumUneg" class="java.lang.Short"/>
+	<field name="detprocContratoEfectivo" class="java.lang.Long"/>
+	<field name="detprocGloblParclContendor" class="java.lang.String"/>
+	<field name="detprocInconsistencia" class="java.lang.Short"/>
+	<field name="detprocDivisa" class="java.lang.Short"/>
+	<field name="detprocSuc" class="java.lang.Short"/>
+	<field name="detprocCuenta" class="java.lang.Integer"/>
+	<field name="detprocImpteDiferencia" class="java.lang.String"/>
+	<field name="detprocFaltanteSobrante" class="java.lang.String"/>
+	<field name="detprocSuccargoAbonoDif" class="java.lang.Short"/>
+	<field name="detprocCntacargoAbonodif" class="java.lang.Integer"/>
+	<field name="detprocReferenciaNumerica" class="java.lang.Long"/>
+	<field name="detprocReferenciaAlf" class="java.lang.String"/>
+	<field name="detprocNumParcialDif" class="java.lang.Short"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="18" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="-1" width="555" height="1" uuid="e3b19054-aa1d-4701-8f81-12510b5e8114"/>
+			</line>
+			<line>
+				<reportElement x="0" y="17" width="555" height="1" uuid="710eed21-bf5c-4bf9-9f8c-37c44ea709e9"/>
+			</line>
+			<staticText>
+				<reportElement x="78" y="0" width="396" height="15" uuid="ccbd57fa-463a-44f3-88ae-9bb40e38fe64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BANCO NACIONAL DE MÉXICO, S.A.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="405" y="22" width="139" height="10" uuid="56413239-d031-4f17-9b0a-50ce2e555a34"/>
+				<textElement>
+					<font size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[VIERNES 9 DE DICIEMBRE DE 2013 05:30 PM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="181" y="2" width="191" height="12" uuid="3bb2c3c7-4167-41c0-bcb6-ef52be6395ab"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE CARGO POR FALTANTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="22" width="59" height="10" uuid="7e6a2465-b444-4286-8e86-7ecf1ab2abfd"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA Y HORA:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="578" splitType="Stretch">
+			<staticText>
+				<reportElement x="78" y="54" width="93" height="21" uuid="f1b0a2cc-5222-45eb-9335-c6f1af5ef0ab"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Identificador     ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="76" width="93" height="20" uuid="2a1b9bca-1e5a-4964-b463-6b9d6a84b44f"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SIRH de origen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="95" width="93" height="21" uuid="9ed760da-ab2b-4939-85de-3efcc17013ab"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Recepción en ETV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="119" width="91" height="20" uuid="41fe2c98-7e4d-4555-9ee9-1203bc029fdc"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Acreditación en Banamex]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="113" width="94" height="22" uuid="0a6c4b12-0061-4afa-8d09-678bdbdceb47"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número de Comprobante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="162" width="91" height="20" uuid="e68ebe5b-cc2b-42f5-bcca-23c2c989fcb8"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Global/Parcial/Contenedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="133" width="93" height="20" uuid="667a3cd2-10d7-4203-a86b-8aa9789148b0"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dice Contener]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="151" width="93" height="20" uuid="1290f9c3-cdff-48d7-bd5c-2a385c4bab60"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contrato Efectivo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="171" width="93" height="20" uuid="4a4aab17-9b79-4834-9c57-fa7e7745cd02"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inconsistencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="191" width="93" height="20" uuid="8bd190bd-c03a-4980-a318-2562b4aaf509"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sucursal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="212" width="93" height="20" uuid="0dcf467a-bb04-43a0-95be-61825eeca70b"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Importe de la Diferencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="244" width="91" height="20" uuid="4d25ea65-11b5-4d33-bd80-ded94aecd315"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Suc. de Cargo/Abono por Diferencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="229" width="93" height="20" uuid="873e6bdb-34af-47ab-a4cd-013488c09f73"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Referencia Numerica]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="172" y="54" width="84" height="21" uuid="b607c545-9b54-4ad5-ad38-832aabb98b07"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipomovIdn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="76" width="84" height="20" uuid="7cf1bacd-c0dc-43f5-935c-f39cc7d38df6"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocSirhCpaeSirhOrigen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="95" width="84" height="21" uuid="0de853ba-5ab3-49b5-9ab0-ad61ec3b2635"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocRecepcionEnEtv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="113" width="84" height="20" uuid="bafee24a-d517-4d90-9491-cb8a2abd7f6b"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocNumDeComprobante}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="119" width="100" height="22" uuid="f788c83f-3680-492d-a9c9-0ac552dda4c9"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocAcreditacionEnBnmx}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="162" width="100" height="20" uuid="ef53781c-90e7-47be-b0d0-778da1ddec85"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocGloblParclContendor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="133" width="84" height="20" uuid="75851557-1588-4ba7-b57e-471178d1c9b6"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocDiceContener}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="151" width="85" height="20" uuid="fb6d3da0-6d22-468d-ab71-2ac962795722"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocContratoEfectivo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="171" width="84" height="20" uuid="92c2de22-28ed-4ff3-bdff-1c1dde500c96"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocInconsistencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="191" width="84" height="20" uuid="77b42a65-779f-4a58-b673-08b6f9a2f638"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocSuc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="212" width="84" height="20" uuid="106a8383-6151-45e0-8a74-58287d6ee345"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocImpteDiferencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="244" width="100" height="20" uuid="2c6d9aa7-bb8f-4b90-9d7b-1da145cf7ab4"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocSuccargoAbonoDif}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="230" width="84" height="20" uuid="cd465f51-d124-4464-87a2-17ad6a698e2d"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocReferenciaNumerica}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="351" y="54" width="91" height="21" uuid="517cc1d7-754a-4d0d-b629-40358d83e4f7"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ETV Traslado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="75" width="91" height="20" uuid="b4d1bbb8-2ee4-4b0f-9a30-10fd8f78b172"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Recolección]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="96" width="91" height="21" uuid="93af3e13-2460-4d27-985f-3d959ce777b4"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Verificación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="141" width="91" height="22" uuid="5dc1e0b1-f3f4-4308-bc56-97a0ac0e7093"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número Unidad de Negocio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="183" width="91" height="20" uuid="c175ab04-2fc8-4b13-8225-3a1b67774190"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Divisa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="202" width="91" height="20" uuid="d5c7e512-7d4f-4901-aa4b-be298b567da5"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cuenta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="221" width="91" height="20" uuid="1fcd19a7-1d13-481d-8c96-0cf80277654c"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Faltante/Sobrante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="249" width="95" height="20" uuid="301db63f-13ef-4212-8e04-8b2e5bd0a7e7"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Referencia Alfanumerica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="268" width="91" height="20" uuid="b9d6f70e-7b01-4495-883c-62e9eeaed4da"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número de Parcial de Diferencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="270" width="93" height="20" uuid="d46222ab-8bbc-4783-90af-09334ccc7b35"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cta. de Cargo/Abono por Diferencia]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="443" y="54" width="100" height="21" uuid="4a7abe16-01b7-4936-aca7-9d5aa5ddb122"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocEtvTraslado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="75" width="100" height="20" uuid="d433f9e3-fb30-4aba-bc4a-745acb54add7"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocRecoleccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="96" width="100" height="21" uuid="38c448da-efdc-4679-af96-0b082bcad871"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocVerificacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="141" width="100" height="22" uuid="6558a849-8a8b-44f5-96f6-ab57a41f10c1"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocNumUneg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="183" width="100" height="20" uuid="9b303fcb-255f-400a-97ed-a60bb2a19f36"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocDivisa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="202" width="100" height="20" uuid="e097a37f-ee27-4396-91dd-aad8a1741542"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocCuenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="221" width="100" height="20" uuid="59a525a5-bff7-4885-abd8-442c4342b6d6"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocFaltanteSobrante}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="270" width="84" height="20" uuid="feff410a-31ef-493b-adc8-3a2d4b01a73a"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocCntacargoAbonodif}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="249" width="84" height="20" uuid="693ed6fd-0b0f-48ee-9c88-d21af7cb5cfc"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocReferenciaNumerica}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="268" width="100" height="20" uuid="74b54cff-5462-40a2-a1a2-3e52fc20a8d2"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detprocNumParcialDif}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="108">
+			<textField>
+				<reportElement x="438" y="88" width="80" height="20" uuid="f6d0bdad-a7cf-4aa2-8444-b545a91b624d"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="518" y="88" width="42" height="20" uuid="c319fda8-011b-4973-adf2-fe5f8584197b"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="199" y="88" width="100" height="20" uuid="9a7ddf7e-b288-488a-ad88-c7085279966a"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AE-WEB 2013]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

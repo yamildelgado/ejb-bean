@@ -1,0 +1,169 @@
+
+  
+  @import url("screen.css");
+  @import url("interior.css");
+  @import url("tables.css");
+  
+  form.vertical fieldset,form.horizontal fieldset {
+	border: 1px solid #ccc;
+	padding: 10px 0 0 0;
+	margin: 10px 3px;
+}
+
+form.vertical fieldset fieldset,form.horizontal fieldset fieldset {
+	border: 1px solid #ccc;
+	margin: 10px;
+}
+
+form.vertical fieldset p.commands {
+	padding: 8px;
+}
+
+form.horizontal fieldset p.commands {
+	float: right;
+	width: auto;
+	margin-top: 15px;
+}
+
+form.vertical fieldset p {
+	padding: 2px 10px 0px;
+	clear: both;
+}
+
+form.vertical legend,form.horizontal legend {
+	color: #666;
+	font-size: 12px;
+	background: #fff;
+	padding: 4px 6px;
+	margin-left: 10px;
+	font-weight: none;
+	border: 1px solid #ccc;
+}
+
+form.horizontal p {
+	padding: 5px 10px 7px;
+	float: left;
+	font-size: 12px;
+	width: 200px;
+}
+
+form.vertical fieldset div.divider {
+	padding: 1px;
+	margin: 0 5px;
+	clear: both;
+}
+
+
+
+* button.jqTransformButton span span {
+	height: 20px;
+}
+
+
+*+button.jqTransformButton span span {
+	height: 20px;
+}
+
+/* Colores */
+.button-blue span {
+	background: url(../img/forms/buttons/boton-blue-right.png) no-repeat
+		right top;
+}
+
+.button-blue span span {
+	background: url(../img/forms/buttons/boton-blue-left.png) no-repeat top
+		left;
+}
+
+.button-blue {
+	
+	
+	background: url(../img/forms/buttons/boton-blue-left.png) top left;
+	color: white;
+	border: none;
+	height: 25px;
+	border-radius:.3em;
+	-moz-border-radius:.3em;
+	-webkit-border-radius:.3em;
+	-o-border-radius:.3em;
+	 behavior:url(border-radius.htc);
+	
+	
+	
+}
+
+  
+ 
+#bordeEmergente{
+	
+	
+	width: 600px;
+	background: white;
+	overflow: auto;
+}
+body{
+	background: white;
+	
+}
+
+
+/***************************Tablas*************************/
+
+#bordeTr{
+	border:1px solid #d8d8d8;
+	border-collapse: collapse;
+	width:450px;
+	
+}
+#bordeTr th, #bordeTr td {
+  border: 1px solid #d8d8d8;
+  text-align:center;
+}
+#bordeTr2{
+	border:1px solid #d8d8d8;
+	border-collapse: collapse;
+	
+	
+}
+#bordeTr2 th, #bordeTr2 td {
+  border: 1px solid #d8d8d8;
+  text-align:center;
+}
+/********************** tabla generica**************************/
+table.tablaBorde{
+	font-family: Arial,Helvetica,sans-serif;
+	border-collapse:collapse;
+	color:#666;
+}
+table.tablaBorde th {
+  padding: 4px;
+  text-align:center;
+  background: #d8d8d8;
+}
+table.tablaBorde th , .tablaBorde td label {
+  border: 1px solid #d8d8d8;
+  text-align:center;
+  
+  
+}
+
+
+#barraFlotante{
+	position:fixed;
+   bottom:0;
+   left:0;
+   height:32px;
+   width:100%;
+   text-align:center;
+   z-index:9;
+   background-color: #d8d8d8;
+   background-image: url(fondo.png);
+   background-repeat: repeat-x;
+   background-position: left bottom;
+   border:1px solid #A9A9A9;
+}
+#centro{
+	margin: auto;
+	width:955px;
+	overflow:auto;
+}

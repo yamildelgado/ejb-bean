@@ -1,0 +1,689 @@
+@charset "utf-8";
+/*----------------------------------------------------- 
+Afore Banamex Estilos 
+Uso por: ABANSE
+$Id: interior.css,v 1.0 02 Agosto 2010 adalaros $
+-----------------------------------------------------*/ 
+
+/* ------- Navegacion  ------- */ 
+
+#mainnav #drop-menu-on a  {
+  background: transparent url(../img/navigation/nav_tab_left_close.gif) no-repeat scroll left top;
+	color: #ff0000;
+	text-decoration: none;
+	padding: 0 0 0 20px;
+}   
+
+#mainnav #drop-menu-off a  {
+  background:transparent url(../img/navigation/flyout_open0.gif) no-repeat scroll 0 12px;
+  margin-left:8px;
+  padding-left:20px;
+}   
+
+.site {
+	clear: both;
+    margin: 0 auto;
+    text-align: left;
+    width: 955px;
+}
+
+.site-name {
+    margin: 5px 10px;
+}
+
+.search-area {
+	padding: 0 0 7px 0;
+	margin-right: 3px;
+	float: right;
+}
+#top-nav {
+	margin:0 auto;
+	width: 955px;
+	clear:both;
+	text-align:left;
+}
+
+#top-nav_popup {
+	margin:0 auto;
+	clear:both;
+	text-align:left;
+}
+
+#nav-container {
+	background: #ffffff url('../img/hd_bg_fixed.gif') no-repeat 0 0;
+	width: 100%;
+	height: 104px;
+}
+#main-nav {
+	width: 100%;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	line-height: normal; 
+	background: #ffffff;	
+}    
+#main-nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}     
+#main-nav li {
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+	list-style:none;
+	/*text-transform:capitalize;*/
+}
+
+
+#main-nav a {
+	float: left;
+	margin: 0;
+	padding: 10px 12px 7px 12px;/*padding: 4px 25px 0px 10px;*/
+	color: #666;/*#ffffff*/
+	font-weight: bold;
+	text-decoration: none;
+}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#main-nav a span {
+	float:none;
+}
+/* End IE5-Mac hack */   
+#main-nav a:hover  {
+	color: #666666; /*3399CC*/
+	text-decoration: none;
+}
+#main-nav #active a  {
+	background: url(../img/navigation/nav_tab_left.gif) no-repeat left top;
+	color: #ff0000;
+	text-decoration: none;
+	padding: 0 0 0 4px;
+}    
+#main-nav a span {
+	display: block;
+	background: url(../img/navigation/nav_tab_right.gif) no-repeat right top;
+	padding: 10px 12px 13px 8px;/*padding: 4px 17px 0px 8px;*/ 
+	font-weight: bold;
+	color:#000;
+	margin-right: 0px; 
+	text-decoration: none;	
+}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#main-nav a span {float:none;}
+/* End IE5-Mac hack */
+#main-nav a:hover span {
+	color: #000;
+	text-decoration: none;
+}
+#main-nav #active-no-sub a  {
+	text-decoration: none;
+	background: url(../img/navigation/nav_tab_left.gif) no-repeat left top;
+	padding: 0 0 0 4px;
+	color: #000066;
+}
+#main-nav #active-no-sub a span {
+	display: block;
+	background: url(../img/navigation/nav_tab_right.gif) no-repeat right top;
+	padding: 10px 12px 13px 8px;/*padding: 4px 17px 0px 8px;*/ 
+	font-weight: bold;
+	margin-right: 0px; 
+	text-decoration: none;
+	color: #000066;	
+}
+#main-nav #active.no-sub a:hover span {
+	color: #000066;
+	text-decoration: none;
+}
+/* ----------------- MAIN NAV STYLES END HERE -----------------*/
+/* ----------------- SUBNAV STYLES START HERE -------------------*/
+.sub-nav {
+	text-align: left;
+	color: #999;	
+	background: #fff url('../img/navigation/btmcenter_subnav.gif') repeat-x 0 0; 
+	margin: 0 12px 0 11px; 
+	padding: 10px 5px 0px 7px;
+}
+.sub-nav a {
+    color: #333333;
+    text-decoration: none;
+	padding: 0px 5px 0px 5px;   
+	/*text-transform:capitalize; */
+}
+.sub-nav a:hover {
+    color: #ff0000;
+    text-decoration: underline;
+    
+}
+.sub-nav-on {
+    font-weight: bold;
+	color: #ffffff;
+}
+.sub-nav-on a {
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+}
+.sub-nav-on a:hover {
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;   
+}
+.sub-nav-on a:link {
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/*menu de navegacion ori*/
+
+
+
+.sub-nav ul {
+	padding:0;
+	margin:0;
+}    
+.sub-nav ul li {
+	display: inline;
+	list-style:none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	float:left;
+	/*text-transform:capitalize;*/
+}
+
+/*
+.sub-nav ul li span{
+	float:left;
+	margin-top:-1px;
+	*margin-top:-2px;
+	
+} 
+*/
+.sub-nav ul ul {
+	position: absolute;
+	display: none;
+	clear:both;
+	margin: 0 0 0 -2px;
+	* margin: -4px 0 0 -2px;
+	padding:5px 22px 10px 22px;
+	border:solid 1px #aaa;
+	border-top-width:0px;
+	background:#f7f7f7 url('../img/navigation/subnav_ul_bg.png') repeat-x scroll left bottom    ;
+	-moz-border-radius-bottomleft:4px;
+	-moz-border-radius-bottomright:4px;
+}
+.sub-nav ul ul li {
+	float: none;
+	white-space:nowrap;
+	display:inherit;
+	padding:0px;
+	margin:0px
+}
+.sub-nav ul ul li a {
+	display:block;
+	padding:3px 0;
+	margin:0px;
+}
+.sub-nav ul li ul li a:hover {
+
+}
+/* ----------------- SUBNAV STYLES START HERE -------------------*/
+/* ----------------- NAV CONTAINER ----------------------*/
+
+.top-left-nav-container {
+	width: 11px; 
+	float: left; 
+	background: url('../img/navigation/topleft_hdr.gif') no-repeat 0 0; 
+	height: 66px; /*62*/
+}
+
+.top-center-nav-container {
+	margin: 0 12px 0 11px; 
+	background: url('../img/navigation/topcenter_hdr.gif') repeat-x 0 0;
+	padding-top: 2px; /*New*/
+}
+
+.top-right-nav-container {
+	width: 12px; 
+	float: right; 
+	background: url('../img/navigation/topright_hdr.gif') no-repeat 0 0; 
+	height: 66px;/*62*/
+}
+
+.middle-container {
+	clear: both;
+	background: url('../img/navigation/btmcenter_hdr.gif') repeat-x bottom left;
+}
+
+.middle-left-main-nav-container {
+	width: 11px; 
+	float: left; 
+	background: url('../img/navigation/navleft_hdr_new.gif') no-repeat bottom left; 
+	height: 45px; /*25px*/
+}
+
+.middle-right-main-nav-container {
+	width: 12px; 
+	float: right; 
+	background: url('../img/navigation/navrt_hdr_new.gif') no-repeat bottom right; 
+	height: 45px; /*25px*/
+}
+
+.middle-center-main-nav-container {
+	margin: 0 12px 0 11px; 
+	padding: 0;
+	height: 45px;
+	/*background: url('../img/btmcenter_hdr.gif') repeat-x bottom left;*/ /* Can be used if ie6 whitespace bug is fixed */
+}
+
+
+
+.bottom-outer-main-nav-container {
+	clear: both;
+}
+
+.bottom-left-nav-container {
+	width: 11px; 
+	float: left; 
+	background: url('../img/navigation/btmleft_hdr.gif') no-repeat 0 0; 
+	margin: 0;
+}
+
+.bottom-right-nav-container {
+	width: 12px; 
+	float: right; 
+	background: url('../img/navigation/btmright_hdr.gif') no-repeat 0 0; 
+	margin: 0;
+}
+
+.bottom-center-nav-container {
+	background: url('../img/navigation/btmcenter_hdr.gif') repeat-x 0 0; 
+}
+
+
+/* left navigation styles start here */
+
+
+#left-nav-container li{
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+}
+
+a.left-nav {
+	background: url('../img/icons/leftnav_black.gif') no-repeat 0px -1px;
+	padding-left: 22px;
+	margin-bottom: 6px;
+	color: #666;
+	text-decoration: none;
+	display: block;
+	cursor:pointer;
+}
+a.left-nav-black {
+	font-weight: bold;
+	background: url('../img/icons/leftnav_black.gif') no-repeat 0px -1px;
+}
+a.left-nav-on {
+	font-weight: ;
+	background: url('../img/icons/leftnav_open.gif') no-repeat 0px -1px;
+}
+
+a.left-nav:hover, a.left-nav-black:hover {
+	text-decoration: underline;
+	color: #ff0000;
+}
+.left-nav-div {
+	padding: 4px 0px 4px 22px;
+}
+.left-nav-div a {
+	text-decoration: none;
+	display: block;
+	padding: 0px 0px 7px 0px;
+}
+.left-nav-div a:hover {
+	text-decoration: underline;
+}
+
+.left-nav-div a.left-nav-on {
+	background: url('') no-repeat 0px 1px;
+}
+
+.left-nav-div a.select, .left-nav-div a.select:hover {
+	text-decoration: none;
+	display: block;
+	padding: 0px 0px 7px 0px;
+	font-weight: bold;
+}
+
+
+/* --- BEGIN SUBNAV CONTAINER ---*/
+
+.bottom-outer-sub-nav-container {
+	 clear: both;
+	 margin-top: -10px;
+	 position:absolute;
+	 /position:;
+	 p/osition:;
+	 width: 955px;/*56.555%;*/ /*74.250%*/
+	 /width: ;
+	 w/idth: ;
+}
+
+.bottom-left-sub-nav-container {
+	width: 11px; 
+	float: left; 
+	background: url('../img/navigation/btmleft_subnav.gif') no-repeat 0 0; 
+	padding: 20px 0 0 0; 
+	margin: 0;
+}
+ 
+.bottom-right-sub-nav-container {
+	width: 12px; 
+	float: right; 
+	background: url('../img/navigation/btmright_subnav.gif') no-repeat 0 0; 
+	padding: 20px 0 0 0; 
+	margin: 0;
+}
+
+
+
+/* ------- Estructura de la paginas ------- */ 
+
+#main-content-area-container {
+	width: 955px;
+	margin:0px auto 0px auto;
+	padding: 0;
+}
+
+#page-container {
+	margin: 0px auto;
+	width: 955px;
+	padding: 8px 0px 0px 0px;
+	text-align: left;
+}
+
+#page-container-border {
+	background-color:#fff;
+	margin: 0px auto;
+	width: 955px;
+	padding: 0px;
+	clear: both;
+	margin-top: 0px;
+	m/argin-top: 0px;
+	/margin-top: 0px;
+	text-align:left;
+}
+#page-container-border2 {
+	background-color:#fff;
+	margin: 0px auto;
+	width: 600px;
+	padding: 0px;
+	clear: both;
+	margin-top: 0px;
+	m/argin-top: 0px;
+	/margin-top: 0px;
+	text-align:left;
+}
+#page-container-border_popup {
+	margin: 0px auto;
+	padding: 10px;
+	clear: both;
+	text-align:left;
+}
+#page-container #page-name, #page-container-border #page-name {
+	color: #000066;
+}
+
+.right-cont{
+	width: 687px;
+	/width: 687px;
+	margin: 0px 0px 20px 232px;
+}
+
+.left-cont{
+	width: 687px;
+	margin: 0px 232px 20px 0px;
+}
+.middle-cont{
+	width: 453px;
+	margin: 0px 222px 20px 222px;
+	padding:0 10px 0 10px;
+}
+.lg-cont-1col{
+	width:918px;
+}
+
+.col2-left-cont{
+	margin:0px 454px 20px 0px;
+	padding-right:11px;
+	_padding-right:5px;
+	width:454px;
+}
+.col2-right-cont{
+	float:right;
+	width:455px;
+	/padding-right:10px;
+}
+
+.col3-left-cont{
+	width:300px;
+	float:left;
+}
+.col3-right-cont{
+	width:300px;
+	float:right;
+	/padding-right:10px;
+
+}
+.col3-mid-cont{
+	width: 300px;
+	margin: 0px 300px 20px 300px;
+	padding:0 10px 0 10px;
+	_padding:0 5px 0 5px;
+}
+
+.lg-cont-top-bg {
+	background: url('../img/lg_topcontent_bg.gif') no-repeat 0 0;
+	padding: 4px 0;
+	/padding: 2px 0;
+	margin-top: 5px;
+	/margin-top: 0px;
+	clear:both;
+}
+.lg-cont-center-bg {
+	background: transparent url('../img/lg_midcont_bg.gif') repeat-y scroll 0 0;
+	padding: 10px 10px 20px 17px;
+	margin: 0;
+	float: left;
+	width:930px;
+	z-index:10;
+}
+
+
+.lg-cont-divider-bg-2col {
+	background: url('../img/2col_faux.gif') repeat-y 0 0;
+	float: left;
+}
+.lg-cont-divider-bg-3col{
+	background: url('../img/3col_faux.gif') repeat-y 0 0;
+	float: left;
+}
+.lg-cont-divider-bg-4col{
+	background: url('../img/4col_faux.gif') repeat-y 0 0;
+	float: left;
+}
+
+
+.lg-cont-divider-bg-2col-left {
+	background: url('../img/2col_leftfaux.gif') repeat-y 0 0;
+	float: left;
+}
+.lg-cont-divider-bg-2col-right {
+	background: url('../img/2col_rightfaux.gif') repeat-y 0 0;
+	float: left;
+}
+.lg-cont-divider-bg-3col-middle {
+	background: url('../img/3col_middlefaux.gif') repeat-y 0 0;
+	float: left;
+}
+
+
+.sub-left-col-cont{
+	float: left;
+	width: 220px;
+}
+.sub-right-col-cont{
+	float: right; 
+	width: 220px;
+	_padding-right:8px;
+}
+.sub-center-col-cont {
+	margin: 0 230px 0 220px;
+}
+.lg-cont-bottom-bg {
+	background: url('../img/lg_btm_cont_bg.gif') no-repeat 0 0;
+	/*height: 14px;*/
+	padding: 7px 0;
+	margin: 0;
+	clear: both;
+}
+
+
+
+/* Cajas dinamica */
+
+.box  {
+	float:left;
+	margin:0px;
+	width:100%;
+}
+
+.box-pad  {
+	float:left;
+	margin:0px;
+	width:100%;
+	padding: 5px 10px 5px 0;
+}
+
+.left-box{
+	padding-left:14px;
+	height: 8px;	
+	font-style:normal;	
+	color:#fff;
+	
+}
+
+.right-box{
+	display:block;
+	height: 8px;
+	line-height:23px;
+	font-style:normal;
+	color:#fff;		
+		
+}
+
+
+.left-top-box { 
+	background:url('../img/box_topcontent_bg.gif') left center no-repeat; 
+}
+.left-top-box .right-top-box { 
+	background:url('../img/box_topcontent_bg.gif') center right no-repeat;  
+}
+
+.left-middle-box { 
+	background:url('../img/box_midcont_bg.gif') left center repeat-y; 
+	padding-left:8px;
+	_margin-top:-5px
+}
+.right-middle-box { 
+	background:url('../img/box_midcont_bg.gif') center right repeat-y;  
+	padding-right:10px;
+}
+
+.left-bottom-box { 
+	background:url('../img/box_btm_cont_bg.gif') left center no-repeat; 
+	_margin-top:-3px
+}
+.left-bottom-box .right-bottom-box { 
+	background:url('../img/box_btm_cont_bg.gif') center right no-repeat;  
+}
+.cont-box{
+	overflow:auto;
+}
+
+/* Medidas estandar para cajas */
+.width-1{
+	width:222px;
+}
+
+.width-2{
+	width:455px;
+}
+
+.width-3{
+	width:688px;
+}
+
+.width-4{
+	width:920px;
+}
+/*login img */
+.width-5{
+	width:200px;
+}
+
+/* menu desplegable */
+ul.submenu{
+	list-style:none;
+}
+
+ul.submenu ul{
+	display:none;
+	list-style:none;
+	
+} 
+
+ul.submenu li:hover > ul{
+	display:block;
+
+	
+}
+ul.submenu li ul li :hover > ul{
+	display:block;
+	margin-left:80px; 
+
+	
+}
+
+/* grid */
+table.gridtable {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size:9px;
+	color:#ffffff;
+	border-style: hidden;
+}
+
+table.gridtable tr {
+	height:25px;
+}
+
+table.gridtable th {
+	padding: 4px;
+	border-style: hidden;
+	background-color: #d8d8d8;
+}
+
+table.gridtable td {
+	padding: 4px;
+	
+	background-color: #ffffff;
+}
+
+table.gridtable tr.sombreado > td {
+	background-color: #f2f2f2;
+}
+
+.
+

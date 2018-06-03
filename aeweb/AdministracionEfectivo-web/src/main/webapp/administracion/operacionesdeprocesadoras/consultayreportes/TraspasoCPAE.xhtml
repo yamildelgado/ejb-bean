@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+
+	<ui:define name="content">
+
+	
+		<div id="breadcrumbs">
+			<span>Administración</span> <span>
+				Catálogos</span> <span> Operaciones de Procesadoras</span> <span> Consultas y Reportes</span> 
+		</div>
+
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['operacionesprocesadoras.tituloTraspasoCpae']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+
+						<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+
+						
+
+
+
+						<fieldset>
+							<legend>#{msg['operacionesprocesadoras.dotacionatmsdetalle']}</legend>
+							<h:panelGrid columns="6">
+								<h:outputLabel value="#{msg['operacionesprocesadoras.identificador']}" /><span  /><h:inputText value="#{operProcGridMB.operacionVO.tipoperIdn}" size="4" />
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.etv']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocEtvTraslado}" size="4"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.sirhOrigenDestino']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocSirhCpaeSirhOrigen}" size="4"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.sirhDestino']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocSirhDestinoIdAtm}" size="4"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.folio']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocFolioS018}" size="18"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.instruccionEtv']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocInstruccionEtv}" size="10" />
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.preparacionEtv']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocPreparacionEtv}" size="10"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.entregaTraslado']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocEntregaATraslado}" size="10" />
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.entregaFisicaRetorno']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocEntregaFORetrnoEtv}"  size="10" />
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.compromisoEntregaUsuario']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocCopmisoEntrgUsrio}"  size="8"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.numeroComprobante']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocNumDeComprobante}" size="20" />
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.divisa']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocDivisa}" size="3" />
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.importedepositodotacion']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocImpteDeposDotacion}" size="14"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.bca1000']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocBca1000}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.bca500']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocBca500}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.bca200']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocBca200}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.bca100']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocBca100}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.bca50']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocBca50}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.bca20']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocBca20}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mca100']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMca100}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mca20']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMca20}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mca10']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMca10}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mca5']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMca5}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mca2']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMca2}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mca1']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMca1}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mca50c']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMca50Centavos}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mca20c']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMca20Centavos}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mca10c']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMca10Centavos}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mca05c']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMca05Centavos}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mca1c']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMca01Centavos}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.bea1']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocBea1}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.bea2']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocBea2}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.bea5']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocBea5}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.bea10']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocBea10}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.bea20']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocBea20}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.bea100']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocBea100}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mea1c']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMea1}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mea5c']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMea05Centavos}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mea10c']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMea10Centavos}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mea25c']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMea25Centavos}" size="9" />
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mea50c']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMea50Centavos}" size="9"/>
+								<h:outputLabel value ="#{msg['operacionesprocesadoras.mea1']}" /><span/><h:inputText value="#{operProcGridMB.operacionVO.detprocMea1}" size="9"/>
+																										<h:inputHidden value="#{operProcGridMB.operacionVO.tipoperIdn}" />
+							</h:panelGrid>
+						</fieldset>
+
+						<br />
+
+
+						<br />
+
+						<fieldset>
+							<div align="center">
+								<h:panelGrid columns="3" style="width:40px;">
+								
+								
+									<h:commandButton value="#{msg['subbovedas.btnGenerarReporte']}"
+										class="button-blue jqTransformButton"  
+										action="#{operProcGridMB.generarRepore}"/>	
+										
+									<h:commandButton value="#{msg['operacionesProcesadoras.btoRegresar']}"
+										class="button-blue jqTransformButton" action="#{operProcGridMB.regresar()}"/>
+										
+
+								</h:panelGrid>
+							</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

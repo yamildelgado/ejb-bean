@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['cortefinalcaja.titulo']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+
+						<fieldset>
+						<legend>#{msg['cortefinalcaja.seleccioncajas']}</legend>
+							<center>
+							<div style="width: 500px;">
+								<h:dataTable  class="gridtable" value="">
+									<h:column>
+										<f:facet name="header">#{msg['cortefinalcaja.idcaja']}</f:facet>
+										<h:outputLabel value="0001"  />
+										<h:outputLabel value="0002" />
+										<h:outputLabel value="0003" />
+									</h:column>
+									<h:column>
+										<f:facet name="header">#{msg['cortefinalcaja.tipocaja']} </f:facet>
+										<h:outputLabel value="receptora" />
+										<h:outputLabel value="verificadoraBillete" />
+										<h:outputLabel value="verificadoraMoneda" />
+										
+									</h:column>
+									<h:column>
+										<f:facet name="header">#{msg['cortefinalcaja.status']} </f:facet>
+										<h:outputLabel value="habilitada" />
+										<h:outputLabel value="deshabilitada" />
+										<h:outputLabel value="deshabilitada" />
+
+
+									</h:column>
+									<h:column>
+										<f:facet name="header">#{msg['cortefinalcaja.seleccionar']} </f:facet>
+										<h:selectBooleanCheckbox value="true" />
+										<br/>
+										<h:selectBooleanCheckbox value="false" />
+										<br/>
+										<h:selectBooleanCheckbox value="true" />
+									</h:column>
+								</h:dataTable>
+							</div>
+							</center>
+					</fieldset>
+						<br />
+						<br />
+						<div align="center">
+								<h:commandButton
+									value="#{msg['cortefinalcaja.ejecutar']}"
+									type="submit" class="button-blue jqTransformButton" >
+								</h:commandButton>
+						</div>
+	
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

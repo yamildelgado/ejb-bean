@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+	<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Depuración Trimestral</span> 
+		</div>
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+		<div id="sub-nav" class="sub-nav" style="height: 40px">
+				<ul class="nav">
+					<li><a href="#">Cátalogos</a></li>
+
+					<li><a href="#"><u>Turnos</u></a></li>
+
+					<li><a href="#">Procesadoras</a></li>
+
+					<li><a href="#">Bitácora</a></li>
+
+					<li><a href="#">Depuración</a></li>
+				</ul>
+		<div class="clear-both"></div>
+			</div>
+			<div class="section-name" style="width:1000px;">
+				<h1 >#{msg['deputacionTrimestral.titulo']}</h1>
+			</div>
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form id="actualizacionCatalogos" styleClass="horizontal">
+			<fieldset>
+			<h:outputLabel style="text-align:center; " value="#{msg['depuracionTrimestral.subtitulo']}" />
+			<br/>
+			<h:outputLabel style="text-align:center;" value="#{msg['depuracionTrimestral.subtitulo2']}" />
+	        <br />
+	        <h:outputLabel style="text-align:center;" value="#{msg['depuracionTrimestral.subtitulo3']}" />
+			<br />
+			<br />
+			
+			<br />
+				
+								
+		
+			
+			<h:panelGrid columns="1" style="width:40px; margin-top:-30px; margin-left:650px;"> 
+								<h:commandButton style="width:100px;"
+										value="#{msg['depuracionTrimestral.btnAceptar']}"
+										class="button-blue jqTransformButton" />
+										 
+									<h:commandButton style="width:100px;"
+										value="#{msg['depuracionTrimestral.btnSalir']}"
+										class="button-blue jqTransformButton"/>
+			 </h:panelGrid>
+										
+							
+						
+						<br />
+</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

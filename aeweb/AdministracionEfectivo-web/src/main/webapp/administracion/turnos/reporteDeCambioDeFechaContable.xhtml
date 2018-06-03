@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+
+	<h:commandLink>subbovedasEdit</h:commandLink>
+	<ui:define name="content">
+
+	<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Turnos</span> <span> Reporte de Cambio De Fecha Contable</span>
+		</div>
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+
+			<div id="sub-nav" class="sub-nav" style="height: 40px">
+				<ul class="nav">
+					<li><a href="#">Cátalogos</a></li>
+
+					<li><a href="#"><u>Turnos</u></a></li>
+
+					<li><a href="#">Procesadoras</a></li>
+
+					<li><a href="#">Bitácora</a></li>
+
+					<li><a href="#">Depuración</a></li>
+				</ul>
+
+				<div class="clear-both"></div>
+			</div>
+			<div class="section-name">
+				<h1>#{msg['reporteCambioFecha.titulo']}</h1>
+
+			</div>
+			<h:form class="horizontal">
+
+				<h:panelGroup id="messagePanel" layout="block">
+					<h:messages errorStyle="color: red" infoStyle="color: blue"
+						layout="table" />
+				</h:panelGroup>
+
+				
+				<fieldset>
+                              <div align="center" style="width: 850px">
+                              <br/>
+                              <br/>
+                              <br/>
+                              <br/>
+                              <h:outputLabel value="#{msg['reporteCambioFecha.anuncio']}"  />  
+                              <h:outputLabel value="#{msg['reporteCambioFecha.anuncio2']}"  style="text-decoration: underline;"  />	
+                              <h:outputLabel value="(10:00 pm)" />
+                             	</div>
+       							<br/>
+       							
+                               <div align="right" style="width: 850px">
+								<br/>
+								<br/>
+       							<br/>	
+							    <h:commandButton value="#{msg['reporteCambioFecha.botonAceptar']}"
+								class="button-blue jqTransformButton" style="width: 80px" action="reporteDeCambioDeFechaContableList"/>
+								<br/>
+								<br/>
+								<h:commandButton value="#{msg['reporteCambioFecha.botonSalir']}" 
+									class="button-blue jqTransformButton" style="width: 80px"  />
+								</div>
+								
+								
+						</fieldset>
+						
+						
+				<br />
+				
+			</h:form>
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+

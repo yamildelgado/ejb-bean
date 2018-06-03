@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+
+	<ui:define name="content">
+		<div id="breadcrumbs">
+			<span>Supervisión</span> <span> Reportes</span>
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+
+
+
+			<div class="clear-both"></div>
+
+			<div class="section-name">
+				<br></br>
+				<h1>#{msg['consultaDepositosMovimientos.tituloConsultaDepositosMovimientos']}</h1>
+
+			</div>
+			<h:form class="horizontal">
+
+				<h:panelGroup id="messagePanel" layout="block">
+					<h:messages errorStyle="color: red" infoStyle="color: blue"
+						layout="table" />
+				</h:panelGroup>
+
+
+
+				<fieldset>
+					<legend>#{msg['consultaDepositosMovimientos.tituloTunoActivo']}</legend>
+					<h:dataTable class="gridtable" style="width:850px" var="subBoveda"
+						value="">
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['consultaDepositosMovimientos.turno']} </f:facet>
+							<h:outputLabel value="MATUTINO 1 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['consultaDepositosMovimientos.iniciado']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 09:00 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['consultaDepositosMovimientos.fContableInicio']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['consultaDepositosMovimientos.finalizado']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 14:34 " />
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['consultaDepositosMovimientos.fContableFinal']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['consultaDepositosMovimientos.estatus']} </f:facet>
+							<h:outputLabel value="CERRADO" />
+						</h:column>
+
+						<br></br>
+						<br></br>
+						<br></br>
+
+					</h:dataTable>
+					<br />
+
+				</fieldset>
+
+				<br />
+
+
+				<fieldset>
+					<legend>#{msg['consultaDepositosMovimientos.criteriosConsulta']}</legend>
+
+					<fieldset columns="" style="width: 425px; float: left;">
+						<fieldset>
+							<h:panelGrid columns="3" width="425px">
+
+								<h:outputLabel
+									value="#{msg['consultaDepositosMovimientos.turnoActivo']}" />
+								<h:selectOneRadio layout="pageDirection">
+									<f:selectItem itemValue="" />
+								</h:selectOneRadio>
+								<br />
+
+								<h:outputLabel
+									value="#{msg['consultaDepositosMovimientos.fechaContable']}" />
+								<h:selectOneRadio layout="pageDirection">
+									<f:selectItem itemValue="" />
+								</h:selectOneRadio>
+								<p:calendar showOn="button" />
+							</h:panelGrid>
+
+						</fieldset>
+						<br /> <br />
+						<h:panelGrid columns="3">
+							<h:outputLabel value="#{msg['diferencias.caja']}" />
+							<h:selectOneRadio layout="pageDirection">
+								<f:selectItem itemValue="" />
+							</h:selectOneRadio>
+							<h:selectOneMenu value="" style="width:180px;">
+								<f:selectItems value="---Seleccionar Caja---" var="operaciones"
+									itemLabel="---Seleccionar Caja--- " itemValue="---Seleccionar Caja--- " />
+							</h:selectOneMenu>
+
+
+							<h:outputLabel
+								value="#{msg['consultaDepositosMovimientos.comprobante']}" />
+							<h:selectOneRadio layout="pageDirection">
+								<f:selectItem itemValue="" />
+							</h:selectOneRadio>
+
+							<h:selectOneMenu value="" style="width:180px;">
+								<f:selectItems value="----Comprobantes----" var="operaciones"
+									itemLabel=" ----Comprobantes----" itemValue="----Comprobantes---- " />
+							</h:selectOneMenu>
+						</h:panelGrid>
+					</fieldset>
+
+
+
+					<fieldset>
+
+						<br /> <br />
+						<h:panelGrid columns="2" width="405px">
+
+							<h:outputLabel
+								value="#{msg['consultaDepositosMovimientos.fechaContable']}" />
+							<p:calendar showOn="button" />
+
+							<h:outputLabel
+								value="#{msg['consultaDepositosMovimientos.procesadora']}" />
+
+
+							<h:selectOneMenu value="" style="width:200px;">
+								<f:selectItems value="---Seleccionar---" var="operaciones"
+									itemLabel=" " itemValue=" " />
+							</h:selectOneMenu>
+							<br />
+
+						</h:panelGrid>
+						<br /> <br /> <br /> <br /> <br /> <br /> <br />
+
+						<h:panelGrid columns="2">
+							<h:outputLabel
+								value="#{msg['consultaDepositosMovimientos.tipoReporte']}" />
+							<h:selectOneMenu value="" style="width:200px;">
+								<f:selectItems value="---Seleccionar---" var="operaciones"
+									itemLabel="MOVIMIENTOS S500" itemValue="MOVIMIENTOS S018" />
+							</h:selectOneMenu>
+						</h:panelGrid>
+					</fieldset>
+
+
+
+				</fieldset>
+
+				<div align="right" style="width: 850px">
+					<h:commandButton
+						value="#{msg['consultaDepositosMovimientos.btnAceptar']}"
+						style="align=center" class="button-blue jqTransformButton" />
+
+					<h:commandButton
+						value="#{msg['consultaDepositosMovimientos.btnSalir']}"
+						style="align=right" class="button-blue jqTransformButton" />
+				</div>
+			</h:form>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+
+

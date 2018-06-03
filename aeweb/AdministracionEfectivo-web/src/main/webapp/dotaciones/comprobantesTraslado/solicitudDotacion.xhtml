@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	 
+	<div id="breadcrumbs">
+			 <span>Dotaciones</span> <span>
+				Generación de Solicitudes de Dotación</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['solicitudDotacion.titulo']}
+				</h1>
+			</div>
+			
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+					<h:panelGroup id="messagePanel" layout="block">
+								<h:messages errorStyle="color: red" infoStyle="color: blue"
+									layout="table" />
+							</h:panelGroup>
+			
+							<fieldset>
+							
+							<legend>#{msg['solicitudDotacion.tipoDeOperacion']}</legend>
+							
+							<h:panelGrid columns="6" style="width:800px;margin-left:20px; float:center;">
+														
+														
+								<h:outputLabel value="#{msg['solicitudDotacion.entidad']}"  />
+								<h:inputText value="Entidad" disabled="true" size="15" />
+								
+								<h:outputLabel value="#{msg['solicitudDotacion.tipoDeDotacion']}"  />
+								<h:selectOneMenu value="" size="15" style="height:25px">
+                                <f:selectItem itemValue="" itemLabel="Normal"/>
+                                <f:selectItem itemValue="" itemLabel="	Emergente"/>
+                                <f:selectItem itemValue="" itemLabel="Preestablecida"/>
+                                <f:selectItem itemValue=""         itemLabel = "--Selecciona descripción--"/>
+                                </h:selectOneMenu>	
+								
+								<h:outputLabel value="#{msg['solicitudDotacion.fecha']}"  />
+								<p:calendar id="popupButtonCal" showOn="button" size="20"/>   
+								
+									
+								</h:panelGrid>
+																													
+							</fieldset>					
+							
+							<br/>
+							<br/>
+							<br/>
+											
+			
+						<fieldset style="vertical-align:middle" >
+								
+								<fieldset>
+								
+								<legend>#{msg['solicitudDotacion.criterioBusqueda']}</legend>
+														
+								<h:panelGrid columns="5" style="width:600px;margin-left:20px; float:left;" >	
+								
+								<h:outputLabel value="Contrato"  />
+								<h:inputText size="25"  maxlength="25" style="height:20px" value="1324425231"/>
+								
+								<h:outputLabel value="Unidad de Negocio Id"/>
+								<h:inputText value="1234" disabled="true" size="15" />
+								<h:inputText value="5314" size="15" />
+								
+								<center>																					
+								<h:outputLabel value="#{msg['solicitudDotacion.nombre']}"  />
+								<h:selectOneMenu value="" size="20" style="width:380px;">
+								
+                                <f:selectItem itemValue="" itemLabel="Liverpool Polanco"/>
+                                <f:selectItem itemValue="" itemLabel="Ford Satelite"/>
+                                <f:selectItem itemValue="" itemLabel="Interlomas Polanco"/>
+                                <f:selectItem itemValue="" itemLabel="Sanborns Coyoacan"/>
+                                <f:selectItem itemValue="" itemLabel="Telcel Polanco"/>
+                                <f:selectItem itemValue="" itemLabel="Loverpool Satelite"/>
+                                <f:selectItem itemValue=""         itemLabel = "--Selecciona una Unidad de Negocio--" style="text-align:right; "/>
+                                
+                                </h:selectOneMenu>
+                                </center>
+								
+								<h:commandButton value="#{msg['solicitudDotacion.consulta']}" 
+								class="button-blue jqTransformButton" action="#{solicitudDotacionGridMB.btnConsultaUnidadNegocio()}" style="width:90px;" />
+								</h:panelGrid>
+								
+								</fieldset>
+								
+							
+								<br/>
+								 <fieldset>
+								
+								<legend>#{msg['solicitudDotacion.datos']}</legend>
+								
+								<h:panelGrid columns="6" style="width:800px; margin-left:20px">	
+								
+								
+								<h:outputLabel value="Sucursal"  />
+								<h:inputText size="25"  maxlength="25" style="height:20px" value="2453"/>
+								
+								<h:outputLabel value="Cuenta"/>
+								<h:inputText value="764245" size="15" />
+								
+								<h:outputLabel value="#{msg['solicitudDotacion.etv']}" />
+								<h:inputText size="25"  maxlength="25" style="height:20px;" value="Tameme"/>	
+								
+								
+								</h:panelGrid>
+								
+								</fieldset>
+								<br/>
+								<br/>
+								
+								<h:panelGrid columns="4" style="width:800px;margin-left:20px">
+																							
+								<h:outputLabel value="#{msg['solicitudDotacion.divisa']}" />
+								<h:selectOneMenu value="" size="15" style="height:25px" >
+							    <f:selectItem itemValue="" itemLabel="Dolar Americano"/>
+                                <f:selectItem itemValue="" itemLabel="Moneda Nacional"/>
+								<f:selectItem itemValue=""         itemLabel = "--Selecciona una Divisa--"/>
+                                
+                                </h:selectOneMenu>																	
+												
+								<h:outputLabel value="#{msg['solicitudDotacion.importe']}" />
+								<h:inputText size="25"  maxlength="25" style="height:20px; text-align:center" value="$"/>
+								
+								</h:panelGrid>						
+				
+						<h:panelGrid columns="3" border="1">
+
+							<h:inputText size="12" style="border:hidden;background-color:#FFFFFF" disabled="true" />
+							
+							<h:dataTable  class="gridtable" value="#{solicitudDotacionGridMB.listadotacionBillete}" var="billete">
+
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['solicitudDotacion.cantidad']}"  style="text-align:center"/>
+							</f:facet>
+							<h:inputText size="25"  maxlength="25" style="height:20px" value=""/>
+							</h:column>
+							
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['solicitudDotacion.billete']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:center" value="#{billete.billete}"/>
+							</h:column>
+							
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['solicitudDotacion.subtotal']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:right" value="#{billete.subtotal}"/>
+							</h:column>		
+														
+							</h:dataTable>
+
+							
+							<h:dataTable  class="gridtable" value="#{solicitudDotacionGridMB.listadotacionMoneda}" var="moneda">
+
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['solicitudDotacion.cantidad']}"  style="text-align:center"/>
+							</f:facet>
+							<h:inputText size="25"  maxlength="25" style="height:20px" value=""/>
+							</h:column>
+							
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['solicitudDotacion.moneda']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:center" value="#{moneda.moneda}"/>
+							</h:column>
+							
+							<h:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['solicitudDotacion.subtotal']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel  style="text-align:right" value="#{moneda.subtotal}"/>
+							</h:column>		
+														
+							</h:dataTable>
+	
+						</h:panelGrid>
+						
+						
+								<h:panelGrid columns="8">					
+								
+								<h:outputLabel value="#{msg['solicitudDotacion.total']}" />
+								
+								
+								<h:inputText size="15"  maxlength="25"  value="$ 1,402,570.00" style="border:hidden; text-align:right" disabled="true"/>
+								
+								<h:inputText size="43" style="border:hidden;background-color:#FFFFFF" disabled="true" />
+
+								<h:inputText size="15"  maxlength="25" value="$ 1,398,800.00" style="border:hidden; text-align:right" disabled="true"/>
+								
+								<h:inputText size="34" style="border:hidden;background-color:#FFFFFF;text-align:left" disabled="true" value="  +"/>
+
+								<h:inputText size="15"  maxlength="25" value="$ 3,8800.00" style="border:hidden; text-align:right" disabled="true"/>
+								
+								
+								</h:panelGrid>
+
+						
+						
+						
+						<div align="center">
+						<h:panelGrid columns="3" style="width:40px;" >
+						
+								<h:commandButton value="#{msg['solicitudDotacion.btnRegistrar']}"
+									class="button-blue jqTransformButton" action="detalleDotacion" />
+								
+								<h:commandButton value="#{msg['solicitudDotacion.btnSalir']}"
+									class="button-blue jqTransformButton"/>	
+									
+
+						</h:panelGrid>
+						</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+  <title>....</title>
+  <script language="Javascript" type="text/javascript" src="codigoCalculadora.js"></script>
+
+</head>
+<body>
+ <table border=0 >
+
+					<p>
+							<select name="entradalista[]" multiple="multiple" style="width: 155px">
+								<option>Lista</option>
+						</select>
+						
+					</p>
+					
+					<p>
+						<input id="contrato"
+								style="width: 135px" size="10;" type="text" disabled="disabled"/>
+					</p>
+
+        <tr>
+            <td colspan="2">
+                <input type="Button" Id="pow" value="%" onClick="operar(5)" />
+            </td>
+            <td>
+                <input type="Button" Id="Dividir" value="/" onClick="operar(4)" />
+            </td>
+            <td>
+                <input type="Button" Id="Multiplicar" value="x" onClick="operar(3)" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="Button" Id="7" value="7" onClick="asignarNumero('7')" />
+            </td>
+            <td>
+                <input type="Button" Id="8" value="8" onclick="asignarNumero('8')"/>
+            </td>
+            <td>
+                <input type="Button" Id="9" value="9" onclick="asignarNumero('9')"/>
+            </td>
+            <td>
+                <input type="Button" Id="Restar" value="-" onClick="operar(2)" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="Button" Id="4" value="4" onClick="asignarNumero('4')"/>
+            </td>
+            <td>
+                <input type="Button" Id="5" value="5" onclick="asignarNumero('5')"/>
+            </td>
+            <td>
+                <input type="Button" Id="6" value="6" onclick="asignarNumero('6')"/>
+            </td>
+		<td>
+			<input type="Button" Id="Sumar" value="+" onClick="operar(1)" />
+		</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="Button" Id="1" value="1" onClick="asignarNumero('1')"/>
+            </td>
+            <td>
+                <input type="Button" Id="2" value="2" onclick="asignarNumero('2')"/>
+            </td>
+            <td>
+                <input type="Button" Id="3" value="3" onclick="asignarNumero('3')"/>
+            </td>
+            <td>
+                <input type="Button" Id="EsIgual" value="=" onClick="esIgual()" />
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <input type="Button" Id="0" value="0" onClick="asignarNumero('0')"/>
+                
+            </td>
+	    	<td>
+                <input type="Button" Id="." value="." onclick="asignarPunto('.')"/>
+            </td>
+	    	<td>
+				<input type="Button" Id="C" value="C" onClick="teclaC()"/>
+	   	    </td>	
+	   	    <td>
+				<input type="Button" Id="CE" value="CE" onClick="teclaC()"/>
+	   	    </td>
+        </tr>
+    </table>
+
+</body>
+</html>

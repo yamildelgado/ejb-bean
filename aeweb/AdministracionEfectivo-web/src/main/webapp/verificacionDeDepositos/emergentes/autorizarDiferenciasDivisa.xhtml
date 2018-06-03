@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/emergentesTemplate.xhtml">
+	<ui:define name="content">
+
+
+
+
+
+		<h:form styleClass="horizontal">
+			<h:panelGroup id="messagePanel" layout="block">
+				<h:messages errorStyle="color: red" infoStyle="color: blue" layout="table" />
+			</h:panelGroup>
+			<fieldset>
+				<legend>#{msg['verificacionAutoDif.autorizacionDif']}</legend>
+		
+				<h:panelGrid columns="3" style=" width:400px; ">
+
+					<h:outputLabel value="#{msg['verificacionAutoDif.importeDiferencia']}" />
+					<h:inputText value="" size="20" />
+					<h:outputLabel value="#{msg['verificacionAutoDif.mn']}" />
+				</h:panelGrid>
+				<hr  style="width:400px; color:#ccc;"/>
+				<h:panelGrid columns="2" style="  width:400px;">
+					<h:outputLabel value="#{msg['verificacionAutoDif.noNominaSupervisor']}" />
+					<h:inputText value="" size="20"  style="margin-left:-50px;" />
+					<h:outputLabel value="#{msg['verificacionAutoDif.importeDiferencia']}" />
+					<h:inputText value="" size="20" style="margin-left:-50px;" />
+
+				</h:panelGrid>
+		
+
+			</fieldset>
+
+
+			
+			<h:commandButton value="#{msg['verificacionAutoDif.btnAceptar']}"
+				style="width:100px;" class="button-blue jqTransformButton">
+			</h:commandButton>
+			
+
+		</h:form>
+
+
+
+
+	</ui:define>
+</ui:composition>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

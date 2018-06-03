@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>AdministracionEfectivo</artifactId>
+		<groupId>AdministracionEfectivoGrupo</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>AdministracionEfectivo-ear</artifactId>
+	<packaging>ear</packaging>
+
+	<name>AdministracionEfectivo EAR module</name>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>AdministracionEfectivoGrupo</groupId>
+			<artifactId>AdministracionEfectivo-web</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>AdministracionEfectivoGrupo</groupId>
+			<artifactId>AdministracionEfectivo-ejb</artifactId>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>AdministracionEfectivoGrupo</groupId>
+			<artifactId>AdministracionEfectivo-seguridad</artifactId>
+			<type>ejb</type>
+		</dependency>
+
+
+
+
+		<dependency>
+			<groupId>AdministracionEfectivoGrupo</groupId>
+			<artifactId>AdministracionEfectivo-jpa</artifactId>
+			<type>ejb</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>AdministracionEfectivo</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<version>6</version>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<modules>
+
+						<webModule>
+							<groupId>AdministracionEfectivoGrupo</groupId>
+							<artifactId>AdministracionEfectivo-web</artifactId>
+							<contextRoot>/AE-Web</contextRoot>
+						</webModule>
+
+					</modules>
+				</configuration>
+			</plugin>
+
+
+
+			<plugin>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+				<configuration>
+					<skip>false</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>Websphere7AM.plugin</groupId>
+				<artifactId>websphere7am-maven-plugin</artifactId>
+				<version>1.0.0</version>
+				<configuration>
+					<defaultCommand>
+						<host>localhost</host>
+						<port>9080</port>
+					</defaultCommand>
+					<commands>
+						<command>
+							<command>INSTALL</command>
+							<appName>AdministracionEfectivo-ear</appName>
+							<earFile>AdministracionEfectivo-ear.ear</earFile>
+							<target>WebSphere:cell=consultor3-PCNode01Cell,node=consultor3-PCNode01,server=server1</target>
+							<description>Administracion Efectivo</description>
+						</command>
+					</commands>
+				</configuration>
+				<executions>
+
+				</executions>
+			</plugin>
+
+
+		</plugins>
+
+
+	</build>
+
+</project>

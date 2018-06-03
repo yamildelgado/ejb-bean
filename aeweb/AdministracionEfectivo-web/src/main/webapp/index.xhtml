@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/loginTemplate.xhtml">
+	<ui:define name="content">
+	
+
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+
+
+
+				<!-- Caja para Login-->
+				<h:form>
+					<div class="box-pad width-1">
+						<div class="login-title">
+							<span> <h:outputLabel
+									value="#{msg['ingresoSistema.inicioSession']}" /></span>
+						</div>
+
+						<div class="left-middle-box">
+							<div class="right-middle-box">
+
+								<div class="login-content">
+
+									<span class="required"> <h:outputLabel
+											value="#{msg['ingresoSistema.nomina']}" for="user" /></span>
+									<h:inputText value="" maxlength="30"
+										class="login-input required" id="user" />
+									<h:outputLabel value="" for="user" generated="true"
+										class="error generated" />
+
+									<br /> <span class="required"> <h:outputLabel
+											value="#{msg['ingresoSistema.password']}" for="password" /></span>
+									<h:inputSecret value="" maxlength="30"
+										class="login-input required" id="password" />
+									<h:outputLabel value="" for="password" generated="true"
+										class="error generated" />
+
+									<br /> <span class="required"><h:outputLabel
+											value="#{msg['ingresoSistema.token']}" /></span>
+									<h:inputSecret value="" maxlength="30"
+										class="login-input required" id="token" />
+									<h:outputLabel for="token" generated="true"
+										class="error generated" />
+
+									<div style="padding: 5px 0px; text-align: right;">
+										
+										<h:commandButton value="#{msg['ingresoSistema.ingresar']}"
+											id="action" class="button-blue jqTransformButton" />
+
+										<br></br>
+										<br></br>
+										<span class="required"/>
+										<h:outputLabel value="Todos los campos son obligatorios" style="color:red"/>
+
+									</div>
+
+									<br class="clear-float" />
+								</div>
+							</div>
+						</div>
+
+						<div class="left-box left-bottom-box">
+							<div class="right-box right-bottom-box"></div>
+						</div>
+					</div>
+				</h:form>
+				<!-- Termina Caja para Login-->
+				
+				<!-- Promo -->
+				<div id="login-promo" class="box-pad width-5">
+					<div id="slideshow">
+						<img src="resources/img/logo_banamex_2.gif" alt="Abanse"
+							class="active" style="width : 632px; height : 190px;"/>
+							
+							
+					</div>
+					<div align="right">
+							<h:outputLabel value="Sistema AE-WEB" style="text-align:center;color:blue;font-size: x-large;" />
+					</div>
+				</div>
+				<!-- Termina Promo -->
+
+				<br class="clear-float" />
+				<br/>
+      <p class="disclaimer" style="width:900px;">
+     
+      
+    
+
+    
+     EL uso de este Sistema es únicamente para los propósitos aprobados por la gerencia. 
+Queda prohibido su uso para cualquier otro propósito. Todos los registros de transacciones,
+reportes, correo electrónico, programas y otros datos generados o residentes en este sistema,
+son propiedad de Grupo Financiero Banamex, Subsidiarias y Afiliadas en México y pueden ser
+usados por cualquiera de ellas, para cualquier propósito. Las actividades autorizadas y no 
+autorizadas pueden ser monitoreadas.
+     
+
+      </p>
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

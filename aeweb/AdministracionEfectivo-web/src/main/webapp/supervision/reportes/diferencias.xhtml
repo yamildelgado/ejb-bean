@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+
+	<ui:define name="content">
+		<div id="breadcrumbs">
+			<span>Supervisión</span> <span> Reportes</span>
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+
+
+
+			<div class="clear-both"></div>
+
+			<div class="section-name">
+				<br></br>
+				<h1>#{msg['diferencias.tituloDiferencias']}</h1>
+
+			</div>
+			<h:form class="horizontal">
+
+				<h:panelGroup id="messagePanel" layout="block">
+					<h:messages errorStyle="color: red" infoStyle="color: blue"
+						layout="table" />
+				</h:panelGroup>
+
+
+
+				<fieldset>
+					<legend>#{msg['diferencias.tituloTunoActivo']}</legend>
+					<h:dataTable class="gridtable" style="width:850px" var="subBoveda"
+						value="">
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['diferencias.turno']} </f:facet>
+							<h:outputLabel value="MATUTINO 1 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['diferencias.iniciado']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 09:00 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['diferencias.fContableInicio']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['diferencias.finalizado']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 14:34 " />
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['diferencias.fContableFinal']} </f:facet>
+							<h:outputLabel value="04/DIC/2013 " />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['diferencias.estatus']} </f:facet>
+							<h:outputLabel value="CERRADO" />
+						</h:column>
+
+						<br></br>
+						<br></br>
+						<br></br>
+
+					</h:dataTable>
+					<br />
+
+				</fieldset>
+
+				<br />
+
+
+				<fieldset>
+					<legend>#{msg['diferencias.criterioConsulta']}</legend>
+
+					<fieldset style="width: 435px; float: left;">
+
+						<h:panelGrid columns="3" width="425px">
+
+							<h:outputLabel value="#{msg['diferencias.turnoAct']}" />
+							<h:selectOneRadio id="radio_equipobill8"
+								value="#{cajaGridMB.cajaVO.cajaEquip}"
+								onclick="SeleccionarTxt(this)" layout="pageDirection">
+								<f:selectItem itemValue="" />
+							</h:selectOneRadio>
+							<br />
+
+							<h:outputLabel value="#{msg['diferencias.caja']}" />
+							<h:selectOneRadio id="radio_equipobill2"
+								value="#{cajaGridMB.cajaVO.cajaEquip}"
+								onclick="SeleccionarTxt(this)" layout="pageDirection">
+								<f:selectItem itemValue="" />
+							</h:selectOneRadio>
+							<h:selectOneMenu value="" style="width:180px;">
+								<f:selectItems value="---Seleccionar Caja---" var="operaciones"
+									itemLabel="#{operaciones.nombreOperacion}"
+									itemValue="#{operaciones.tipoOperacion}" />
+							</h:selectOneMenu>
+
+
+							<h:outputLabel value="#{msg['diferencias.etv']}" />
+							<h:selectOneRadio id="radio_equipobill3"
+								value="#{cajaGridMB.cajaVO.cajaEquip}"
+								onclick="SeleccionarTxt(this)" layout="pageDirection">
+								<f:selectItem itemValue="" />
+							</h:selectOneRadio>
+
+							<h:selectOneMenu value="" style="width:180px;">
+								<f:selectItems value="---Seleccionar Etv---" var="operaciones"
+									itemLabel="#{operaciones.nombreOperacion}"
+									itemValue="#{operaciones.tipoOperacion}" />
+							</h:selectOneMenu>
+
+						</h:panelGrid>
+					</fieldset>
+
+
+
+					<fieldset>
+
+						<br /> <br />
+						<h:panelGrid columns="2" width="405px">
+
+							<h:outputLabel value="#{msg['diferencias.fecha']}" />
+							<p:calendar value="#{diferencias.calendario}" id="popupButtonCal"
+								showOn="button" />
+
+							<h:outputLabel value="#{msg['diferencias.procesadora']}" />
+
+
+							<h:selectOneMenu value="" style="width:200px;">
+								<f:selectItems value="---Seleccionar---" var="operaciones"
+									itemLabel="#{operaciones.nombreOperacion}"
+									itemValue="#{operaciones.tipoOperacion}" />
+							</h:selectOneMenu>
+							<br />
+
+						</h:panelGrid>
+						<br />
+					</fieldset>
+					<br />
+
+
+					<h:panelGrid columns="4" style="width: 465px; float: left;">
+
+						<h:outputLabel value="#{msg['diferencias.tipoReporte']}" />
+						<h:selectOneRadio id="radio_equipobill4"
+							value="#{cajaGridMB.cajaVO.cajaEquip}"
+							onclick="SeleccionarTxt(this)">
+							<f:selectItem itemValue="" size="20" />
+						</h:selectOneRadio>
+						<h:outputLabel value="#{msg['diferencias.montoMayor']}" />
+						<h:inputText value="" size="20" />
+
+
+					</h:panelGrid>
+					<h:panelGrid columns="2" style="width: 465px; float: left;">
+						<h:outputLabel value="#{msg['diferencias.montoMenor']}"
+							style=" margin-left:180px;" />
+						<h:inputText value="" size="20" />
+					</h:panelGrid>
+
+					<h:panelGrid columns="2" style="width: 800px; margin-left:120px;">
+
+						<h:selectOneRadio id="radio_equipobill6"
+							value="#{cajaGridMB.cajaVO.cajaEquip}"
+							onclick="SeleccionarTxt(this)">
+							<f:selectItem itemValue="" />
+						</h:selectOneRadio>
+						<h:outputLabel value="#{msg['diferencias.reporteSinActa']}" />
+
+
+						<h:selectOneRadio id="radio_equipobill7"
+							value="#{cajaGridMB.cajaVO.cajaEquip}"
+							onclick="SeleccionarTxt(this)">
+							<f:selectItem itemValue="" />
+						</h:selectOneRadio>
+						<h:outputLabel value="#{msg['diferencias.reporteConActa']}" />
+
+
+
+
+					</h:panelGrid>
+					<br />
+
+					<div align="right" style="margin-right: 190px;">
+						<h:commandButton value="#{msg['diferencias.btnAceptar']}"
+							 class="button-blue jqTransformButton" style="width:180;"/>
+							
+						<h:commandButton value="#{msg['diferencias.btnSalir']}"
+							 class="button-blue jqTransformButton" style="width:180;"/>
+					</div>
+					<br />
+				</fieldset>
+
+
+
+
+			</h:form>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+

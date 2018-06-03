@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<h:commandLink >etvsEdit</h:commandLink>
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> Institucionales</span> <span> ETV´s</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['etv.titulo']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+						<fieldset>
+							<legend>#{msg['etv.seccionDetalleOperacion']}</legend>
+								<h:panelGrid columns="2">
+								
+								<h:outputLabel value="#{msg['etv.id']}" />
+								<h:inputText value="#{EtvGridMB.etvVO.etvIdn}" size="10"/>
+								
+								<h:outputLabel value="#{msg['etv.nombreCorto']}" />
+								<h:inputText value="#{EtvGridMB.etvVO.etvNombreCorto}" size="60"/>
+								
+								
+								
+								<h:outputLabel value="#{msg['etv.tipoServicio']}" />
+								<h:inputText value="#{EtvGridMB.etvVO.etvTipoServico}" size="10"/>
+								
+								<h:outputLabel value="#{msg['etv.contacto']}" />
+								<h:inputText value="#{EtvGridMB.etvVO.etvContacto}" size="34"/>
+							
+								<h:outputLabel value="#{msg['etv.calle']}" />
+								<h:inputText value="#{EtvGridMB.etvVO.etvCalle}" size="34"/>
+								
+								<h:outputLabel value="#{msg['etv.colonia']}" />
+								<h:inputText value="#{EtvGridMB.etvVO.etvColonia}" size="34"/>
+								
+								<h:outputLabel value="#{msg['etv.deleg']}" />
+								<h:inputText value="#{EtvGridMB.etvVO.etvDeleg}" size="34"/>
+								
+								<h:outputLabel value="#{msg['etv.cp']}" />
+								<h:inputText value="#{EtvGridMB.etvVO.etvCp}" size="10"/>
+								
+								<h:outputLabel value="#{msg['etv.idEdoRepublica']}" />
+								<h:inputText value="#{EtvGridMB.etvVO.idEstadoRepublica}" size="10"/>
+								
+								<h:outputLabel value="#{msg['etv.subBoveda']}" />
+								<h:inputText value="#{EtvGridMB.etvVO.idnSubboveda}" size="10"/>
+								
+								
+								</h:panelGrid>
+
+								</fieldset>
+
+						<br />
+						
+						
+						
+						<br />
+						<fieldset>
+						<div align="center">
+						<h:panelGrid columns="2" style="width:40px;">
+						
+								<h:commandButton value="#{msg['etv.btnRegresar']}"
+									class="button-blue jqTransformButton" 
+									action="#{EtvGridMB.regresarList}"
+									/>
+
+
+						</h:panelGrid>
+						</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

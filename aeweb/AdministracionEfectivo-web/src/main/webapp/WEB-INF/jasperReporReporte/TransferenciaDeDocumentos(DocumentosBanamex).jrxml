@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="transferenciaDocumentos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="54f84ed3-d790-4148-b86a-51ac3cb32815">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="42"/>
+	<property name="ireport.y" value="0"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="25">
+			<line>
+				<reportElement x="3" y="0" width="572" height="1" uuid="526fcae6-5929-4992-ae31-998ee43993ea"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="4" y="19" width="572" height="1" uuid="1220c5b0-3e0e-4f9e-a7be-545676f0944b"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="201" y="0" width="191" height="19" uuid="dd93e74f-0008-4be3-90dc-c20cae9d4eb8"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BANCO NACIONAL DE MÉXICO, S.A.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="0" width="195" height="20" uuid="bf470247-6cad-4da4-833b-fc5d76c76e39"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TRANSFERENCIA DE DOCUMENTOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="231" y="20" width="128" height="20" uuid="0a707df1-6413-4eee-a6fe-73caa46ba01e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DOCUMENTOS BANAMEX]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="30" width="60" height="10" uuid="2cdc90db-b4e3-4c24-bca4-1ea53a6cbf3f"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA Y HORA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="40" width="43" height="10" uuid="9adaec59-34fc-457c-982a-ede8cd04f105"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUCURSAL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="487" y="41" width="52" height="10" uuid="4f34d20f-e48f-43d8-ae6c-1c19aa10992f"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUB BÓVEDA: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="465" y="40" width="17" height="10" uuid="02d6ae1e-2c9b-4286-9b9a-0660b86a62a5"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[0350]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="542" y="41" width="18" height="10" uuid="28143bbd-d045-4928-9133-8eaa6a79fc43"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[00]]></text>
+			</staticText>
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss Z">
+				<reportElement x="487" y="30" width="87" height="11" uuid="83a23e5c-e735-4958-866c-c5100b79547e"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="124" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="0" width="100" height="14" uuid="bcac2f5b-f296-4b0d-8359-e5a13e5639e7"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TURNO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="14" width="100" height="17" uuid="300ce525-83cf-45d3-993e-fd23575d5822"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CAJERO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="31" width="100" height="17" uuid="cadd2510-ef31-45f4-b671-402c25f2082e"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CAJA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="48" width="100" height="20" uuid="5fd2b3b1-401c-4af7-a7c1-6f3e8beaaf6d"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO DE CAJA:     ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="92" width="100" height="20" uuid="91e3f910-6668-4c88-a135-ef6f0ca812a6"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO DE MONEDA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="0" width="100" height="14" uuid="060927ee-ecd3-4819-a17c-ac11917823d2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[VESPERTINO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="17" width="173" height="14" uuid="c883b765-8b0a-43d1-9138-745365ac1587"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ANGEL DANIEL SANTOS CRUZ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="33" width="100" height="15" uuid="d27f7b44-3503-4a19-9168-0a3c2561a6b3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[23]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="48" width="100" height="20" uuid="06d48bfc-78c5-4357-9618-965a2090dbee"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[VERIFICADORA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="92" width="100" height="20" uuid="3a7f7f37-20d2-4dd6-921d-9235b66c1086"/>
+				<text><![CDATA[MONEDA NACIONAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="149" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="8" width="22" height="20" uuid="7b9e05f3-82ef-4088-88fb-3dcdfa7ca54d"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="28" width="159" height="20" uuid="8dbb4340-4e80-478c-a14f-c345e8d8323e"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[LIBRERÍA PORRÚA HNOS CIA SA.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="8" width="73" height="20" uuid="7e18d2f0-2e58-437c-843c-5dcdbb5e6857"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[000000056636]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="427" y="8" width="39" height="20" uuid="7eccd578-3dfb-4b1e-9f0f-a8a1dbcea07c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[  0870           ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="8" width="77" height="20" uuid="bc8543c9-e05d-4105-8f97-56e4477355fb"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[0208201310]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="99" y="8" width="83" height="20" uuid="e45395b5-192e-401c-b0b1-3ffc4b541a49"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TV0208201310]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="8" width="228" height="20" uuid="62b9aa34-569c-455c-9010-367d0b837a15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[COMPAÑÍA MEXICANA DE TRASLADO DE VALORES SA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="556" y="8" width="16" height="20" uuid="b5e97087-dae8-41ea-8bcc-42906fca8293"/>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="28" width="58" height="20" uuid="797e2deb-c941-4485-b4d8-1187997b38b5"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[10,000.00]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="99" y="55" width="83" height="20" uuid="266a7a6b-6dc3-4e97-aa41-42c91eefeefa"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TV0208201310]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="427" y="55" width="39" height="20" uuid="e2f07746-2613-43a8-af2e-6008ff6290ea"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[  0870           ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="55" width="22" height="20" uuid="32311164-723f-4271-9122-d340895a0c62"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="55" width="73" height="20" uuid="17bbbcfb-d42c-49cd-85a4-5577ab402e2d"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[000000056636]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="55" width="77" height="20" uuid="7ad3bff0-7b53-4da2-bd09-6c7ad26fe2bf"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[0208201310]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="556" y="55" width="16" height="20" uuid="0a83c2ff-6c30-4a58-a072-d19a26e2fc9c"/>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="55" width="228" height="20" uuid="bfbd4d25-151e-44d0-a937-b7941cf66545"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[COMPAÑÍA MEXICANA DE TRASLADO DE VALORES SA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="75" width="159" height="20" uuid="b25a2d5e-0216-491a-a932-48868fa9d7a0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[LIBRERÍA PORRÚA HNOS CIA SA.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="75" width="58" height="20" uuid="717b0b57-5390-4381-b764-6826487f5501"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[5,000.00]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="392" y="105" width="127" height="20" uuid="5f6a5409-3349-43a0-ab71-686d516d76ed"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número de Documentos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="125" width="35" height="20" uuid="00cedf76-c72c-44db-ad06-ca4824736b91"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="537" y="105" width="33" height="20" uuid="70270d64-5eab-40cd-93e5-006524fbae7a"/>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="537" y="126" width="35" height="20" uuid="3fc791af-66c1-45b5-8c06-55ef520fc4a6"/>
+				<text><![CDATA[15,000.00]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="240" y="16" width="73" height="20" uuid="62f0137d-be02-4ad0-8e15-2d94be514d2e"/>
+				<textElement>
+					<font size="7" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[AE-WEB 2013]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="16" width="80" height="20" uuid="d78be9a8-de7f-4613-a876-9598d717db71"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="532" y="16" width="40" height="20" uuid="3473d8f1-e6d9-409e-941a-1f1ee1f85613"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

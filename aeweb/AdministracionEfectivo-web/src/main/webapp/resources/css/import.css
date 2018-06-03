@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/*-----------------------------------------------------
+Afore Banamex Estilos 
+Uso: Este archivo solo se usa para importar todos los estilos a una pagina
+$Id: import.css, v 1.0 02 Agosto 2010 adalaros  $
+-----------------------------------------------------*/
+
+<!--
+  @import url("reset.css");
+  @import url("screen.css");
+  @import url("interior.css");
+  @import url("sub-subMenu.css");
+  @import url("icons.css");
+  @import url("tables.css");
+  @import url("forms.css");
+  @import url("themes/custom-theme/jquery-ui-1.8.2.custom.css");
+  @import url("visualize.css");
+  @import url("visualize-light.css");
+  @import url("menu.css");
+  @import url("emergentes.css");
+  
+  
+--> 
+  
+  

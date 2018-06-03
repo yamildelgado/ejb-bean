@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubBoveda" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f220bf70-de25-44bd-b3b6-0ca8c65497ce">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="117"/>
+	<field name="subbovedaIdn" class="java.lang.Short"/>
+	<field name="cajaIdn" class="java.lang.Short"/>
+	<field name="cajaIpAddress" class="java.lang.String"/>
+	<field name="tipocajaId" class="java.lang.Short"/>
+	<field name="tipoCajaDescrip" class="java.lang.String"/>
+	<field name="cajaEquip" class="java.lang.String"/>
+	<field name="cajaModeloEquipoBill" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="126" splitType="Stretch">
+			<textField>
+				<reportElement x="190" y="97" width="80" height="20" uuid="1a4fa49c-f3ab-43b0-a67a-dd38f5e4279e"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subbovedaIdn}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="32" y="100" width="130" height="20" uuid="f1b0a2cc-5222-45eb-9335-c6f1af5ef0ab"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUB BÓVEDA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="10" width="555" height="1" uuid="b4ecf9f9-8cb2-4744-b001-5e0ac940ebfe"/>
+			</line>
+			<line>
+				<reportElement x="10" y="28" width="555" height="1" uuid="f0496797-fd49-40d3-86b4-801149541142"/>
+			</line>
+			<staticText>
+				<reportElement x="88" y="11" width="396" height="15" uuid="7189c78a-608b-4939-97a9-f021c676842f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BANCO NACIONAL DE MÉXICO, S.A.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="208" y="28" width="159" height="12" uuid="03111314-76ef-4596-996a-81cfd8a5bac4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CAJAS]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="484" y="56" width="67" height="11" forecolor="#000000" uuid="f37fa807-80a8-41f6-992f-f385427f8b2d"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="414" y="56" width="70" height="11" forecolor="#000000" uuid="a7343b7c-2e62-442a-902c-a5133e69eee7"/>
+				<textElement>
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA Y HORA :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="47">
+			<staticText>
+				<reportElement x="26" y="16" width="101" height="31" uuid="a449d02f-6c28-427d-9aa0-627bf76b348c"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[CLAVE DE CAJA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="16" width="117" height="20" uuid="9b066ce1-a008-43bb-bd3d-81118b2b2d32"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[TIPO DE CAJA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="126" y="16" width="94" height="31" uuid="c2d64c9d-9661-4c50-8e5f-e47a40bf9826"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCIÓN IP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="219" y="16" width="94" height="31" uuid="d34c0e8b-96f0-4d21-ae93-b2bc809f610a"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="16" width="111" height="20" uuid="2859cc54-3992-49a5-afd4-3641f2075065"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[MODELO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="26" y="8" width="100" height="20" uuid="9f78568f-5072-4283-85ed-8d62815f9628"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cajaIdn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="8" width="115" height="20" uuid="09dc95b2-553f-4e24-8070-2e73db742c20"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cajaModeloEquipoBill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="126" y="8" width="93" height="20" uuid="412f4ee9-eb1b-43f2-962b-09cdbec9949d"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cajaIpAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="313" y="7" width="117" height="20" uuid="38bdd2c2-395a-4c7a-af85-50ac889477ff"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cajaEquip}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="8" width="93" height="20" uuid="6c4d288f-a242-4116-8240-a2da7fc0c9f7"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipocajaId}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="49" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="523" y="23" width="42" height="20" uuid="5bfe2025-d664-4141-b2e0-13e36f765034"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="242" y="23" width="100" height="20" uuid="5de11d48-248d-40e0-8fc8-bac5ffab07e4"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AE-WEB 2013]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="443" y="23" width="80" height="20" uuid="609718e4-f124-4556-94dd-ea111e2295f1"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

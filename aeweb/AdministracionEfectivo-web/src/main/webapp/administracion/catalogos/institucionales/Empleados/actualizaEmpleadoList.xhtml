@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+	<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> Institucionales</span> <span>Empleados</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['catalogoEmpleado.tituloConsulta']}
+				</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+					<h:panelGroup id="messagePanel" layout="block">
+								<h:messages errorStyle="color: red" infoStyle="color: blue"
+									layout="table" />
+							</h:panelGroup>
+			
+						<fieldset>
+							<legend>#{msg['catalogoSIRH.sessionDatosConsulta']}</legend>
+
+								<h:panelGrid columns="3">
+															
+								<h:outputLabel value="#{msg['catalogoEmpleado.idNominaEmpleado']}"  />
+								<span />
+								<h:inputText size="10" value="#{empleadoGridMB.empleadoVO.empNomina}" maxlength="8"
+								converter="javax.faces.Number" converterMessage="INGRESA UN NÚMERO FORMADO POR MENOS DE 8 DÍGITOS EN EL CAMPO DE NÓMINA" 
+								/>		
+								
+								<h:outputLabel value="#{msg['catalogoEmpleado.perfil']}"  />
+								<span />
+								<h:inputText size="10" value="#{empleadoGridMB.empleadoVO.empPerfil}" maxlength="2"
+								converter="javax.faces.Number" converterMessage="INGRESA UN NÚMERO FORMADO POR MENOS DE 2 DÍGITOS EN EL CAMPO DE PERFÍL" 
+								/>		
+							
+								<h:outputLabel value="#{msg['catalogoEmpleado.nombreEmpleado']}"  />
+								<span />
+								<h:inputText size="34" value="#{empleadoGridMB.empleadoVO.empNombre}" maxlength="25" />
+								
+								<h:outputLabel value="#{msg['catalogoEmpleado.apellidoPaternoEmpleado']}" />
+								<span />
+								<h:inputText size="34" value="#{empleadoGridMB.empleadoVO.empPaterno}" maxlength="25" />
+								
+								<h:outputLabel value="#{msg['catalogoEmpleado.apellidoMaternoEmpleado']}" />
+								<span />
+								<h:inputText size="34" value="#{empleadoGridMB.empleadoVO.empMaterno}" maxlength="25" />
+								
+								</h:panelGrid>
+								
+				
+								</fieldset>
+
+						<br />
+						<fieldset>
+						
+							<legend>#{msg['catalogoEmpleado.seccionDetalleOperacion']}</legend>
+							
+							<h:dataTable  class="gridtable" value="#{empleadoGridMB.listaEmpleado}" var="empleado">
+														
+							
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['catalogoEmpleado.idNominaEmpleado']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel value="#{empleado.empNomina}" style="text-align:center"/>
+							</p:column>
+							
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['catalogoEmpleado.perfil']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel value="#{empleado.empPerfil}" style="text-align:center"/>
+							</p:column>
+							
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['catalogoEmpleado.nombreEmpleado']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel value="#{empleado.empNombre}" style="text-align:center"/>
+							</p:column>		
+							
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['catalogoEmpleado.apellidoPaternoEmpleado']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel value="#{empleado.empPaterno}" style="text-align:center"/>
+							</p:column>
+							
+							<p:column>
+							<f:facet name="header">
+							<h:outputLabel value="#{msg['catalogoEmpleado.apellidoMaternoEmpleado']}"  style="text-align:center"/>
+							</f:facet>
+							<h:outputLabel value="#{empleado.empMaterno}" style="text-align:center"/>
+							</p:column>
+														
+							</h:dataTable>
+
+						</fieldset>
+						
+						
+						<br />
+						<fieldset>
+						<div align="center">
+						<h:panelGrid columns="3" style="width:40px;" >
+						
+								<h:commandButton value="#{msg['catalogoEmpleado.btnConsultar']}"
+									class="button-blue jqTransformButton" 
+									actionListener="#{empleadoGridMB.consultaEmpleadoPorParametro}"
+									/>
+								
+								<h:commandButton value="#{msg['catalogoEmpleado.btnLimpiar']}"
+									class="button-blue jqTransformButton" 
+									type="reset"/>	
+									
+
+						</h:panelGrid>
+						</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

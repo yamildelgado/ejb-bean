@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+		
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> Institucionales</span> <span>Bancos</span> 
+		</div>
+		
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['banco.titulomodulo']}</h1>
+			</div>
+			<h:form class="horizontal">
+				<fieldset>
+					<legend>#{msg['banco.detallebancos']}</legend>
+					<h:dataTable class="gridtable" var="banco" value="#{bancoGridMB.listaBanco}" style="width:700px;">
+							<h:column>
+								<f:facet name="header">
+								<h:outputLabel value="#{msg['banco.idbanco']}" />
+								</f:facet>
+								<h:outputLabel value="#{banco.bancoIdn}" />   
+							</h:column>	
+							<h:column>
+								<f:facet name="header">
+								<h:outputLabel value="#{msg['banco.descripcionbanco']}" />
+								</f:facet>
+								<h:outputLabel value="#{banco.bancoDescripcionLarga}" /> 
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+								<h:outputLabel value="#{msg['banco.bajalogica']}" />
+								</f:facet>
+								<h:outputLabel value="#{banco.bancoBajaLogica}" /> 
+							</h:column>
+					</h:dataTable>
+					</fieldset>		
+				
+			</h:form>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

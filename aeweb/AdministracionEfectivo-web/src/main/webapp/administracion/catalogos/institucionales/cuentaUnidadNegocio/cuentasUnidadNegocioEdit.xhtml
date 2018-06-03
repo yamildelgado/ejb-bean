@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<ui:define name="content">
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> Institucionales</span> <span> Cuentas Unidad de Negocio</span> 
+		</div>
+
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['cuenta.subtitulo']}</h1>
+			</div>
+
+			<div id="capa">
+				<div class="lg-cont-1col">
+
+					<h:form styleClass="horizontal">
+
+						
+
+						<br />
+						
+
+						<fieldset>
+							<legend>#{msg['unidadNegocio.sessionDatosCuenta']}</legend>
+
+							<h:panelGrid columns="3">
+								<h:outputLabel value="#{msg['cuenta.TCTACuenta']}" />
+								<span class="required" />
+								<h:outputLabel value="#{cuentaGridMB.cuentaVO.cuentaPK.cntrtoNum}" size="34" />
+								<h:outputLabel value="#{msg['cuenta.divisionMoneda']}" />
+								<span class="required" />
+								<h:selectOneMenu value="" disabled="true">
+								
+								  <f:selectItem itemLabel="#{cuentaGridMB.cuentaVO.divisaMonedaId}"/>
+								</h:selectOneMenu>
+								<h:outputLabel value="#{msg['cuenta.tipoInstrumento']}" />
+								<span />
+								<h:selectOneMenu value="" disabled="true">
+								 <f:selectItem itemLabel="#{cuentaGridMB.cuentaVO.tipoInstrumento}"/>
+								</h:selectOneMenu>
+								<h:outputLabel value="#{msg['cuenta.idCuentaAsociado']}" />
+								<span class="required" />
+								<h:outputLabel value="#{cuentaGridMB.cuentaVO.idCuentaAsociado}" size="34" />
+
+								<h:outputLabel value="#{msg['cuenta.indicadorAsociado']}" />
+								<span class="required" />
+								<h:outputLabel value="#{cuentaGridMB.cuentaVO.indicadorAsociado}" size="34" />
+							</h:panelGrid>
+							<br />
+
+							<fieldset>
+								<legend>#{msg['cuenta.seccionDatosCuenta']}</legend>
+								<h:panelGrid columns="6">
+									<h:outputLabel value="#{msg['cuenta.claveOperativaDePagos']}" />
+									<span class="required" />
+									<h:outputLabel value="#{cuentaGridMB.cuentaVO.claveOperativaDePagos}" size="34" />
+									<h:outputLabel value="#{msg['cuenta.tipoCuenta']}" />
+									<span class="required" />
+									<h:selectOneMenu value="" disabled="true">
+								<f:selectItem  itemLabel="#{cuentaGridMB.cuentaVO.tipoCuenta}" />
+								</h:selectOneMenu>
+									<h:outputLabel value="#{msg['cuenta.usoCuenta']}" />
+									<span class="required" />
+									<h:outputLabel value="#{cuentaGridMB.cuentaVO.usoCuenta}" size="34" />
+									<h:outputLabel value="#{msg['cuenta.idCuentaAsociado']}" />
+									<span class="required" />
+									<h:outputLabel value="" size="34" />
+									<h:outputLabel value="#{msg['cuenta.sucusal']}" />
+								<span />
+								<h:outputLabel value="#{cuentaGridMB.cuentaVO.cuentaPK.ctaSucursalId}" size="34" />
+								</h:panelGrid>
+							</fieldset>
+
+						</fieldset>
+
+						<br />
+
+						<fieldset>
+							<legend>#{msg['cuenta.seccionDatosReferencia']}</legend>
+
+							<h:panelGrid columns="6">
+
+								<h:outputLabel value="#{msg['cuenta.referenciaUnoTipo']}" />
+								<span />
+								<h:outputLabel value="#{cuentaGridMB.cuentaVO.referencia1Tipo}" size="20" />
+
+								<h:outputLabel value="#{msg['cuenta.referenciaUnoMascara']}" />
+								<span />
+								<h:outputLabel value="#{cuentaGridMB.cuentaVO.referencia1Mascara}" size="20" />
+								<h:outputLabel value="#{msg['cuenta.referenciaDosTipo']}" />
+								<span />
+								<h:outputLabel value="#{cuentaGridMB.cuentaVO.referencia2Tipo}" size="20" />
+								<h:outputLabel value="#{msg['cuenta.referenciaDosMascara']}" />
+								<span  />
+								<h:outputLabel value="#{cuentaGridMB.cuentaVO.referencia2Mascara}" size="20" />
+
+								<h:outputLabel value="#{msg['cuenta.referenciaTresTipo']}" />
+								<span  />
+								<h:outputLabel value="#{cuentaGridMB.cuentaVO.referencia3Tipo}" size="20" />
+
+								<h:outputLabel value="#{msg['cuenta.referenciaTresMascara']}" />
+								<span />
+								<h:outputLabel value="#{cuentaGridMB.cuentaVO.referencia3Mascara}"  size="20" />
+								<h:outputLabel value="#{msg['cuenta.referenciaCuatroTipo']}" />
+								<span />
+								<h:outputLabel value="#{cuentaGridMB.cuentaVO.referencia4Tipo}"  size="20" />
+								<h:outputLabel value="#{msg['cuenta.referenciaCuatroMascara']}" />
+								<span />
+								<h:outputLabel value="#{cuentaGridMB.cuentaVO.referencia4Mascara}"  size="20" />
+								<h:outputLabel value="#{msg['cuenta.bajaLogica']}" />
+								<span />
+								<h:outputLabel value="#{cuentaGridMB.cuentaVO.bajaLogica}"  size="20" />
+
+								
+							</h:panelGrid>
+						</fieldset>
+
+						<br />
+
+						<fieldset>
+							<div align="center">
+
+								<h:commandButton value="#{msg['unidadNegocio.btnRegresar']}" action="cuentaUnidadNegocioList.jsf"
+									class="button-blue jqTransformButton" />
+
+
+							</div>
+						</fieldset>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>

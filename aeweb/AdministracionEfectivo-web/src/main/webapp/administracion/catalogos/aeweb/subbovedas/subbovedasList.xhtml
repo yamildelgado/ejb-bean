@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/navegacionTemplate.xhtml">
+	<h:commandLink >subbovedasList</h:commandLink>
+	<ui:define name="content"> 
+	
+		<div id="breadcrumbs">
+			 <span>Administración</span> <span>
+				Catálogos</span> <span> AE-WEB</span> <span> Sub Bóvedas</span> 
+		</div>
+		
+		<div class="lg-cont-top-bg"></div>
+		<div class="lg-cont-center-bg">
+			<div class="section-name">
+				<h1>#{msg['subbovedas.titulo']}</h1>
+			
+			</div>
+			<h:form class="horizontal">
+				<h:panelGroup id="messagePanel" layout="block">
+							<h:messages errorStyle="color: red" infoStyle="color: blue"
+								layout="table" />
+						</h:panelGroup>
+						
+						
+							
+						
+						<fieldset>
+					<legend>#{msg['subbovedas.tituloAgregar']}</legend> 
+					<div>
+					<h:panelGrid columns="4" >
+			
+									
+					<h:outputLabel value="#{msg['subbovedas.idnSirh']}" />
+					<h:inputText value="#{subBovedaGridMB.listaSubBoveda.get(0).sirhIdn}" disabled="true" size="4" maxlength="2" />
+						
+						
+					<h:outputLabel value="#{msg['subbovedas.nombreCPAE']}" />
+					<h:inputText value="#{subBovedaGridMB.listaSubBoveda.get(0).subBovedaNombreCpae}" disabled="true" size="10" maxlength="2" />
+					
+					<h:outputLabel value="#{msg['subbovedas.idnPlaza']}" />
+					<h:inputText value="#{subBovedaGridMB.listaSubBoveda.get(0).plazaIdn}" disabled="true" size="10" maxlength="2" />
+					
+					<h:outputLabel value="#{msg['subbovedas.nombrePlaza']}" />
+					<h:inputText value="#{subBovedaGridMB.listaSubBoveda.get(0).nombrePlaza}" disabled="true" size="45" maxlength="2" />
+					
+					
+						<h:outputLabel value="#{msg['subbovedas.idnSubboveda']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.idnSubBoveda}" size="10" maxlength="8" converter="javax.faces.Number"  converterMessage="#{msg['subbovedas.errorIdn']}">
+	
+						</h:inputText>
+
+						<h:outputLabel value="#{msg['subbovedas.descripcion']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.subBovedaDescripcion}" size="45" maxlength="90" />
+						
+						<h:outputLabel value="#{msg['subbovedas.calle']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.subBovedaCalleNum}" size="40" maxlength="36" />
+
+						<h:outputLabel value="#{msg['subbovedas.colonia']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.subBovedaColonia}" size="26" maxlength="24" />
+						
+						<h:outputLabel value="#{msg['subbovedas.Poblacion']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.subBovedaPoblacion}" size="22" maxlength="20" />
+						
+						<h:outputLabel value="#{msg['subbovedas.cp']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.subBovedaCp}" size="8" maxlength="6" />
+						
+						<h:outputLabel value="#{msg['subbovedas.edo']}" />
+						<h:inputText value="#{subBovedaGridMB.subBovedaVO.subBovedaEdo}" size="4" maxlength="2" />
+
+						</h:panelGrid>
+						</div>
+						<div align="right" style="width:900px" >
+						<br></br>
+						<br></br>
+							<h:commandButton value="#{msg['subbovedas.btnGuardar']}"
+								class="button-blue jqTransformButton"  actionListener="#{subBovedaGridMB.agregar}" type="submit"/>
+								<br></br>
+								<br></br>
+						</div>	
+									
+				</fieldset>
+			
+
+				<fieldset>
+					<legend>#{msg['subbovedas.resultadoConsulta']}</legend> 
+					
+					
+					
+									
+					<h:dataTable class="gridtable" style="width:850px" var="subBoveda" value="#{subBovedaGridMB.listaSubBoveda}">
+					
+						
+						
+						<h:column>
+							<f:facet name="header" style="size=4">#{msg['subbovedas.idnSubboveda']} </f:facet>
+							<h:outputLabel value="#{subBoveda.idnSubBoveda}" size="2" />
+						</h:column>
+					
+						
+						<h:column>
+							<f:facet name="header">#{msg['subbovedas.descripcion']}</f:facet>
+							<h:outputLabel value="#{subBoveda.subBovedaDescripcion}" />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header" >#{msg['subbovedas.domicilio']}</f:facet>
+							<h:outputLabel value="#{subBoveda.subBovedaCalleNum}" size="25" />
+							<h:outputLabel value="#{subBoveda.subBovedaColonia}" />
+							<h:outputLabel value="#{subBoveda.subBovedaPoblacion}" />
+							<h:outputLabel value="#{subBoveda.subBovedaCp}" />
+							<h:outputLabel value="#{subBoveda.subBovedaEdo}" />
+						</h:column>
+						
+						
+						<h:column>
+						<f:facet name="header">#{msg['subbovedas.btnEditar']}</f:facet>
+						<h:commandLink   value="#{msg['subbovedas.btnEditar']}"  action="#{subBovedaGridMB.consultaSubBovedaPorId}" immediate="true" >
+										   <f:setPropertyActionListener target="#{subBovedaGridMB.subBovedaVO}" value="#{subBoveda}"></f:setPropertyActionListener>
+										</h:commandLink>
+							
+						</h:column>
+					
+						<br></br>
+						
+					</h:dataTable>
+									
+				</fieldset>
+
+ 				
+						<br />
+						<fieldset>
+						<div align="center">
+						<h:panelGrid columns="3" style="width:40px;">
+						
+								<h:commandButton value="#{msg['subbovedas.btnGenerarReporte']}"
+									class="button-blue jqTransformButton"  action="#{subBovedaGridMB.generarRepore}"/>								
+									
+									<h:commandButton value="#{msg['subbovedas.btnSalir']}" type="submit" class="button-blue jqTransformButton" align="left"/>
+									
+									
+
+
+						</h:panelGrid>
+						</div>
+						</fieldset>
+
+			</h:form>
+			
+		
+			
+
+
+		</div>
+		<div class="lg-cont-bottom-bg"></div>
+	</ui:define>
+</ui:composition>
+			
+			

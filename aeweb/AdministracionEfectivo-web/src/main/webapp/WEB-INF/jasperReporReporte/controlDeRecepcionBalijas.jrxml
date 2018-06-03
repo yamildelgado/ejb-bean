@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a985ec65-e49f-4879-985f-bde75840e592">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="detprocEtvTraslado" class="java.lang.Short"/>
+	<field name="detprocSirhCpaeSirhOrigen" class="java.lang.Short"/>
+	<field name="detprocSirhDestinoIdAtm" class="java.lang.Short"/>
+	<field name="detprocFolioS018" class="java.lang.Long"/>
+	<field name="detprocNumDeComprobante" class="java.lang.String"/>
+	<field name="detprocDivisa" class="java.lang.Short"/>
+	<field name="detprocImpteDeposDotacion" class="java.lang.String"/>
+	<field name="detprocInstruccionEtv" class="java.lang.Long"/>
+	<field name="detprocPreparacionEtv" class="java.lang.Long"/>
+	<field name="detprocEntregaATraslado" class="java.lang.Long"/>
+	<field name="detprocEntregaFORetrnoEtv" class="java.lang.Long"/>
+	<field name="detprocCopmisoEntrgUsrio" class="java.lang.Long"/>
+	<field name="detprocBca1000" class="java.math.BigDecimal"/>
+	<field name="detprocBca500" class="java.math.BigDecimal"/>
+	<field name="detprocBca200" class="java.math.BigDecimal"/>
+	<field name="detprocBca100" class="java.math.BigDecimal"/>
+	<field name="detprocBca50" class="java.math.BigDecimal"/>
+	<field name="detprocBca20" class="java.math.BigDecimal"/>
+	<field name="detprocMca100" class="java.math.BigDecimal"/>
+	<field name="detprocMca20" class="java.math.BigDecimal"/>
+	<field name="detprocMca10" class="java.math.BigDecimal"/>
+	<field name="detprocMca5" class="java.math.BigDecimal"/>
+	<field name="detprocMca2" class="java.math.BigDecimal"/>
+	<field name="detprocMca1" class="java.math.BigDecimal"/>
+	<field name="detprocMca50Centavos" class="java.math.BigDecimal"/>
+	<field name="detprocMca20Centavos" class="java.math.BigDecimal"/>
+	<field name="detprocMca10Centavos" class="java.math.BigDecimal"/>
+	<field name="detprocMca05Centavos" class="java.math.BigDecimal"/>
+	<field name="detprocMca01Centavos" class="java.math.BigDecimal"/>
+	<field name="detprocBea1" class="java.math.BigDecimal"/>
+	<field name="detprocBea2" class="java.math.BigDecimal"/>
+	<field name="detprocBea5" class="java.math.BigDecimal"/>
+	<field name="detprocBea10" class="java.math.BigDecimal"/>
+	<field name="detprocBea20" class="java.math.BigDecimal"/>
+	<field name="detprocBea100" class="java.math.BigDecimal"/>
+	<field name="detprocMea01Centavos" class="java.math.BigDecimal"/>
+	<field name="detprocMea05Centavos" class="java.math.BigDecimal"/>
+	<field name="detprocMea10Centavos" class="java.math.BigDecimal"/>
+	<field name="detprocMea25Centavos" class="java.math.BigDecimal"/>
+	<field name="detprocMea50Centavos" class="java.math.BigDecimal"/>
+	<field name="detprocMea1" class="java.math.BigDecimal"/>
+	<field name="estructraSirh" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="18" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="-1" width="752" height="1" uuid="e3b19054-aa1d-4701-8f81-12510b5e8114"/>
+			</line>
+			<line>
+				<reportElement x="0" y="17" width="750" height="1" uuid="710eed21-bf5c-4bf9-9f8c-37c44ea709e9"/>
+			</line>
+			<staticText>
+				<reportElement x="197" y="0" width="396" height="15" uuid="ccbd57fa-463a-44f3-88ae-9bb40e38fe64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BANCO NACIONAL DE MÉXICO, S.A.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="268" y="2" width="252" height="12" uuid="3bb2c3c7-4167-41c0-bcb6-ef52be6395ab"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE CONTROL DE RECEPCION BALIJAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="532" y="22" width="59" height="10" uuid="7e6a2465-b444-4286-8e86-7ecf1ab2abfd"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA Y HORA:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="601" y="22" width="109" height="10" uuid="7906f1db-b0a7-4ee9-90de-d89844856669"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="450" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="23" width="49" height="11" uuid="7ee9247c-213c-406c-bb0b-fdfc998c3454"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO. LOTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="70" width="49" height="13" uuid="9c313e97-ec60-4ef4-8734-c347e93f42f2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OPERADOR:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="46" width="101" height="13" uuid="40ca2478-f5f9-4cba-9adc-a7565654a7f6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECCIÓN DE VERIFICACIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="647" y="322" width="85" height="20" uuid="5bf973af-7531-4221-907b-f3bf98c39522"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL DE ENVASES:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="661" y="148" width="45" height="20" uuid="9ec87db7-3568-4528-b041-5e8514920fb9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="49" y="148" width="112" height="20" uuid="600dd995-a8f6-4817-9ceb-07e455cf29b0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO COMPROBANTE ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="197" y="148" width="61" height="20" uuid="e297f775-f9d4-4b46-8d6b-ddc4152bf0b3"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO.  CAJA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="34" width="49" height="11" uuid="f7943a20-5b22-4790-a013-d7c15cc8048c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TURNO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="541" y="148" width="52" height="20" uuid="29533847-d16b-4ede-b56a-82040cce5271"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="84" width="49" height="9" uuid="0a8641ee-16ca-47bf-b385-66d00eeebf73"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO. CAMIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="148" width="88" height="20" uuid="1716eede-5092-46a0-af3f-9221df33944b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO. DE ENVASE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="425" y="148" width="56" height="20" uuid="7679ced7-b7f1-44df-9e94-b966b98dd656"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IMPORTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="59" width="26" height="11" uuid="546d5434-0376-40f6-b60d-8668160496df"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CAJA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="647" y="302" width="103" height="20" uuid="1c61f9ef-7ebb-437b-9825-718eecd547bb"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL DE COMPROBANTES:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="3" y="144" width="747" height="1" uuid="a3adc15e-ca69-40cc-aa7c-afaff1188ccc"/>
+			</line>
+			<line>
+				<reportElement x="647" y="216" width="85" height="1" uuid="a1711f61-1bc6-44ec-b4d3-4d74132a9acf"/>
+			</line>
+			<line>
+				<reportElement x="647" y="248" width="85" height="1" uuid="3cb5f8f6-4c16-4cdf-b4fd-0a0af0dc6858"/>
+			</line>
+			<line>
+				<reportElement x="647" y="232" width="85" height="1" uuid="97b27db9-53a6-4b64-83c6-59e367ea50e2"/>
+			</line>
+			<line>
+				<reportElement x="647" y="264" width="85" height="1" uuid="94b8e444-7dca-4fdc-967d-9d7ae9c149c4"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="630" y="19" width="80" height="20" uuid="f6d0bdad-a7cf-4aa2-8444-b545a91b624d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="710" y="19" width="42" height="20" uuid="c319fda8-011b-4973-adf2-fe5f8584197b"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="320" y="19" width="100" height="20" uuid="9a7ddf7e-b288-488a-ad88-c7085279966a"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AE-WEB 2013]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	template="/WEB-INF/templates/emergentesTemplate.xhtml">
+	<ui:define name="content">
+
+
+
+
+
+		<h:form styleClass="horizontal">
+			<h:panelGroup id="messagePanel" layout="block">
+				<h:messages errorStyle="color: red" infoStyle="color: blue" layout="table" />
+			</h:panelGroup>
+			<fieldset>
+				<legend>#{msg['verificacionAutorizar.autorizar']}</legend>
+		
+				<h:panelGrid columns="2" style=" width:400px; ">
+
+					<h:outputLabel value="#{msg['verificacionAutorizar.noNomina']}" />
+					<h:inputText value="" size="20" />
+					<h:outputLabel value="#{msg['verificacionAutorizar.password']}" />
+					<h:inputText value="" size="20" />
+				</h:panelGrid>
+				<hr  style="width:400px; color:#ccc;"/>
+				<br/>
+				
+				<h:commandButton value="#{msg['verificacionAutorizar.btnAceptar']}"	style="width:100px; margin-left:80px;" class="button-blue jqTransformButton">	</h:commandButton>
+				<h:commandButton value="#{msg['verificacionAutorizar.btnCancelar']}"	style="width:100px; margin-left:80px;" class="button-blue jqTransformButton">	</h:commandButton>
+				<br/>
+				<br/>
+			</fieldset>
+
+
+			
+			
+			
+
+		</h:form>
+
+
+
+
+	</ui:define>
+</ui:composition>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TransferenciaDeEfectivo" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f220bf70-de25-44bd-b3b6-0ca8c65497ce">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="306"/>
+	<property name="ireport.y" value="0"/>
+	<field name="tipoperIdn" class="java.lang.Short"/>
+	<field name="detprocEtvTraslado" class="java.lang.Short"/>
+	<field name="detprocSirhCpaeSirhOrigen" class="java.lang.Short"/>
+	<field name="detprocRecoleccion" class="java.lang.Long"/>
+	<field name="detprocRecepcionEnEtv" class="java.lang.Long"/>
+	<field name="detprocVerificacion" class="java.lang.Long"/>
+	<field name="detprocAcreditacionEnBnmx" class="java.lang.Long"/>
+	<field name="detprocNumDeComprobante" class="java.lang.String"/>
+	<field name="detprocDiceContener" class="java.lang.String"/>
+	<field name="detprocNumUneg" class="java.lang.Short"/>
+	<field name="detprocContratoEfectivo" class="java.lang.Long"/>
+	<field name="detprocGloblParclContendor" class="java.lang.String"/>
+	<field name="detprocInconsistencia" class="java.lang.Short"/>
+	<field name="detprocDivisa" class="java.lang.Short"/>
+	<field name="detprocSuc" class="java.lang.Short"/>
+	<field name="detprocCuenta" class="java.lang.Integer"/>
+	<field name="detprocImpteDiferencia" class="java.lang.String"/>
+	<field name="detprocFaltanteSobrante" class="java.lang.String"/>
+	<field name="detprocSuccargoAbonoDif" class="java.lang.Short"/>
+	<field name="detprocCntacargoAbonodif" class="java.lang.Integer"/>
+	<field name="detprocReferenciaNumerica" class="java.lang.Long"/>
+	<field name="detprocReferenciaAlf" class="java.lang.String"/>
+	<field name="detprocNumParcialDif" class="java.lang.Short"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="581">
+			<staticText>
+				<reportElement x="213" y="52" width="154" height="21" uuid="bc205d38-90a9-4386-b231-fa045f4db8ed"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Moneda sin Verificar (M.S.V.)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="-1" width="572" height="1" uuid="cd43235d-f5ce-4358-a0c4-7f8a5e75e17e"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="203" y="30" width="174" height="18" uuid="bb7c291b-c7e0-49c5-b07e-b7bda522da5f"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[TRANSFERENCIA DE EFECTIVO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="26" width="572" height="1" uuid="b4de3349-2d03-44ee-bb6a-ad66cab46442"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="181" y="5" width="229" height="17" uuid="77b9d3f8-cd2a-4f8b-8b81-c723af7470d5"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[BANCO NACIONAL DE MÉXICO, S.A.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="109" width="36" height="16" uuid="9d2571ee-e60e-4633-b441-3812ead96fb1"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPAE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="109" width="53" height="16" uuid="60ed3fde-aaa8-4d00-90d5-e2f28e3d99d9"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUB BÓVEDA: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="440" y="109" width="32" height="16" uuid="a8200d15-0b55-427d-8816-aeabd8718a41"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[0350]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="525" y="109" width="28" height="16" uuid="9c9a9b1e-e863-4654-bcfd-101f65c9b469"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[00]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="336" width="143" height="15" uuid="d1067471-3920-4d3b-ace9-1a424df9c1b1"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[PLOMO DEL ENVASE VIRTUAL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="336" width="62" height="15" uuid="bfe43f32-510e-4eb4-80e7-3df6fcd1607d"/>
+				<textElement>
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[TV0208201310]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="207" width="68" height="16" uuid="0b1f5145-0f19-400b-b489-67cff8698cca"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[TIPO DE CAJA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="294" width="177" height="13" uuid="0a6089e5-4897-485c-b4b5-22ee6512861b"/>
+				<textElement>
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[LIBRERÍA PORRÚA HNOS CIA  SA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="322" width="143" height="14" uuid="7bc295b8-18b6-4e1d-afcb-65aee7d3fc4a"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[COMPAÑÍA DE TRASLADO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="207" width="66" height="19" uuid="f94cb1db-305d-4bf1-b97d-f94c37f4df2a"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[VERIFICADORA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="367" width="64" height="15" uuid="2a67cbc9-9dde-45fd-9b7b-9338ccc38f9a"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[1,750.00  M.N.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="294" width="143" height="13" uuid="ca3edd9b-11b0-405e-b754-50c872e3f2c2"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[NOMBRE DEL CLIENTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="173" width="68" height="17" uuid="b18bcc8f-0e37-4c05-9f60-b9443b8ecf75"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CAJERO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="190" width="68" height="17" uuid="a071b21b-540a-46a9-a98e-46059731e49f"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CAJA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="173" width="120" height="17" uuid="554a3d90-2a88-431d-a72b-e20e4344749c"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[SOCORRO RAMOS MARTÍNEZ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="351" width="25" height="16" uuid="b15527ee-5b0c-4a69-8f63-48cd77df9800"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[30]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="306" width="100" height="15" uuid="e10168ac-bcea-4738-be50-23d54ae6f46b"/>
+				<textElement>
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[0208201317]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="190" width="19" height="17" uuid="032717bb-8e1b-425c-b7ef-4b54f41c88ad"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[85]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="159" width="100" height="14" uuid="d43edca8-7dbe-48a1-8430-047518df5fd3"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[VESPERTINO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="307" width="143" height="14" uuid="529af5f2-62bd-4405-926c-6e1e10c9414f"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[FOLIO DEL COMPROBANTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="367" width="143" height="15" uuid="89b017fe-a04e-4149-8379-31770f6b7dd2"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[IMPORTE DE LA TRANSFERENCIA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="159" width="68" height="14" uuid="93610003-5499-4ffc-a292-1910f0190b5a"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[TURNO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="321" width="195" height="15" uuid="2b6a1503-0ad2-47e9-8d9a-60d7a38673e4"/>
+				<textElement>
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[SERVICIO PANAMERICANO DE PROTECCIÓN SA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="351" width="143" height="16" uuid="db89d5a3-1945-4a19-8474-d01f68f6a397"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CAJA A LA QUE SE TRANSFIERE:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="455" y="87" width="100" height="10" uuid="5cad7f19-fd3f-4461-8cc6-484379ff33b7"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="396" y="87" width="59" height="10" uuid="692805a0-6a30-434b-a6a0-8b0bd01aa82d"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA Y HORA:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="50">
+			<staticText>
+				<reportElement x="230" y="16" width="129" height="17" uuid="89bd1744-9775-4e5c-8b09-252d05b52a16"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[AE-WEB 2013 ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="445" y="16" width="80" height="17" uuid="4e34e5a2-d0cd-4615-8759-5a9972a0602c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página"+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="525" y="16" width="40" height="17" uuid="33072ac5-57e7-47eb-be6f-752a98f25d91"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
